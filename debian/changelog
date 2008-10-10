@@ -1,0 +1,350 @@
+twinkle (1:1.2-3) unstable; urgency=low
+
+  [ Patrick Matthäi ]
+  * Bump Standards-Version to 3.8.0.
+  * Converted menu images to xpm and use them at twinkle.menu.
+    Thanks lintian.
+
+  [ Mark Purcell ]
+  * Update debian.install: twinkle.desktop & sip.protocol
+  * Update twinkle.desktop fixes
+    - linitan:desktop-entry-contains-encoding-key
+  * Add bug/presubj directing users to upstream user group
+  * Add debian/twinkle.manpages
+  * Update debian/menu - menu-icon-too-big. Icons in the Debian menu
+    system should be at most 32x32
+
+ -- Mark Purcell <msp@debian.org>  Sat, 11 Oct 2008 10:05:06 +1100
+
+twinkle (1:1.2-2) unstable; urgency=low
+
+  * Provide gcc4.3.patch to fix build issues
+    - FTBFS: twinkle_zrtp_ui.h:47: error: 'MessageSeverity' has not been
+    declared (Closes: #479874)
+  * Fixup menu entry. Thks Rodrigo Campos
+    - switch to new debian menu policy (Closes: #475424)
+  * Update debian/twinkle.1 manpage for 1.2 version
+
+ -- Mark Purcell <msp@debian.org>  Sat, 31 May 2008 12:38:57 +1000
+
+twinkle (1:1.2-1) unstable; urgency=low
+
+  [ Kilian Krause ]
+  * Fix menu entry Apps -> Applications
+  * Add Homepage field as added in dpkg-dev 1.14.6.
+
+  [ Mikael Magnusson ]
+  * New upstream release (Closes: #465187)
+  * Add myself to Uploaders.
+  * Update debian/control package Description.
+  * Update patches/libgsm.patch. (Partly merged by upstream.)
+  * Rename patches/configure-boost.patch to
+    patches/z99-configure-boost.patch (fixes patch order), and update.
+
+ -- Mikael Magnusson <mikma@users.sourceforge.net>  Sat, 15 Mar 2008 18:43:10 +0100
+
+twinkle (1:1.1-2) unstable; urgency=low
+
+  * Remove obsolete Build-Depends: kdelibs-bin
+  * Rebuild for libboost transition
+
+ -- Mark Purcell <msp@debian.org>  Thu, 16 Aug 2007 18:12:05 +0100
+
+twinkle (1:1.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Rework debian/patches/libgsm.patch
+  * Rework debian/patches/configure-boost.patch  to correctly detect
+    -lboost_regex-mt...
+
+ -- Mark Purcell <msp@debian.org>  Wed, 25 Jul 2007 22:50:26 +0100
+
+twinkle (1:1.0.1-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/patches deleted as included upstream:
+    - audiocheck.patch
+    - conf.patch
+    - incoming.patch
+  * Rebuild with Depends: libzrtpcpp-0.9-0 (>= 0.9-4)
+    - Crashes when making/receiving a call (Closes: #420138)
+
+ -- Mark Purcell <msp@debian.org>  Sun, 20 May 2007 16:55:03 +0100
+
+twinkle (1:1.0-3) unstable; urgency=low
+
+  * Rebuild for libccrtp-dev > 1.5.1 [libccrtp soname]
+    - twinkle depends on libccrtp1-1.5-0 which is not in sid (Closes:
+    #418843)
+
+ -- Mark Purcell <msp@debian.org>  Thu, 12 Apr 2007 21:43:17 +0100
+
+twinkle (1:1.0-2) unstable; urgency=low
+
+  * Add upstream patches; audiocheck, conf & incoming
+
+ -- Mark Purcell <msp@debian.org>  Sat,  3 Mar 2007 13:14:15 +0000
+
+twinkle (1:1.0-1) unstable; urgency=low
+
+  * New upstream release
+    - binNMU required (Closes: #402509)
+    - Via headers containing ipv6 addresses are dropped (Closes: #398849)
+  * Update debian/rules URL location
+  * Delete debian/patches/extra-qualifications.patch included upstream
+  * Update debian/control package Description
+  * Update debian/twinkle.1 manpage for 1.0 release
+  * lintian cleanup: extended-description-line-too-long
+
+ -- Mark Purcell <msp@debian.org>  Thu, 25 Jan 2007 22:32:22 +0000
+
+twinkle (1:1.0~beta-1) unstable; urgency=low
+
+  * New upstream release
+  * Needed for the preceeding package to get into etch
+  * delete debian/patches dtmf, invite4xx and memman included upstream
+  * debian/rules get-orig-source targets rewritten
+  * Cleanup debian/watch
+  * Add extra-qualifications.patch to fix upstream g 4.1.1 build errors
+
+ -- Mark Purcell <msp@debian.org>  Mon,  8 Jan 2007 21:29:49 +0000
+
+twinkle (1:0.9-6) testing-proposed-updates; urgency=medium
+
+  * Apply upstream memman.patch to fix random twinkle crashes
+    - crash on call end (Closes: #402509)
+  * Loaded direct to t-p-u as discussed on debian-release
+
+ -- Mark Purcell <msp@debian.org>  Sun,  7 Jan 2007 06:27:36 +0000
+
+twinkle (1:0.9-5) unstable; urgency=low
+
+  * Pre-run autoheader to include expected src/twinkle_config.h.in changes
+    inside debian/patches/libgsm.patch
+    - Closes: #394153: FTBFS: undefined reference to gsm_decode
+
+ -- Mark Purcell <msp@debian.org>  Sat, 25 Nov 2006 08:57:34 +0000
+
+twinkle (1:0.9-4) unstable; urgency=low
+
+  * Grab upstream patches: DTMF & Invite4xx
+  * VoIP Provider issue: Can't talk for more than a minute (Closes: #365588)
+  * help2man generated manpage
+  * Linitan cleanup: manpage-has-useless-whatis-entry
+
+ -- Mark Purcell <msp@debian.org>  Sat,  4 Nov 2006 13:17:50 +0000
+
+twinkle (1:0.9-3) unstable; urgency=low
+
+  * Rebuild
+
+ -- Mark Purcell <msp@debian.org>  Wed,  1 Nov 2006 21:38:21 +0000
+
+twinkle (1:0.9-2) unstable; urgency=low
+
+  * Build-Depends: libzrtpcpp-dev
+
+ -- Mark Purcell <msp@debian.org>  Mon, 16 Oct 2006 19:22:13 +0100
+
+twinkle (1:0.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Update Build-Depends
+  * PRACK messages should be authenticated (Closes: #389252)
+
+ -- Mark Purcell <msp@debian.org>  Mon,  2 Oct 2006 09:50:03 +0800
+
+twinkle (1:0.8.1-1) unstable; urgency=low
+
+  [ Kilian Krause ]
+  * New upstream release. Ships without iLBC, therefore no need to repackage.
+
+  [ Mark Purcell ]
+  * Cleanup debian/patches/libgsm.patch
+  * Use upstream supplied sip.protocol & twinkle.desktop
+
+ -- Mark Purcell <msp@debian.org>  Thu, 20 Jul 2006 19:33:00 +0100
+
+twinkle (0.8.dfsg-1) unstable; urgency=low
+
+  * New upstream release
+  * Remove non-free iLBC code from DFSG release
+
+ -- Mark Purcell <msp@debian.org>  Sun,  2 Jul 2006 21:37:09 +0100
+
+twinkle (0.7.1-2) unstable; urgency=low
+
+  * Enable sip URIs: debian/sip.protocol
+    - Twinkle won't manage sip URI from Konqueror (Closes: #366975)
+
+ -- Mark Purcell <msp@debian.org>  Fri, 12 May 2006 21:20:39 +0100
+
+twinkle (0.7.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Mark Purcell <msp@debian.org>  Sun,  7 May 2006 23:00:03 +0100
+
+twinkle (0.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Update debian/control. Fixes FTBFS on kfreebsd-amd64: unsatisfied
+     Build-Depends (Closes: #361483)
+  * Rebuild with updated libccrtp & libcommoncpp2
+    - Fixes: libccext2-1.3.so.1: cannot open shared object file (Closes: #362440)
+  * Installed debian/twinkle.desktop. Fixes: please install a .desktop
+  file (Closes: #358398)
+  * Add Build-Depends: libspeex-dev
+  * Modify debian/patches/libgsm.diff
+
+ -- Mark Purcell <msp@debian.org>  Mon,  1 May 2006 12:21:03 +0100
+
+twinkle (0.6.2-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/patches/gui.cpp.diff removed as applied upstream
+
+ -- Mark Purcell <msp@debian.org>  Sun, 26 Feb 2006 17:46:56 +0000
+
+twinkle (0.6.1-2) unstable; urgency=low
+
+  * Add debian/patches/libgsm.diff to use Build-Depends: libgsm1-dev
+  * Add debian/patches/gui.cpp.diff (Closes: Bug#352534)
+
+ -- Mark Purcell <msp@debian.org>  Tue, 21 Feb 2006 18:31:51 +0000
+
+twinkle (0.6.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Mark Purcell <msp@debian.org>  Sun, 12 Feb 2006 08:06:44 +0000
+
+twinkle (0.6-1) UNRELEASED; urgency=low
+
+  * (NOT RELEASED YET) New upstream release
+  * Add Build-Depends: libxpm-dev, libsndfile1-dev
+
+ -- Mark Purcell <msp@debian.org>  Fri, 10 Feb 2006 10:32:07 +1100
+
+twinkle (0.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Don't ship upstream NEWS as it is a duplicate of upstream ChangeLog
+  * Remove usr/sbin from debian/dirs
+
+ -- Mark Purcell <msp@debian.org>  Tue, 17 Jan 2006 16:53:16 +0000
+
+twinkle (0.4.2-1) unstable; urgency=low
+
+  * New upstream release
+    - Lines hang with "dialing" status (Closes: #340779)
+    - does not play ringtone (Closes: #340233)
+
+ -- Mark Purcell <msp@debian.org>  Tue, 29 Nov 2005 20:47:21 +0000
+
+twinkle (0.4.1-3) unstable; urgency=low
+
+  * Rebuild against kdelibs 3.4.2 for unstable
+    - twinkle is not installable on sid (Closes: #340534)
+  * Suggests: kaddressbook
+
+ -- Mark Purcell <msp@debian.org>  Thu, 24 Nov 2005 07:34:45 +0000
+
+twinkle (0.4.1-2) unstable; urgency=low
+
+  * Rebuild against kdelibs 3.4.2
+
+ -- Mark Purcell <msp@debian.org>  Tue, 22 Nov 2005 20:16:05 +0000
+
+twinkle (0.4.1-1) unstable; urgency=low
+
+  * New upstream release
+    - FTBFS on 64 bit arches: cast from 'void*' to 'int' loses precision
+    (Closes: #324395)
+    - ftbfs [sparc] stun.cxx:680: error: 'gethrtime' was not declared in
+    this scope (Closes: #336746)
+  * Fix Build-Depends: FTBFS on GNU/kFreeBSD (Closes: #336859)
+  * Copyright audit to debian/copyright
+  * Use correct QTDIR=/usr/share/qt3, negates need for
+    DEB_AUTO_UPDATE_AUTOCONF
+  * Remove patch against configure.in
+
+ -- Mark Purcell <msp@debian.org>  Sun, 20 Nov 2005 23:05:07 +0000
+
+twinkle (0.3.2-4) unstable; urgency=low
+
+  * Add Build-Depends: kdelibs4-dev kdelibs-bin, libasounds2-dev, libxml2-dev
+    - fix ppc build (Closes: #325057)
+  * Remove ppc-build patch, obsolete by upstream v 0.3
+
+ -- Mark Purcell <msp@debian.org>  Sun, 30 Oct 2005 07:56:45 +0000
+
+twinkle (0.3.2-3) unstable; urgency=low
+
+  * Use DEB_AUTO_UPDATE_AUTOCONF to rebuild configure from patched
+    configure.in. Ugly..
+
+ -- Mark Purcell <msp@debian.org>  Sat, 29 Oct 2005 22:54:12 +0100
+
+twinkle (0.3.2-2) unstable; urgency=low
+
+  * Add Build-Depends: cdbs
+
+ -- Mark Purcell <msp@debian.org>  Sat, 29 Oct 2005 17:45:43 +0100
+
+twinkle (0.3.2-1) unstable; urgency=low
+
+  * New upstream release
+    - New upstream version available (Closes: #334615)
+  * FTBFS on 64 bit arches: cast from 'void*' to 'int' loses precision
+    (Closes: #324395)
+  * Patch from Guido Guenther
+    - fix ppc build (Closes: #325057)
+  * Patch from Mikael Magnusson
+    - Thread creation timing bug causes crashes (Closes: #329433)
+  * Fix: old-fsf-address-in-copyright-file
+
+ -- Mark Purcell <msp@debian.org>  Sat, 29 Oct 2005 16:46:40 +0100
+
+twinkle (0.3-1) unstable; urgency=low
+
+  [ Kilian Krause ]
+  * Debian VoIP upload
+
+  [ Mark Purcell ]
+  * New upstream release
+  * Switch to cdbs!
+
+ -- Mark Purcell <msp@debian.org>  Thu, 13 Oct 2005 18:12:02 +0100
+
+twinkle (0.2.1-2) unstable; urgency=low
+
+  * Build-Depends: libxml2-dev
+
+ -- Mark Purcell <msp@debian.org>  Sun, 21 Aug 2005 15:55:13 +0100
+
+twinkle (0.2.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Build-Depends:  libccrtp-dev (>=1.3.4)
+  * Add Build-Depends: qt3-apps-dev
+  * Add Build-Depends: automake1.9
+  * Export QTDIR for build target as well :-(
+  * Update extended description
+
+ -- Mark Purcell <msp@debian.org>  Sun, 21 Aug 2005 14:05:30 +0100
+
+twinkle (0.1-2) unstable; urgency=low
+
+  * C++ migration
+  * Build-Depends:  libqt3-mt-dev (>= 3:3.3.4-4)
+
+ -- Mark Purcell <msp@debian.org>  Thu, 18 Aug 2005 21:02:31 +0100
+
+twinkle (0.1-1) experimental; urgency=low
+
+  * Upload to experimental while c++ transition
+  * Initial release Closes: #311150
+
+ -- Mark Purcell <msp@debian.org>  Thu, 11 Aug 2005 22:16:20 +0100
+
