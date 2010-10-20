@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,14 +28,21 @@
 
 using namespace std;
 
+//@{
+/** @name Disposition types */
+#define DISPOSITION_ATTACHMENT	"attachment"
+//@}
+
 class t_hdr_content_disp : public t_header {
 public:
 	string			type;
+	string			filename;
 	list<t_parameter>	params;
 
 	t_hdr_content_disp();
 
 	void set_type(const string &t);
+	void set_filename(const string &name);
 	void add_param(const t_parameter &p);
 	void set_params(const list<t_parameter> &l);
 	string encode_value(void) const;

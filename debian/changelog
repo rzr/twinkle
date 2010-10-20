@@ -1,3 +1,61 @@
+twinkle (1:1.4.2-2build2) natty; urgency=low
+
+  * No change rebuild against libboost 1.42
+
+ -- Scott Kitterman <scott@kitterman.com>  Wed, 20 Oct 2010 08:07:29 -0400
+
+twinkle (1:1.4.2-2build1) lucid; urgency=low
+
+  * No-change rebuild against libboost 1.40.
+
+ -- Michael Bienia <geser@ubuntu.com>  Sun, 24 Jan 2010 13:43:21 +0100
+
+twinkle (1:1.4.2-2) unstable; urgency=low
+
+  * Drop depreciated KDE3 support: configure --without-kde
+    - Assist with Debian KDE4 transition
+    - Fix "Add a light version compiled without kde" (Closes: #367258)
+  * Fix "FTBFS: seems to fail when building with libzrtpcpp-dev 1.3.0-1"
+    Updated Build-Depends: (Closes: #519347)
+  * DEB_AUTO_UPDATE_AUTOCONF regenerate configure (pickup boost_regex-mt.patch)
+  * Relax Build-Depends: ccrtp >= 1.7.0
+  * debian/compat -> 7
+  * Update Standards 3.8.1 - no changes
+
+ -- Mark Purcell <msp@debian.org>  Sat, 16 May 2009 11:33:53 +1000
+
+twinkle (1:1.4.2-1) unstable; urgency=low
+
+  * New upstream release
+    - libcommoncpp2 transition
+
+ -- Mark Purcell <msp@debian.org>  Thu, 26 Feb 2009 18:35:47 +1100
+
+twinkle (1:1.4-2) experimental; urgency=low
+
+  * Fix "twinkle_1:1.4-1(sparc/experimental): FTBFS: error:
+    readline/readline.h: No such file or directory" 
+    - Add Build-Depends: libreadline-dev & libspeexdsp-dev (Closes: #513135)
+  * Update Description: to match upstream
+
+ -- Mark Purcell <msp@debian.org>  Tue, 27 Jan 2009 17:30:42 +1100
+
+twinkle (1:1.4-1) experimental; urgency=low
+
+  * New upstream release
+  * Add Build-Depends: ccrtp >= 1.7.0
+
+ -- Mark Purcell <msp@debian.org>  Mon, 26 Jan 2009 21:47:00 +1100
+
+twinkle (1:1.3.2-1) experimental; urgency=low
+
+  * New upstream release
+  * Add Build-Depends: libmagic-dev
+  * Patches included upstream; gcc4.3.patch z99-configure-boost.patch
+  * Distribution experimental while we await lenny
+
+ -- Mark Purcell <msp@debian.org>  Fri, 17 Oct 2008 12:19:21 +1100
+
 twinkle (1:1.2-3) unstable; urgency=low
 
   [ Patrick Matthäi ]

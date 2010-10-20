@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
     
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,6 +21,21 @@
 #include <iostream>
 #include <cstdlib>
 #include <qapplication.h>
+
+#ifdef HAVE_KDE
+#include <kmimetype.h>
+#include <krun.h>
+#include <kservice.h>
+#include <ktrader.h>
+#endif
+
+// This include is needed to avoid build error when building Twinkle
+// without Qt. One of the other includes below seems to include qdir.h
+// indirectly. But by that time it probably conflicts with a macro causing
+// compilation errors reported in qdir.h Include qdir.h here avoids the
+// conflict.
+#include "qdir.h"
+
 #include "gui.h"
 #include "line.h"
 #include "log.h"
@@ -50,6 +65,7 @@
 #include "qlistbox.h"
 #include "qmessagebox.h"
 #include "qpixmap.h"
+#include "qprocess.h"
 #include "qpushbutton.h"
 #include "qsize.h"
 #include "qsizepolicy.h"
@@ -552,15 +568,15 @@ void t_gui::do_user(const string &profile_name) {
 }
 
 bool t_gui::do_message(const string &destination, const string &display,
-		const string &text)
+		       const im::t_msg &msg)
 {
 	t_user *user = phone->ref_user_profile(mainWindow->
 			userComboBox->currentText().ascii());
 	
 	t_url dest_url(expand_destination(user, destination));
-
+	
 	if (dest_url.is_valid()) {
-		phone->pub_send_message(user, dest_url, display, text);
+		phone->pub_send_message(user, dest_url, display, msg);
 	}
 	
 	return true;
@@ -614,7 +630,8 @@ void t_gui::do_help(const list<t_command_arg> &al) {
 // PUBLIC
 /////////////////////////////////////////////////
 
-t_gui::t_gui(t_phone *_phone) : t_userintf(_phone) {
+t_gui::t_gui(t_phone *_phone) : t_userintf(_phone), timerUpdateMessageSessions(NULL)
+{
 	use_stdout = false;
 	lastFileBrowsePath = DIR_HOME;
 	
@@ -667,7 +684,7 @@ void t_gui::run(void) {
 	s.append(' ').append(PRODUCT_VERSION).append(", ");
 	s.append(sys_config->get_product_date().c_str());
 	mainWindow->display(s);
-	s = "Copyright (C) 2005-2008  ";
+	s = "Copyright (C) 2005-2009  ";
 	s.append(PRODUCT_AUTHOR);
 	mainWindow->display(s);
 	
@@ -699,12 +716,19 @@ void t_gui::run(void) {
 	mainWindow->resize(sizeMainWin);
 	
 	// Start QApplication/KApplication
-	if ((sys_config->get_start_hidden() && !g_cmd_args.cmd_show) ||
-	    g_cmd_args.cmd_hide)
+	if (qApp->isSessionRestored() && 
+	    sys_config->get_ui_session_id() == qApp->sessionId().ascii())
 	{
-		mainWindow->hide();
+		// Restore previous session
+		restore_session_state();
 	} else {
-		mainWindow->show();
+		if ((sys_config->get_start_hidden() && !g_cmd_args.cmd_show) ||
+		    g_cmd_args.cmd_hide)
+		{
+			mainWindow->hide();
+		} else {
+			mainWindow->show();
+		}
 	}
 	
 	// Activate a profile if the --set-profile option was given on the command
@@ -778,6 +802,29 @@ void t_gui::restore_state(void) {
 	mainWindow->showBuddyList(sys_config->get_show_buddy_list());
 	
 	t_userintf::restore_state();
+	
+	unlock();
+}
+
+void t_gui::save_session_state(void) {
+	lock();
+	
+	t_win_geometry geometry(mainWindow->x(), mainWindow->y(),
+				mainWindow->width(), mainWindow->height());
+	sys_config->set_ui_session_main_geometry(geometry);
+	sys_config->set_ui_session_main_state(mainWindow->windowState());
+	sys_config->set_ui_session_main_hidden(mainWindow->isHidden());
+	
+	unlock();
+}
+
+void t_gui::restore_session_state(void) {
+	lock();
+	
+	t_win_geometry geometry = sys_config->get_ui_session_main_geometry();
+	mainWindow->setGeometry(geometry.x, geometry.y, geometry.width, geometry.height);
+	mainWindow->setWindowState(sys_config->get_ui_session_main_state());
+	mainWindow->setHidden(sys_config->get_ui_session_main_hidden());
 	
 	unlock();
 }
@@ -887,12 +934,12 @@ void t_gui::cb_incoming_call(t_user *user_config, int line, const t_request *r) 
 	mainWindow->display(s);
 	
 	// Is this a transferred call?
+	QString referredByParty;
 	if (r->hdr_referred_by.is_populated()) {
+		referredByParty = format_sip_address(user_config, 
+				r->hdr_referred_by.display, r->hdr_referred_by.uri).c_str();
 		s = "Call transferred by ";
-		s = qApp->translate("GUI", "Call transferred by %1").arg(
-				format_sip_address(user_config, 
-					    r->hdr_referred_by.display, 
-					    r->hdr_referred_by.uri).c_str());
+		s = qApp->translate("GUI", "Call transferred by %1").arg(referredByParty);
 		mainWindow->display(s);
 	}
 	
@@ -929,7 +976,7 @@ void t_gui::cb_incoming_call(t_user *user_config, int line, const t_request *r) 
 	}
 	displaySubject(subject);
 	
-	cb_notify_call(line, fromParty, organization, fromPhoto, subject);
+	cb_notify_call(line, fromParty, organization, fromPhoto, subject, referredByParty);
 	
 	unlock();
 }
@@ -968,8 +1015,7 @@ void t_gui::cb_answer_timeout(int line) {
 	if (line >= NUM_USER_LINES) return;
 	
 	lock();
-	QString s;
-
+	
 	cb_stop_call_notification(line);
 	
 	unlock();
@@ -1505,7 +1551,7 @@ void t_gui::cb_redirecting_request(t_user *user_config, const t_contact_param &c
 }
 
 void t_gui::cb_notify_call(int line, const QString &from_party, const QString &organization,
-			   const QImage &photo, const QString &subject)
+			   const QImage &photo, const QString &subject, QString &referred_by_party)
 {
 	if (line >= NUM_USER_LINES) return;
 	
@@ -1524,15 +1570,20 @@ void t_gui::cb_notify_call(int line, const QString &from_party, const QString &o
 	if (tray && !sys_tray_popup &&  !phone->is_line_auto_answered(line)) {
 		QString presFromParty("");
 		if (!from_party.isEmpty()) {
-			presFromParty = dotted_truncate(from_party.ascii(), 40).c_str();
+			presFromParty = dotted_truncate(from_party.ascii(), 50).c_str();
 		}
 		QString presOrganization("");
 		if (!organization.isEmpty()) {
-			presOrganization = dotted_truncate(organization.ascii(), 40).c_str();
+			presOrganization = dotted_truncate(organization.ascii(), 50).c_str();
 		}
 		QString presSubject("");
 		if (!subject.isEmpty()) {
-			presSubject = dotted_truncate(subject.ascii(), 40).c_str();
+			presSubject = dotted_truncate(subject.ascii(), 50).c_str();
+		}
+		QString presReferredByParty("");
+		if (!referred_by_party.isEmpty()) {
+			presReferredByParty = qApp->translate("GUI", "Transferred by: %1").arg(
+					dotted_truncate(referred_by_party.ascii(), 40).c_str());
 		}
 		
 		// Create photo pixmap. If no photo is available, then use
@@ -1558,7 +1609,10 @@ void t_gui::cb_notify_call(int line, const QString &from_party, const QString &o
 		lblPhoto->setPixmap(pm);
 		lblPhoto->setFrameShape(photoFrameShape);
 		QVBox *vb = new QVBox(hb);
-		QLabel *lblCaption = new QLabel("<H2>Incoming Call</H2>", vb);
+		QString captionText("<H2>");
+		captionText += qApp->translate("SysTrayPopup", "Incoming Call");
+		captionText += "</H2>";
+		QLabel *lblCaption = new QLabel(captionText, vb);
 		lblCaption->setAlignment(Qt::AlignTop | Qt::AlignLeft);
 		lblCaption->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 		QLabel *lblFrom = new QLabel(presFromParty, vb);
@@ -1571,6 +1625,13 @@ void t_gui::cb_notify_call(int line, const QString &from_party, const QString &o
 			lblOrganization->setSizePolicy(QSizePolicy::Expanding, 
 						       QSizePolicy::Minimum);
 			lastLabel = lblOrganization;
+		}
+		if (!presReferredByParty.isEmpty()) {
+			QLabel *lblReferredBy = new QLabel(presReferredByParty, vb);
+			lblReferredBy->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+			lblReferredBy->setSizePolicy(QSizePolicy::Expanding, 
+						       QSizePolicy::Minimum);
+			lastLabel = lblReferredBy;
 		}
 		if (!presSubject.isEmpty()) {
 			QLabel *lblSubject = new QLabel(presSubject, vb);
@@ -2171,6 +2232,13 @@ bool t_gui::cb_ask_msg(QWidget *parent, const string &msg, t_msg_priority prio) 
 }
 
 void t_gui::cb_display_msg(const string &msg, t_msg_priority prio) {
+	// If this thread may not lock the UI, then push the display message on
+	// the UI event queue. The message will be display asynchronously.
+	if (is_prohibited_thread()) {
+		cb_async_display_msg(msg, prio);
+		return;
+	}
+	
 	QString s;
 	
 	lock();
@@ -2349,13 +2417,41 @@ void t_gui::cb_mwi_terminated(t_user *user_config, const string &reason) {
 
 bool t_gui::cb_message_request(t_user *user_config, t_request *r) {	
 	string text;
-	im::t_text_format text_format;
+	im::t_text_format text_format = im::TXT_PLAIN;
+	bool attachment = false;
+	bool failed_to_save_attachment = false;
+	string attachment_error_msg;
+	string attachment_saved_name;
+	string attachment_save_as_name;
 	
-	if (r->body && r->body->get_type() == BODY_PLAIN_TEXT) {
+	if (!r->body) {
+		log_file->write_report("Missing body.", "t_gui::cb_message_request",
+				       LOG_NORMAL, LOG_DEBUG);
+		return true;
+	}
+	
+	// Determine if message should be shown inline or as an attachment
+	if ((r->hdr_content_disp.is_populated() && r->hdr_content_disp.type == "attachment") ||
+	    (r->body->get_type() == BODY_OPAQUE) ||
+	    (r->hdr_content_length.is_populated() && r->hdr_content_length.length > im::MAX_INLINE_TEXT_LEN) ||
+	    (r->body->encode().size() > im::MAX_INLINE_TEXT_LEN))
+	{
+		attachment = true;
+		
+		string suggested_file_extension = mime2file_extension(r->hdr_content_type.media);
+		
+		if (!sys_config->save_sip_body(*r, suggested_file_extension,
+					       attachment_saved_name, 
+					       attachment_save_as_name, 
+					       attachment_error_msg)) 
+		{
+			failed_to_save_attachment = true;
+		}
+	} else if (r->body->get_type() == BODY_PLAIN_TEXT) {
 		t_sip_body_plain_text *sb = dynamic_cast<t_sip_body_plain_text *>(r->body);
 		text = sb->text;
 		text_format = im::TXT_PLAIN;
-	} else if (r->body && r->body->get_type() == BODY_HTML_TEXT) {
+	} else if (r->body->get_type() == BODY_HTML_TEXT) {
 		t_sip_body_html_text *sb = dynamic_cast<t_sip_body_html_text *>(r->body);
 		text = sb->text;
 		text_format = im::TXT_HTML;
@@ -2369,20 +2465,22 @@ bool t_gui::cb_message_request(t_user *user_config, t_request *r) {
 		return true;
 	}
 	
-	string charset = r->hdr_content_type.media.charset;
-	if (!charset.empty() && cmp_nocase(charset, "utf-8") != 0) {
-		// Try to decode the text
-		QTextCodec *c = QTextCodec::codecForName(charset.c_str());
-		if (c) {
-			text = c->toUnicode(text.c_str());
-		} else {
-			log_file->write_header(
-					"t_gui::cb_message_request",
-					LOG_NORMAL, LOG_WARNING);
-			log_file->write_raw("Cannot decode charset: ");
-			log_file->write_raw(charset);
-			log_file->write_endl();
-			log_file->write_footer();
+	if (!text.empty()) {
+		string charset = r->hdr_content_type.media.charset;
+		if (!charset.empty() && cmp_nocase(charset, "utf-8") != 0) {
+			// Try to decode the text
+			QTextCodec *c = QTextCodec::codecForName(charset.c_str());
+			if (c) {
+				text = c->toUnicode(text.c_str());
+			} else {
+				log_file->write_header(
+						"t_gui::cb_message_request",
+						LOG_NORMAL, LOG_WARNING);
+				log_file->write_raw("Cannot decode charset: ");
+				log_file->write_raw(charset);
+				log_file->write_endl();
+				log_file->write_footer();
+			}
 		}
 	}
 	
@@ -2412,18 +2510,46 @@ bool t_gui::cb_message_request(t_user *user_config, t_request *r) {
 		view->raise();
 	}
 	
-	session->recv_msg(text, text_format);
+	// Construct message
+	im::t_msg msg;
+	
+	msg.direction = im::MSG_DIR_IN;
+	
+	if (r->hdr_subject.is_populated()) {
+		msg.subject = r->hdr_subject.subject;
+	}
+	
+	if (!text.empty()) {
+		msg.message = text;
+		msg.format = text_format;
+	}
+	
+	if (attachment && !failed_to_save_attachment) {
+		msg.has_attachment = true;
+		msg.attachment_filename = attachment_saved_name;
+		msg.attachment_save_as_name = attachment_save_as_name;
+		msg.attachment_media = r->hdr_content_type.media;
+	}
+	
+	session->recv_msg(msg);
+	
+	// Set error message if attachment could not be saved
+	if (failed_to_save_attachment) {
+		QString s = qApp->translate("GUI", "Failed to save message attachment: %1");
+		s.arg(attachment_error_msg.c_str());
+		session->set_error(s.ascii());
+	}
 	
 	unlock();
 	return true;
 }
 
-void t_gui::cb_message_response(t_user *user_config, t_response *r) {
+void t_gui::cb_message_response(t_user *user_config, t_response *r, t_request *req) {
 	lock();
 	
 	// Find session associated with the response
 	im::t_msg_session *session = getMessageSession(user_config, r->hdr_to.uri,
-				r->hdr_from.get_display_presentation());
+				r->hdr_to.display);
 	
 	if (session) {
 		if (!r->is_success()) {
@@ -2446,6 +2572,38 @@ void t_gui::cb_message_response(t_user *user_config, t_response *r) {
 		session->set_msg_in_flight(false);
 	}
 	// If there is no session anymore, then discard the response
+	
+	unlock();
+}
+
+void t_gui::cb_im_iscomposing_request(t_user *user_config, t_request *r,
+			im::t_composing_state state, time_t refresh)
+{
+	lock();
+	
+	// Find an existing session
+	im::t_msg_session *session = getMessageSession(user_config, r->hdr_from.uri,
+				r->hdr_from.get_display_presentation());
+	if (!session) {
+		// A composing indication does not initiate a new message session.
+		log_file->write_report(
+			"Received composing indication for unknown session.",
+			"t_gui::cb_im_iscomposing_request");
+	} else {
+		session->set_remote_composing_state(state, refresh);
+	}
+	
+	unlock();
+}
+
+void t_gui::cb_im_iscomposing_not_supported(t_user *user_config, t_response *r) {
+	lock();
+	
+	// Find an existing session
+	im::t_msg_session *session = getMessageSession(user_config, r->hdr_to.uri,
+				r->hdr_to.display);
+	
+	if (session) session->set_send_composing_state(false);
 	
 	unlock();
 }
@@ -2617,7 +2775,7 @@ void t_gui::action_redirect(const list<t_display_url> &contacts) {
 	
 	int line = phone->get_active_line();
 	mainWindow->displayHeader();
-	s = qApp->translate("GUI", "Line %1: call redirected.");
+	s = qApp->translate("GUI", "Line %1: call redirected.").arg(line + 1);
 	mainWindow->display(s);
 }
 
@@ -2784,13 +2942,36 @@ im::t_msg_session *t_gui::getMessageSession(t_user *user_config,
 	
 void t_gui::addMessageSession(im::t_msg_session *s) {
 	messageSessions.push_back(s);
+	
+	if (!timerUpdateMessageSessions) {
+		timerUpdateMessageSessions = new QTimer();
+		MEMMAN_NEW(timerUpdateMessageSessions);
+		
+		connect(timerUpdateMessageSessions, SIGNAL(timeout()),
+				 this, SLOT(updateTimersMessageSessions()));
+		timerUpdateMessageSessions->start(1000);
+	}
 }
 
 void t_gui::removeMessageSession(im::t_msg_session *s) {
 	messageSessions.remove(s);
+	
+	if (messageSessions.empty()) {
+		timerUpdateMessageSessions->stop();
+		
+		MEMMAN_DELETE(timerUpdateMessageSessions);
+		delete timerUpdateMessageSessions;
+		timerUpdateMessageSessions = NULL;
+	}
 }
 
 void t_gui::destroyAllMessageSessions(void) {
+	if (timerUpdateMessageSessions) {
+		MEMMAN_DELETE(timerUpdateMessageSessions);
+		delete timerUpdateMessageSessions;
+		timerUpdateMessageSessions = NULL;
+	}
+	
 	for (list<im::t_msg_session *>::iterator it = messageSessions.begin();
 	it != messageSessions.end(); ++it)
 	{
@@ -2799,4 +2980,78 @@ void t_gui::destroyAllMessageSessions(void) {
 	}
 	
 	messageSessions.clear();
+}
+
+void t_gui::updateTimersMessageSessions() {
+	for (list<im::t_msg_session *>::iterator it = messageSessions.begin();
+	it != messageSessions.end(); ++it)
+	{
+		(*it)->dec_local_composing_timeout();
+		(*it)->dec_remote_composing_timeout();
+	}
+}
+
+string t_gui::mime2file_extension(t_media media) {
+	string extension;
+	
+#ifdef HAVE_KDE
+	// If KDE is available then use KDE to retrieve the proper file
+	// extension so we nicely integrate with the desktop settings.
+	string mime = media.type + "/" + media.subtype;
+	KMimeType::Ptr pMime = KMimeType::mimeType(mime.c_str());
+	const QStringList &patterns = pMime->patterns();
+	
+	if (!patterns.empty()) {
+		extension = patterns.front().ascii();
+	} else {
+		log_file->write_header("t_gui::mime2file_extension", LOG_NORMAL, LOG_DEBUG);
+		log_file->write_raw("Cannot find file extension for mime type ");
+		log_file->write_raw(mime);
+		log_file->write_footer();
+	}
+#endif
+	return extension;
+}
+
+void t_gui::open_url_in_browser(const QString &url) {
+	string sys_browser = sys_config->get_gui_browser_cmd();
+#ifdef HAVE_KDE
+	if (sys_browser.empty())
+	{
+		KTrader::OfferList offers = KTrader::self()->query("text/html", "Type == 'Application'");
+		if (!offers.empty()) {
+			KService::Ptr ptr = offers.first();
+			KURL::List lst;
+			lst.append(url);
+			KRun::run(*ptr, lst);
+		
+			return;
+		}
+	}
+#endif
+	QProcess process;
+	bool process_started = false;
+	
+	QStringList browsers;
+	
+	if (sys_browser.empty()) {
+		browsers << "firefox" << "mozilla" << "netscape" << "opera";
+		browsers << "galeon" << "epiphany" << "konqueror";
+	} else {
+		browsers << sys_browser.c_str();
+	}
+	
+	for (QStringList::Iterator it = browsers.begin(); it != browsers.end(); ++it)
+	{
+		process.setArguments(QStringList() << *it << url);
+		process_started = process.start();
+		if (process_started) break;
+	}
+	
+	if (!process_started) {
+		QString msg = qApp->translate("GUI", "Cannot open web browser: %1").arg(url);
+		msg += "\n\n";
+		msg += qApp->translate("GUI", "Configure your web browser in the system settings.");
+		cb_show_msg(msg.ascii(), MSG_CRITICAL);
+	}
 }

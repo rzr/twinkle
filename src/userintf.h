@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 
 #include <list>
 #include <string>
+
 #include "events.h"
 #include "phone.h"
 #include "protocol.h"
@@ -28,6 +29,7 @@
 #include "parser/response.h"
 #include "audio/tone_gen.h"
 #include "threads/thread.h"
+#include "im/msg_session.h"
 #include "presence/presence_state.h"
 
 #include "twinkle_config.h"
@@ -44,14 +46,6 @@
 #define INTERVAL_RINGBACK       3000
 
 using namespace std;
-
-// Message prioritoes
-enum t_msg_priority {
-	MSG_NO_PRIO,
-	MSG_INFO,
-	MSG_WARNING,
-	MSG_CRITICAL
-};
 
 struct t_command_arg {
         char    flag;
@@ -163,7 +157,7 @@ protected:
 	virtual void do_user(const string &profile_name);
 	virtual void do_zrtp(t_zrtp_cmd zrtp_cmd);
 	virtual bool do_message(const string &destination, const string &display,
-		const string &text);
+		const im::t_msg &msg);
 	virtual void do_presence(t_presence_state::t_basic_state basic_state);
 	virtual void do_quit(void);
 	virtual void do_help(const list<t_command_arg> &al);
@@ -172,9 +166,16 @@ public:
         t_userintf(t_phone *_phone);
         virtual ~t_userintf();
 
-        // Expand a SIP destination to a full SIP uri, i.e. add sip: scheme
-        // and domain if these are missing.
-        string expand_destination(t_user *user_config, const string &dst);
+	/**
+         * Expand a SIP destination to a full SIP/TEL uri, i.e. add sip/tel scheme
+         * and domain if these are missing.
+         * @param user_config [in] User profile of the user for which the expansion is done.
+         * @param dst [in] The address string to expand.
+         * @param scheme [in] Scheme to expand to (sip/tel/""). If scheme is empty then
+         *        the expansion is done according to preferences from the user profile.
+         * @return The expanded address.
+         */
+        string expand_destination(t_user *user_config, const string &dst, const string &scheme = "");
         
         // Expand a SIP destination into a display and a full SIP uri
         void expand_destination(t_user *user_config, 
@@ -182,7 +183,7 @@ public:
         void expand_destination(t_user *user_config, 
         	const string &dst, t_display_url &display_url);
         	
-        // Expand a SIP destination as above, but split of any headers if any.
+        // Expand a SIP destination as above, but split off any headers if any.
         // If the subject header is present, then its value will be returned in
         // subject.
         // The dst_no_headers parameter will contain the dst string with the headers
@@ -325,8 +326,20 @@ public:
 	// Returns true for yes and false for no.
 	virtual bool cb_ask_msg(const string &msg, t_msg_priority prio = MSG_INFO);
 
-	// Display an error message.
+	/** 
+	 * Display an error/information message.
+	 * @param msg [in] Message to display.
+	 * @param prio [in] Priority associated with the message.
+	 */
 	virtual void cb_display_msg(const string &msg,
+			t_msg_priority prio = MSG_INFO);
+			
+	/**
+	 * Display an error/information message in an asynchronous way.
+	 * @param msg [in] Message to display.
+	 * @param prio [in] Priority associated with the message.
+	 */
+	virtual void cb_async_display_msg(const string &msg, 
 			t_msg_priority prio = MSG_INFO);
 			
 	// Log file has been updated
@@ -372,8 +385,26 @@ public:
 	 * Incoming MESSAGE response callback.
 	 * @param user_config [in] User profile of the user receiving this MESSAGE response.
 	 * @param r [in] The MESSAGE response.
+	 * @param req [in] The MESSAGE request for which the response is received.
 	 */
-	virtual void cb_message_response(t_user *user_config, t_response *r);
+	virtual void cb_message_response(t_user *user_config, t_response *r, t_request *req);
+	
+	/**
+	 * Incoming MESSAGE request with composing indication callback.
+	 * @param user_config [in] User profile of the user receiving this MESSAGE response.
+	 * @param r [in] The MESSAGE request containing the composing indication.
+	 * @param state [in] The message composing state.
+	 * @param refresh [in] The refresh interval in seconds when state is active.
+	 */
+	virtual void cb_im_iscomposing_request(t_user *user_config, t_request *r,
+			im::t_composing_state state, time_t refresh);
+		
+	/** 
+	 * Indication that the far-end does not support message composing indications.
+	 * @param user_config [in] User profile of the user receiving this MESSAGE response.
+	 * @param r [in] The MESSAGE response on the composing indication.
+	 */
+	virtual void cb_im_iscomposing_not_supported(t_user *user_config, t_response *r);
 	//@}
 
 	// Get last call information
@@ -402,6 +433,10 @@ public:
 	
 	// Lookup a URL in the address book
 	virtual string get_name_from_abook(t_user *user_config, const t_url &u);
+
+	// Get all command names
+	const list<string>& get_all_commands(void);
+
 };
 
 void *process_events_main(void *arg);

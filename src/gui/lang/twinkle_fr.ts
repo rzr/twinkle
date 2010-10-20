@@ -316,6 +316,74 @@
     </message>
 </context>
 <context>
+    <name>DiamondcardProfileForm</name>
+    <message>
+        <source>Twinkle - Diamondcard User Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your Diamondcard account ID.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is just your full name, e.g. John Doe. It is used as a display name. When you make a call, this display name might be shown to the called party.</source>
+        <translation type="unfinished">C&apos;est simplement votre nom complet, ex: Pierre Dupond. Il est utilisé pour l&apos;affichage. Quand vous ferez un appel, ceci sera montré à votre correspondant.</translation>
+    </message>
+    <message>
+        <source>&amp;Account ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;PIN code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Your name:</source>
+        <translation type="unfinished">&amp;Votre nom:</translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;&lt;u&gt;Sign up for a Diamondcard account&lt;/u&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished">Annuler (Es&amp;c)</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill in your account ID.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill in your PIN code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A user profile with name %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your Diamondcard PIN code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;With a Diamondcard account you can make worldwide calls to regular and cell phones and send SMS messages. To sign up for a Diamondcard account click on the &quot;sign up&quot; link below. Once you have signed up you receive an account ID and PIN code. Enter the account ID and PIN code below to create a Twinkle user profile for your Diamondcard account.&lt;/p&gt;
+&lt;p&gt;For call rates see the sign up web page that will be shown to you when you click on the &quot;sign up&quot; link.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DtmfForm</name>
     <message>
         <source>Twinkle - DTMF</source>
@@ -783,6 +851,22 @@
         <source>Accepted by network</source>
         <translation>Accepté par le réseau</translation>
     </message>
+    <message>
+        <source>Failed to save message attachment: %1</source>
+        <translation>Echec de l&apos;enregistrement de la pièce jointe: %1</translation>
+    </message>
+    <message>
+        <source>Transferred by: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot open web browser: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure your web browser in the system settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GetAddressForm</name>
@@ -1160,6 +1244,18 @@ Pour vous rappeler facilement de vos profils, vous pouvez utiliser votre nom d&a
         <source>&amp;Call</source>
         <translation>Appel (&amp;Enter)</translation>
     </message>
+    <message>
+        <source>Number of calls:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>###</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total call duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InviteForm</name>
@@ -1229,6 +1325,10 @@ With this option you request your SIP provider to hide your identity from the ca
         <source>Not all SIP providers support identity hiding. Make sure your SIP provider supports it if you really need it.</source>
         <translation>Tous les fournisseurs de services SIP ne supportent pas la fonctionnalité &quot;cacher l&apos;identité&quot;. Assurez vous que votre fournisseur de services SIP l&apos;authorise si vous en avez vraîment besoin.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LogViewForm</name>
@@ -1297,7 +1397,7 @@ With this option you request your SIP provider to hide your identity from the ca
     </message>
     <message>
         <source>The exchanged messages.</source>
-        <translation>Les messages échangés.</translation>
+        <translation type="obsolete">Les messages échangés.</translation>
     </message>
     <message>
         <source>Type your message here and then press &quot;send&quot; to send it.</source>
@@ -1322,6 +1422,54 @@ With this option you request your SIP provider to hide your identity from the ca
     <message>
         <source>Delivery notification</source>
         <translation>Notification de la réception</translation>
+    </message>
+    <message>
+        <source>Instant message toolbar</source>
+        <translation>Barre d&apos;outil de la messagerie instantanée</translation>
+    </message>
+    <message>
+        <source>Send file...</source>
+        <translation>Envoi de fichier...</translation>
+    </message>
+    <message>
+        <source>Send file</source>
+        <translation>Envoyer un fichier</translation>
+    </message>
+    <message>
+        <source>image size is scaled down in preview</source>
+        <translation>La taille de l&apos;image est réduite en prévisualisation</translation>
+    </message>
+    <message>
+        <source>Open with %1...</source>
+        <translation>Ouvrir avec %1...</translation>
+    </message>
+    <message>
+        <source>Open with...</source>
+        <translation>Ouvrir avec...</translation>
+    </message>
+    <message>
+        <source>Save attachment as...</source>
+        <translation>Enregistrer la pièce jointe sous...</translation>
+    </message>
+    <message>
+        <source>File already exists. Do you want to overwrite this file?</source>
+        <translation>Le fichier existe déjà. Voulez-vous le remplacer ?</translation>
+    </message>
+    <message>
+        <source>Failed to save attachment.</source>
+        <translation>Impossible d&apos;enregistrer la pièce jointe.</translation>
+    </message>
+    <message>
+        <source>%1 is typing a message.</source>
+        <translation>%1 est un message texte.</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2213,6 +2361,58 @@ Si le SAS est égal, vous devez le confirmer en cliquant sur le clavier pour une
         <source>&amp;Display</source>
         <translation>&amp;Affichage</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diamondcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sign up...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recharge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Balance history...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Call history...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin center...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recharge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Balance history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NumberConversionForm</name>
@@ -2307,6 +2507,18 @@ Si le SAS est égal, vous devez le confirmer en cliquant sur le clavier pour une
         <source>&amp;Cancel</source>
         <translation>Annuler (Es&amp;c)</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectNicForm</name>
@@ -2379,11 +2591,11 @@ Si le SAS est égal, vous devez le confirmer en cliquant sur le clavier pour une
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Nouveau</translation>
+        <translation type="obsolete">&amp;Nouveau</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="obsolete">Alt+N</translation>
     </message>
     <message>
         <source>Create a new profile with the profile editor.</source>
@@ -2487,7 +2699,7 @@ Si le SAS est égal, vous devez le confirmer en cliquant sur le clavier pour une
     </message>
     <message>
         <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Vous pouvez utiliser l&apos;éditeur de profil pour créer un profil. Avec l&apos;éditeur de profil vous pouvez modifier beaucoup de paramètres SIP, RTP et autres.&lt;br&gt;&lt;br&gt;Vous pouvez également utiliser l&apos;assistant pour créer un profil plus rapidement. Il vous proposera seulement quelques paramètres essentiels. Vous pourrez éditer ce profil plus tard en utilisant l&apos;éditeur de profil.&lt;br&gt;&lt;br&gt;Sélectionnez la méthode que vous préférez (débutants: l&apos;assistant est conseillé).&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;Vous pouvez utiliser l&apos;éditeur de profil pour créer un profil. Avec l&apos;éditeur de profil vous pouvez modifier beaucoup de paramètres SIP, RTP et autres.&lt;br&gt;&lt;br&gt;Vous pouvez également utiliser l&apos;assistant pour créer un profil plus rapidement. Il vous proposera seulement quelques paramètres essentiels. Vous pourrez éditer ce profil plus tard en utilisant l&apos;éditeur de profil.&lt;br&gt;&lt;br&gt;Sélectionnez la méthode que vous préférez (débutants: l&apos;assistant est conseillé).&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;Next you may adjust the system settings. You can change these settings always at a later time.&lt;br&gt;&lt;br&gt;Click OK to view and adjust the system settings.&lt;/html&gt;</source>
@@ -2526,6 +2738,46 @@ Merci de sélectionner un profil.</translation>
     <message>
         <source>&amp;Profile editor</source>
         <translation>Editeur de &amp;profil</translation>
+    </message>
+    <message>
+        <source>Create profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ed&amp;itor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dia&amp;mondcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modify profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Startup profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Diamondcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a profile for a Diamondcard account. With a Diamondcard account you can make worldwide calls to regular and cell phones and send SMS messages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;You can create a Diamondcard account to make worldwide calls to regular and cell phones and send SMS messages.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2614,6 +2866,49 @@ Merci de sélectionner un profil.</translation>
     <message>
         <source>Select users for which you want to enable &apos;auto answer&apos;.</source>
         <translation>Sélectionnez le profil dont vous voulez activer la réponse automatique.</translation>
+    </message>
+</context>
+<context>
+    <name>SendFileForm</name>
+    <message>
+        <source>Twinkle - Send File</source>
+        <translation>Twinkle - Envoi de fichier</translation>
+    </message>
+    <message>
+        <source>Select file to send.</source>
+        <translation>Choisir le fichier à envoyer.</translation>
+    </message>
+    <message>
+        <source>&amp;File:</source>
+        <translation>&amp;Fichier:</translation>
+    </message>
+    <message>
+        <source>&amp;Subject:</source>
+        <translation>&amp;Sujet:</translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>Alt+O</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>Annuler (Es&amp;c)</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>File does not exist.</source>
+        <translation>Le fichier n&apos;existe pas.</translation>
+    </message>
+    <message>
+        <source>Send file...</source>
+        <translation>Envoi de fichier...</translation>
     </message>
 </context>
 <context>
@@ -2741,6 +3036,18 @@ Merci de sélectionner un profil.</translation>
         <source>You have entered an invalid destination.</source>
         <translation>Vous avez saisi une destination invalide.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SysSettingsForm</name>
@@ -2814,17 +3121,17 @@ Merci de sélectionner un profil.</translation>
     </message>
     <message>
         <source>Reduce &amp;noise from the microphone</source>
-        <translation>Réduire le &amp;bruit du microphone</translation>
+        <translation type="obsolete">Réduire le &amp;bruit du microphone</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation>Alt+B</translation>
+        <translation type="obsolete">Alt+B</translation>
     </message>
     <message>
         <source>Recordings from the microphone can contain noise. This could be annoying to the person on the other side of your call. This option removes soft noise coming from the microphone.
 
 The noise reduction algorithm is very simplistic. Sound is captured as 16 bits signed linear PCM samples. All samples between -50 and 50 are truncated to 0.</source>
-        <translation>L&apos;enregistrement par l&apos;intermédiaire d&apos;un microphone peut contenir du bruit. Ceci peut être génant pour le correspondant. Cette option supprime ce bruit.
+        <translation type="obsolete">L&apos;enregistrement par l&apos;intermédiaire d&apos;un microphone peut contenir du bruit. Ceci peut être génant pour le correspondant. Cette option supprime ce bruit.
 L&apos;algoritme de réduction de bruit est très simple. Le son est enregistré en échantillons PCM 16 bits linéaires signés. Tous les échantillons entre -50 et 50 sont ramenés à zéro.</translation>
     </message>
     <message>
@@ -3200,16 +3507,16 @@ Depending on your SIP provider the network might provide ring back tone or an an
     <message>
         <source>none</source>
         <comment>This is the &apos;none&apos; in default IP address combo</comment>
-        <translation>aucune</translation>
+        <translation type="obsolete">aucune</translation>
     </message>
     <message>
         <source>none</source>
         <comment>This is the &apos;none&apos; in default network interface combo</comment>
-        <translation>aucune</translation>
+        <translation type="obsolete">aucune</translation>
     </message>
     <message>
         <source>Either choose a default IP address or a default network interface.</source>
-        <translation>Choisissez soit une adresse IP par défaut soit une interface de réseau.</translation>
+        <translation type="obsolete">Choisissez soit une adresse IP par défaut soit une interface de réseau.</translation>
     </message>
     <message>
         <source>Ring tones</source>
@@ -3288,6 +3595,14 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
         <source>Maximum allowed size (0-4294967295) in bytes of an incoming SIP message over TCP.</source>
         <translation>Taille maximum allouée pour un message SIP entrant en TCP en octets (0-4294967295).</translation>
     </message>
+    <message>
+        <source>W&amp;eb browser command:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Command to start your web browser. If you leave this field empty Twinkle will try to figure out your default web browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SysTrayPopup</name>
@@ -3298,6 +3613,10 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
     <message>
         <source>Reject</source>
         <translation>Refuser</translation>
+    </message>
+    <message>
+        <source>Incoming Call</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3337,6 +3656,10 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
     <message>
         <source>&amp;Cancel</source>
         <translation>Annuler (Es&amp;c)</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3416,6 +3739,10 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
     <message>
         <source>Connect the remote party on the active line with the remote party on the other line.</source>
         <translation>Connecte le correspondant de la ligne active avec le correspondant de l&apos;autre ligne.</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3507,7 +3834,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
     </message>
     <message>
         <source>Lock file %1 already exist, but cannot be opened.</source>
-        <translation>Le fichier de vérouillage %1 existe déjà mais ne peut être ouvert.</translation>
+        <translation type="obsolete">Le fichier de vérouillage %1 existe déjà mais ne peut être ouvert.</translation>
     </message>
     <message>
         <source>%1 is already running.
@@ -3521,7 +3848,7 @@ Le fichier de vérouillage %2 existe déjà.</translation>
     </message>
     <message>
         <source>Cannot write to %1 .</source>
-        <translation>Impossible d&apos;écrire su %1.</translation>
+        <translation type="obsolete">Impossible d&apos;écrire su %1.</translation>
     </message>
     <message>
         <source>Syntax error in file %1 .</source>
@@ -3644,6 +3971,22 @@ et créez les attaches statiques suivantes (UDP) dans votre NAT.</translation>
     <message>
         <source>Cannot receive incoming TCP connections.</source>
         <translation>Impossible de recevoir des connexions TCP entrantes.</translation>
+    </message>
+    <message>
+        <source>Failed to create file %1</source>
+        <translation>Echec de la création du fichier %1</translation>
+    </message>
+    <message>
+        <source>Failed to write data to file %1</source>
+        <translation>Echec de l&apos;écriture de données dans %1</translation>
+    </message>
+    <message>
+        <source>Failed to send message.</source>
+        <translation>Echec de l&apos;envoi du message.</translation>
+    </message>
+    <message>
+        <source>Cannot lock %1 .</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4014,25 +4357,16 @@ Ce champ est obligatoire.</translation>
         <translation>Type des données pour la bande &amp;Ultra-Large:</translation>
     </message>
     <message>
-        <source>&amp;VAD</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Alt+V</source>
         <translation></translation>
     </message>
     <message>
         <source>When enabled, voice activity detection detects whether the audio being encoded is speech or silence/background noise. VAD is always implicitly activated when encoding in VBR, so the option is only useful in non-VBR operation. In this case, Speex detects non-speech periods and encode them with just enough bits to reproduce the background noise. This is called &quot;comfort noise generation&quot; (CNG).</source>
-        <translation>Wenn aktiviert, prüft VAD (Voice Activity Detection, deutsch etwa: Sprache/Pause-Erkennung), ob gerade gesprochen wird. Nicht als Sprache erkannte Geräusche werden nicht übertragen, sondern es wird stattdessen ein wesentlich weniger Daten-Bandbreite benötigendes &quot;Pausesignal&quot; oder (siehe DTX) gar nichts gesendet. 
-VBR (siehe dort) macht VAD unnötig.</translation>
+        <translation type="obsolete">En la sélectionnant, la détection de la parole (ie: voice activity detection ou VAD) détecte si le son encodé est de la voix ou du silence (bruit de fond). VAD est toujours implicitement activé en encodage VBR, cette option est donc uniquement utilisable pour les opérations non-VBR. Dans ce cas, Speex detecte les passages sans paroles et les encode avec juste le nombre de bits nécessaire pour reproduire le bruit de fond. Ceci est appelé la &quot;génération de bruit pour le confort&quot; (comfort noise generation CNG).</translation>
     </message>
     <message>
         <source>&amp;Wide band payload type:</source>
         <translation>Type des données pour la bande &amp;Large:</translation>
-    </message>
-    <message>
-        <source>V&amp;BR</source>
-        <translation></translation>
     </message>
     <message>
         <source>Alt+B</source>
@@ -4044,31 +4378,23 @@ VBR (siehe dort) macht VAD unnötig.</translation>
     </message>
     <message>
         <source>The dynamic type value (96 or higher) to be used for speex wide band.</source>
-        <translation>Die für speex wide band verwendete dynamische Nutzdatentyp-Kennung (nicht kleine 96).</translation>
+        <translation>La valeur dynamique (96 ou plus) à utiliser pour le speex à large bande (RFC 2833).</translation>
     </message>
     <message>
         <source>Co&amp;mplexity:</source>
         <translation>Co&amp;mplexité:</translation>
     </message>
     <message>
-        <source>DT&amp;X</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Alt+X</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Discontinuous transmission is an addition to VAD/VBR operation, that allows to stop transmitting completely when the background noise is stationary.</source>
-        <translation>Discontinuous transmission (deutsch etwa: nicht kontinuierliche Datenübertragung) ist eine Erweiterung der VAD/VBR-Übertragung. Bei gleichbleibenden Audiosignal (insbesondere bei erkannten Sprechpausen) wird statt ständig der gleichen Nutzdaten einfach gar nichts übertragen. Senkt die durchschnittliche Datenrate etwas. Bei Störungen auf dem Übertragungsweg kann diese Option zu den von Mobiltelefonen der Anfangszeit bekannten absurden Tonstörungen (hängenbleiben des Tons, Artefakte) führen.</translation>
+        <translation>La transmission discontinue est un ajout à VAD/VBR, qui permet d&apos;arrêter totalement la transmission quand le bruit de fond est stationnaire.</translation>
     </message>
     <message>
         <source>The dynamic type value (96 or higher) to be used for speex narrow band.</source>
-        <translation>Die für speex narrow band verwendete dynamische Nutzdatentyp-Kennung (nicht kleiner 96).</translation>
+        <translation>La valeur dynamique (96 ou plus) à utiliser pour le speex à petite bande (RFC 2833).</translation>
     </message>
     <message>
         <source>With Speex, it is possible to vary the complexity allowed for the encoder. This is done by controlling how the search is performed with an integer ranging from 1 to 10 in a way that&apos;s similar to the -1 to -9 options to gzip and bzip2 compression utilities. For normal use, the noise level at complexity 1 is between 1 and 2 dB higher than at complexity 10, but the CPU requirements for complexity 10 is about 5 times higher than for complexity 1. In practice, the best trade-off is between complexity 2 and 4, though higher settings are often useful when encoding non-speech sounds like DTMF tones.</source>
-        <translation>Bei Speex kann die Komplexität (=Genauigkeit) festgelegt werden, mit der der Codec arbeitet. Hierzu wird die Tiefe des Suchvorgangs mit einem Wert von 1 bis 10 gesteuert, ähnlich der -1 bis -9 Option von gzip und bzip2. Im Normalbetrieb ist bei 1 der Rauschabstand 1 bis 2dB schlechter und die CPU-Auslastung nur 10-20% im Vergleich zu 10. In der Praxis bewährt sich für Sprache eine Einstellung von 2 - 4, Inband-DTMF z.B. und andere technische Signale, oder auch Musik, profitieren u.U. von höheren Einstellungen.</translation>
+        <translation>Avec Spexx, il est possible de faire varier le taux de compression de l&apos;encodeur. Ceci est possible en contrôlant comment la recherche est assurée avec un entier entre 1 et 10 d&apos;une manière similaire aux option -1 à -9 de gzip et bzip2. En utilisation normale, le niveau de bruit au taux 1 est entre 1 et 2 dB plus élevé que au taux 10, mais l&apos;utilisation du CPU au taux 10 est 5 fois plus grande que au taux 1. En pratique, Le meilleur compromis est entre 2 et 4, alors que des taux plus élevés sont souvent utilent pour encoder des sons autre que la voix comme les sonneries DTMF.</translation>
     </message>
     <message>
         <source>&amp;Narrow band payload type:</source>
@@ -4120,7 +4446,7 @@ VBR (siehe dort) macht VAD unnötig.</translation>
     </message>
     <message>
         <source>The dynamic type value (96 or higher) to be used for DTMF events (RFC 2833).</source>
-        <translation>Die für DTMF (RFC2833) verwendete dynamische Nutzdatentypkennung (nicht kleiner 96).</translation>
+        <translation>La valeur dynamique (96 ou plus) à utiliser pour les évenements DTMF (RFC 2833).</translation>
     </message>
     <message>
         <source>DTMF vo&amp;lume:</source>
@@ -4404,7 +4730,7 @@ Ce format est utiliser par la plupart des téléphones SIP.
     </message>
     <message>
         <source>Allow call &amp;transfer (incoming REFER)</source>
-        <translation>Authoriser le &amp;transfert d&apos;appel (REFER entrant)</translation>
+        <translation type="obsolete">Authoriser le &amp;transfert d&apos;appel (REFER entrant)</translation>
     </message>
     <message>
         <source>Alt+T</source>
@@ -4670,11 +4996,11 @@ Match expression = 0[0-9]* , Replace =(sp)(sp)9$&amp;&lt;br&gt;
     </message>
     <message>
         <source>for STUN</source>
-        <translation>pour STUN</translation>
+        <translation type="obsolete">pour STUN</translation>
     </message>
     <message>
         <source>Keep alive timer for the STUN protocol. If you have enabled STUN, then Twinkle will send keep alive packets at this interval rate to keep the address bindings in your NAT device alive.</source>
-        <translation>Garder actif le décompte pour le protocole STUN. Si vous avez activé STUN, Twinkle enverra des paquets à cet intervalle pour garder l&apos;adresse dans votre interface NAT active.</translation>
+        <translation type="obsolete">Garder actif le décompte pour le protocole STUN. Si vous avez activé STUN, Twinkle enverra des paquets à cet intervalle pour garder l&apos;adresse dans votre interface NAT active.</translation>
     </message>
     <message>
         <source>When an incoming call is received, this timer is started. If the user answers the call, the timer is stopped. If the timer expires before the user answers the call, then Twinkle will reject the call with a &quot;480 User Not Responding&quot;.</source>
@@ -5426,7 +5752,7 @@ Signalisation de message en attente sollicité com spécifié par le RFC 3842.(n
     </message>
     <message>
         <source> bytes</source>
-        <translation>octets</translation>
+        <translation type="obsolete">octets</translation>
     </message>
     <message>
         <source>Messages larger than the threshold are sent via TCP. Smaller messages are sent via UDP.</source>
@@ -5435,6 +5761,138 @@ Signalisation de message en attente sollicité com spécifié par le RFC 3842.(n
     <message>
         <source>Use &amp;STUN (does not work for incoming TCP)</source>
         <translation>Utiliser &amp;STUN (ne fonctionne pas pour le TCP entrant)</translation>
+    </message>
+    <message>
+        <source>P&amp;ersistent TCP connection</source>
+        <translation>Connexion TCP p&amp;ercistante</translation>
+    </message>
+    <message>
+        <source>Keep the TCP connection established during registration open such that the SIP proxy can reuse this connection to send incoming requests. Application ping packets are sent to test if the connection is still alive.</source>
+        <translation>Conserve la connexion TCP pendant l&apos;ouverture de l&apos;enregistrement de façon à ce que le proxy SIP puisse réutiliser cette connexion pour envoyer des requêtes. Des ping sont enoyés pour tester si la connexion est toujours en établie.</translation>
+    </message>
+    <message>
+        <source>&amp;Send composing indications when typing a message.</source>
+        <translation>&amp;Envoi de l&apos;indication composite en un message.</translation>
+    </message>
+    <message>
+        <source>Twinkle sends a composing indication when you type a message. This way the recipient can see that you are typing.</source>
+        <translation>Twinkle envoie une indication composite quand vous écrivez un message. Ainsi, l&apos;interlocuteur peut voir que vous êtes en train d&apos;écrire un message.</translation>
+    </message>
+    <message>
+        <source>AKA AM&amp;F:</source>
+        <translation>AKA AM&amp;F:</translation>
+    </message>
+    <message>
+        <source>A&amp;KA OP:</source>
+        <translation>A&amp;KA OP:</translation>
+    </message>
+    <message>
+        <source>Authentication management field for AKAv1-MD5 authentication.</source>
+        <translation>Champ de gestion de l&apos;authentification en AKAv1-MD5.</translation>
+    </message>
+    <message>
+        <source>Operator variant key for AKAv1-MD5 authentication.</source>
+        <translation>Clé de l&apos;opérateur en AKAv1-MD5.</translation>
+    </message>
+    <message>
+        <source>Prepr&amp;ocessing</source>
+        <translation>Préinterprétati&amp;on</translation>
+    </message>
+    <message>
+        <source>Preprocessing (improves quality at remote end)</source>
+        <translation>La préinterpretation améliore la qualité distante</translation>
+    </message>
+    <message>
+        <source>&amp;Automatic gain control</source>
+        <translation>Contrôle &amp;automatique du gain</translation>
+    </message>
+    <message>
+        <source>Automatic gain control (AGC) is a feature that deals with the fact that the recording volume may vary by a large amount between different setups. The AGC provides a way to adjust a signal to a reference volume. This is useful because it removes the need for manual adjustment of the microphone gain. A secondary advantage is that by setting the microphone gain to a conservative (low) level, it is easier to avoid clipping.</source>
+        <translation>Le contrôle automatique du gain (AGC) tient compte de la possible variation importante du volume d&apos;enregistrement entre deux paramètres. L&apos;AGC permet d&apos;ajuste le volume de référence. Ceci est très pratique car il supprime la nécessité d&apos;ajuster le gain du microphone manuellement. Un autre avantage est de permettre de régler le gain du microphone à un niveau assez bas pour éviter les coupures.</translation>
+    </message>
+    <message>
+        <source>Automatic gain control &amp;level:</source>
+        <translation>&amp;Niveau du contrôle automtaique du gain:</translation>
+    </message>
+    <message>
+        <source>Automatic gain control level represents percentual value of automatic gain setting of a microphone. Recommended value is about 25%.</source>
+        <translation>Ce niveau représente un pourcentage du gain du microphone. La valeur recommandée est 25%.</translation>
+    </message>
+    <message>
+        <source>&amp;Voice activity detection</source>
+        <translation>Détection de l&apos;activité de la &amp;voix</translation>
+    </message>
+    <message>
+        <source>When enabled, voice activity detection detects whether the input signal represents a speech or a silence/background noise.</source>
+        <translation>La détection de l&apos;activité détecte si le signal d&apos;entrée est de la parole ou du silence/bruit de fond et ne transmet pas ce bruit.</translation>
+    </message>
+    <message>
+        <source>&amp;Noise reduction</source>
+        <translation>Réduction du &amp;bruit</translation>
+    </message>
+    <message>
+        <source>The noise reduction can be used to reduce the amount of background noise present in the input signal. This provides higher quality speech.</source>
+        <translation>La réduction du bruit peut être utilisée pour réduire le niveau de bruit de fond dans le signal d&apos;entrée. Ceci améliore la qualité du son.</translation>
+    </message>
+    <message>
+        <source>Acoustic &amp;Echo Cancellation</source>
+        <translation>Suppression de l&apos;&amp;Echo</translation>
+    </message>
+    <message>
+        <source>In any VoIP communication, if a speech from the remote end is played in the local loudspeaker, then it propagates in the room and is captured by the microphone. If the audio captured from the microphone is sent directly to the remote end, then the remote user hears an echo of his voice. An acoustic echo cancellation is designed to remove the acoustic echo before it is sent to the remote end. It is important to understand that the echo canceller is meant to improve the quality on the remote end.</source>
+        <translation>Dans toute communication VOIP, si le son venant du correspondant est sur amplificateur, il est enregistré par le microphone. Si le son enregistré par le micropohne est directement envoyé au correspondant, alors il entend sa voix en écho. La suppression de l&apos;écho est consue pour supprimer cet écho avant qu&apos;il ne soit transmis. Il est important de comprendre que la suppression de l&apos;écho est consue pour améliorer la qualite du son pour le correspondant.</translation>
+    </message>
+    <message>
+        <source>Variable &amp;bit-rate</source>
+        <translation>Taux de compression varia&amp;ble</translation>
+    </message>
+    <message>
+        <source>Discontinuous &amp;Transmission</source>
+        <translation>&amp;Transmission discontinue</translation>
+    </message>
+    <message>
+        <source>&amp;Quality:</source>
+        <translation>&amp;Qualité:</translation>
+    </message>
+    <message>
+        <source>Speex is a lossy codec, which means that it achives compression at the expense of fidelity of the input speech signal. Unlike some other speech codecs, it is possible to control the tradeoff made between quality and bit-rate. The Speex encoding process is controlled most of the time by a quality parameter that ranges from 0 to 10.</source>
+        <translation>Speex est un codec à perte, ce qui signifie qu&apos;il assure la compression au dépend de la fidélité au son d&apos;entrée. A la différence de quelques autres codecs, il est possible de contrôler l&apos;équilibre entre qualité et compression. Le pocessus d&apos;encodage Speex est contrôlé la plupart du temps par un paramêtre de qualité entre 0 et 10.</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>octets</translation>
+    </message>
+    <message>
+        <source>Use tel-URI for telephone &amp;number</source>
+        <translation>Utiliser tel-URI comme &amp;numéro de téléphone</translation>
+    </message>
+    <message>
+        <source>Expand a dialed telephone number to a tel-URI instead of a sip-URI.</source>
+        <translation>Transcrit un numéro de téléphone entré en tel-URI et non en sip-URI.</translation>
+    </message>
+    <message>
+        <source>Accept call &amp;transfer request (incoming REFER)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Allow call transfer while consultation in progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you perform an attended call transfer, you normally transfer the call after you established a consultation call. If you enable this option you can transfer the call while the consultation call is still in progress. This is a non-standard implementation and may not work with all SIP devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable NAT &amp;keep alive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send UDP NAT keep alive packets.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have enabled STUN or NAT keep alive, then Twinkle will send keep alive packets at this interval rate to keep the address bindings in your NAT device alive.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

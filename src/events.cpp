@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -39,6 +39,8 @@ string event_type2str(t_event_type t) {
 	case EV_ICMP:		return "EV_ICMP";
 	case EV_UI:		return "EV_UI";
 	case EV_ASYNC_RESPONSE:	return "EV_ASYNC_RESPONSE";
+	case EV_BROKEN_CONNECTION: return "EV_BROKEN_CONNECTION";
+	case EV_TCP_PING:	return "EV_TCP_PING";
 	}
 
 	return "UNKNOWN";
@@ -172,6 +174,7 @@ t_timer *t_event_timeout::get_timer(void) const {
 // class t_event_failure
 ///////////////////////////////////////////////////////////
 t_event_failure::t_event_failure(t_failure f, unsigned short _tid) :
+	t_event(),
 	failure(f),
 	tid_populated(true),
 	tid(_tid)
@@ -211,7 +214,9 @@ bool t_event_failure::is_tid_populated(void) const {
 ///////////////////////////////////////////////////////////
 // class t_event_start_timer
 ///////////////////////////////////////////////////////////
-t_event_start_timer::t_event_start_timer(t_timer *t) {
+t_event_start_timer::t_event_start_timer(t_timer *t) :
+	t_event()
+{
 	timer = t->copy();
 }
 
@@ -226,7 +231,9 @@ t_timer *t_event_start_timer::get_timer(void) const {
 ///////////////////////////////////////////////////////////
 // class t_event_stop_timer
 ///////////////////////////////////////////////////////////
-t_event_stop_timer::t_event_stop_timer(unsigned short id) {
+t_event_stop_timer::t_event_stop_timer(unsigned short id) :
+	t_event()
+{
 	timer_id = id;
 }
 
@@ -241,7 +248,9 @@ unsigned short t_event_stop_timer::get_timer_id(void) const {
 ///////////////////////////////////////////////////////////
 // class t_event_abort_trans
 ///////////////////////////////////////////////////////////
-t_event_abort_trans::t_event_abort_trans(unsigned short _tid) {
+t_event_abort_trans::t_event_abort_trans(unsigned short _tid) :
+	t_event()
+{
 	tid = _tid;
 }
 
@@ -259,7 +268,7 @@ unsigned short t_event_abort_trans::get_tid(void) const {
 
 t_event_stun_request::t_event_stun_request(t_user *u,
 		StunMessage *m, t_stun_event_type ev_type,
-		unsigned short _tuid, unsigned short _tid) 
+		unsigned short _tuid, unsigned short _tid) : t_event()
 {
 	msg = new StunMessage(*m);
 	MEMMAN_NEW(msg);
@@ -306,7 +315,7 @@ t_user *t_event_stun_request::get_user_config(void) const {
 ///////////////////////////////////////////////////////////
 
 t_event_stun_response::t_event_stun_response(StunMessage *m, unsigned short _tuid,
-		unsigned short _tid)
+		unsigned short _tid) : t_event()
 {
 	msg = new StunMessage(*m);
 	MEMMAN_NEW(msg);
@@ -358,7 +367,10 @@ t_icmp_msg t_event_icmp::get_icmp(void) const {
 ///////////////////////////////////////////////////////////
 // class t_event_ui
 ///////////////////////////////////////////////////////////
-t_event_ui::t_event_ui(t_ui_event_type _type) : type(_type) {}
+t_event_ui::t_event_ui(t_ui_event_type _type) : 
+	t_event(),
+	type(_type) 
+{}
 
 t_event_type t_event_ui::get_type(void) const {
 	return EV_UI;
@@ -386,6 +398,11 @@ void t_event_ui::set_cipher_mode(const string &_cipher_mode) {
 
 void t_event_ui::set_zrtp_sas(const string &sas) {
 	zrtp_sas = sas;
+}
+
+void t_event_ui::set_display_msg(const string &_msg, t_msg_priority &_msg_priority) {
+	msg = _msg;
+	msg_priority = _msg_priority;
 }
 
 void t_event_ui::exec(t_userintf *user_intf) {
@@ -424,6 +441,7 @@ void t_event_ui::exec(t_userintf *user_intf) {
 ///////////////////////////////////////////////////////////
 
 t_event_async_response::t_event_async_response(t_response_type type) :
+	t_event(),
 	response_type(type)
 {}
 
@@ -441,6 +459,50 @@ t_event_async_response::t_response_type t_event_async_response::get_response_typ
 
 bool t_event_async_response::get_bool_response(void) const {
 	return bool_response;
+}
+
+///////////////////////////////////////////////////////////
+// class t_event_broken_connection
+///////////////////////////////////////////////////////////
+
+t_event_broken_connection::t_event_broken_connection(const t_url &url) :
+	t_event(),
+	user_uri_(url)
+{}
+
+t_event_type t_event_broken_connection::get_type(void) const {
+	return EV_BROKEN_CONNECTION;
+}
+
+t_url t_event_broken_connection::get_user_uri(void) const {
+	return user_uri_;
+}
+
+///////////////////////////////////////////////////////////
+// class t_event_tcp_ping
+///////////////////////////////////////////////////////////
+
+t_event_tcp_ping::t_event_tcp_ping(const t_url &url, unsigned int dst_addr, unsigned short dst_port) :
+	t_event(),
+	user_uri_(url),
+	dst_addr_(dst_addr),
+	dst_port_(dst_port)
+{}
+
+t_event_type t_event_tcp_ping::get_type(void) const {
+	return EV_TCP_PING;
+}
+
+t_url t_event_tcp_ping::get_user_uri(void) const {
+	return user_uri_;
+}
+
+unsigned int t_event_tcp_ping::get_dst_addr(void) const {
+	return dst_addr_;
+}
+
+unsigned short t_event_tcp_ping::get_dst_port(void) const {
+	return dst_port_;
 }
 
 ///////////////////////////////////////////////////////////
@@ -599,6 +661,19 @@ void t_event_queue::push_refer_permission_response(bool permission) {
 			t_event_async_response::RESP_REFER_PERMISSION);
 	MEMMAN_NEW(event);
 	event->set_bool_response(permission);
+	push(event);
+}
+
+void t_event_queue::push_broken_connection(const t_url &user_uri) {
+	t_event_broken_connection *event = new t_event_broken_connection(user_uri);
+	MEMMAN_NEW(event);
+	push(event);
+}
+
+void t_event_queue::push_tcp_ping(const t_url &user_uri, unsigned int dst_addr, unsigned short dst_port) 
+{
+	t_event_tcp_ping *event = new t_event_tcp_ping(user_uri, dst_addr, dst_port);
+	MEMMAN_NEW(event);
 	push(event);
 }
 

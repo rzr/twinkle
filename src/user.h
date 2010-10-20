@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,6 +25,8 @@
 
 #include <string>
 #include <list>
+#include <cc++/config.h>
+#include "protocol.h"
 #include "sys_settings.h"
 #include "audio/audio_codecs.h"
 #include "sockets/url.h"
@@ -104,21 +106,40 @@ private:
 	// Mutex for exclusive access to the user profile
 	mutable t_recursive_mutex	mtx_user;
 
-	// USER
-
+	/** @name USER */
+	//@{
 	// SIP user
+	/** User name (public user identity). */
 	string			name;
+	
+	/** Domain of the user. */
 	string			domain;
+	
+	/** Display name. */
 	string			display;
 
-	// The organization will be put in an initial INVITE and in a
-	// 200 OK on an INVITE.
+	/**
+	 * The organization will be put in an initial INVITE and in a
+	 * 200 OK on an INVITE.
+	 */
 	string			organization;
 
 	// SIP authentication
-	string			auth_realm; // an empty realm matches with all realms
+	/** Authentication realm. An empty realm matches with all realms. */
+	string			auth_realm;
+	
+	/** Authentication name (private user identity). */
 	string			auth_name;
+	
+	/** Authentication password (aka_k for akav1-md5 authentication) */
 	string			auth_pass;
+	
+	/** Operator variant key for akav1-md5 authentication. */
+	uint8			auth_aka_op[AKA_OPLEN];
+	
+	/** Authentication management field for akav1-md5 authentication. */
+	uint8			auth_aka_amf[AKA_AMFLEN];
+	//@}
 
 
 	// SIP SERVER
@@ -176,14 +197,21 @@ private:
 	unsigned short		speex_wb_payload_type;
 	unsigned short		speex_uwb_payload_type;
 	
-	// Speex options
+	// Speex preprocessing options
+	bool			speex_dsp_vad;       // voice activity reduction
+	bool			speex_dsp_agc;       // automatic gain control
+	bool			speex_dsp_aec;       // acoustic echo cancellation
+	bool			speex_dsp_nrd;       // noise reduction
+	unsigned short		speex_dsp_agc_level; // gain level of AGC (1-100[%])
+
+	// Speex coding options
 	t_bit_rate_type		speex_bit_rate_type;
 	int			speex_abr_nb;
 	int			speex_abr_wb;
-	bool			speex_vad;
 	bool			speex_dtx;
 	bool			speex_penh;
 	unsigned short		speex_complexity;
+	unsigned short		speex_quality; // quality measure (worst 0-10 best)
 	
 	// RTP dynamic payload types for iLBC
 	unsigned short		ilbc_payload_type;
@@ -216,8 +244,8 @@ private:
 	unsigned short		dtmf_volume;
 
 
-	// SIP PROTOCOL
-
+	/** @name SIP PROTOCOL */
+	//@{
 	// SIP protocol options
 	// hold variants: rfc2543, rfc3264
 	// rfc2543 - set IP address to 0.0.0.0
@@ -291,34 +319,47 @@ private:
 	
 	// Replaces (RFC 3891)
 	bool			ext_replaces;
+	//@}
 
-	// REFER options
-	// Hold the current call when an incoming REFER is accepted.
+	/** @name REFER options */
+	//@{
+	/** Hold the current call when an incoming REFER is accepted. */
 	bool			referee_hold;
 
-	// Hold the current call before sending a REFER.
+	/** Hold the current call before sending a REFER. */
 	bool			referrer_hold;
 
-	// Allow an incoming refer
+	/** Allow an incoming refer */
 	bool			allow_refer;
 
-	// Ask user for permission when a REFER is received.
+	/** Ask user for permission when a REFER is received. */
 	bool			ask_user_to_refer;
 
-	// Referrer automatically refreshes subscription before expiry.
+	/** Referrer automatically refreshes subscription before expiry. */
 	bool			auto_refresh_refer_sub;
 	
-	// An attended transfer should use the contact-URI of the transfer target.
-	// This contact-URI is not always globally routable however. As an
-	// alternative the AoR (address of record) can be used. Disadvantage is
-	// that the AoR may route to multiple phones in case of forking, whereas
-	// the contact-URI routes to a particular phone.
+	/**
+	 * An attended transfer should use the contact-URI of the transfer target.
+	 * This contact-URI is not always globally routable however. As an
+	 * alternative the AoR (address of record) can be used. Disadvantage is
+	 * that the AoR may route to multiple phones in case of forking, whereas
+	 * the contact-URI routes to a particular phone.
+	 */
 	bool			attended_refer_to_aor;
 	
-	// Privacy options
+	/** 
+	 * Allow to transfer a call while the consultation call is still
+	 * in progress.
+	 */
+	bool			allow_transfer_consultation_inprog;
+	//@}
+	
+	/** @name Privacy options */
+	//@{
 	// Send P-Preferred-Identity header in initial INVITE when hiding
 	// user identity.
 	bool			send_p_preferred_id;
+	//@}
 	
 	/** @name Transport */
 	//@{
@@ -333,54 +374,84 @@ private:
 	unsigned short		sip_transport_udp_threshold;
 	//@}
 
-	// NAT
-
-	// NAT traversal
-	// You can set nat_public_ip to your public IP or FQDN if you are behind
-	// a NAT. This will then be used inside the SIP messages instead of your
-	// private IP. On your NAT you have to create static bindings for port 5060
-	// and ports 8000 - 8005 to the same ports on your private IP address.
+	/** @name NAT */
+	//@{
+	/**
+	 * NAT traversal
+	 * You can set nat_public_ip to your public IP or FQDN if you are behind
+	 * a NAT. This will then be used inside the SIP messages instead of your
+	 * private IP. On your NAT you have to create static bindings for port 5060
+	 * and ports 8000 - 8005 to the same ports on your private IP address.
+	 */
 	bool			use_nat_public_ip;
+	
+	/** The public IP address of the NAT device. */
 	string			nat_public_ip;
 	
-	// NAT traversal via STUN
+	/** NAT traversal via STUN. */
 	bool			use_stun;
+	
+	/** URL of the STUN server. */
 	t_url			stun_server;
+	
+	/** User persistent TCP connections. */
+	bool			persistent_tcp;
+	
+	/** Enable sending of NAT keepalive packets for UDP. */
+	bool			enable_nat_keepalive;
+	//@}
 
-
-	// TIMERS
-
-	// Noanswer timer is started when an initial INVITE is received. If
-	// the user does not respond within the timer, then the call will be
-	// released with a 480 Temporarily Unavailable response.
+	/** @name TIMERS */
+	//@{
+	/** 
+	 * Noanswer timer is started when an initial INVITE is received. If
+	 * the user does not respond within the timer, then the call will be
+	 * released with a 480 Temporarily Unavailable response.
+	 */
 	unsigned short		timer_noanswer; // seconds
 	
-	// Duration of NAT keepalive timer (s)
-	unsigned long		timer_nat_keepalive; 
+	/** Duration of NAT keepalive timer (s) */
+	unsigned short		timer_nat_keepalive;
+	
+	/** Duration of TCP ping timer (s) */
+	unsigned short		timer_tcp_ping;
+	//@}
 
-	// ADDRESS FORMAT
-
-	// Telephone numbers
-	// Display only the user-part of a URI if it is a telephone number
-	// I.e. the user=phone parameter is present, or the user indicated
-	// that the format of the user-part is a telephone number.
+	/** @name ADDRESS FORMAT */
+	//@{
+	/**
+	 * Telephone numbers
+	 * Display only the user-part of a URI if it is a telephone number
+	 * I.e. the user=phone parameter is present, or the user indicated
+	 * that the format of the user-part is a telephone number.
+	 * If the URI is a tel-URI then display the telephone number.
+	 */
 	bool			display_useronly_phone;
 
-	// Consider user-parts that consist of 0-9,+,-,*,# as a telephone
-	// number. I.e. in outgoing messages the user=phone parameter will
-	// be added to the URI. For incoming messages the URI will be considered
-	// to be a telephone number regardless of the presence of the
-	// user=phone parameter.
+	/**
+	 * Consider user-parts that consist of 0-9,+,-,*,# as a telephone
+	 * number. I.e. in outgoing messages the user=phone parameter will
+	 * be added to the URI. For incoming messages the URI will be considered
+	 * to be a telephone number regardless of the presence of the
+	 * user=phone parameter.
+	 */
 	bool			numerical_user_is_phone;
 	
-	// Remove special symbols from numerical dial strings
+	/** Remove special symbols from numerical dial strings */
 	bool			remove_special_phone_symbols;
 	
-	// Special symbols that must be removed from telephone numbers
+	/** Special symbols that must be removed from telephone numbers */
 	string			special_phone_symbols;
 	
-	// Number conversion
+	/**
+	 * If the user enters a telephone number as address, then complete it
+	 * to a tel-URI instead of a sip-URI.
+	 */
+	bool			use_tel_uri_for_phone;
+	
+	/** Number conversion */
 	list<t_number_conversion>	number_conversions;
+	//@}
 	
 	// RING TONES
 	string		ringtone_file;
@@ -435,6 +506,9 @@ private:
 	//@{
 	/** Maximum number of simultaneous IM sessions. */
 	unsigned short	im_max_sessions;
+	
+	/** Flag to indicate that IM is-composing indications (RFC 3994) should be sent. */
+	bool		im_send_iscomposing;
 	//@}
 	
 	/** @name PRESENCE */
@@ -484,6 +558,8 @@ public:
 	string get_auth_realm(void) const;
 	string get_auth_name(void) const;
 	string get_auth_pass(void) const;
+	void get_auth_aka_op(uint8 *aka_op) const;
+	void get_auth_aka_amf(uint8 *aka_amf) const;
 	bool get_use_outbound_proxy(void) const;
 	t_url get_outbound_proxy(void) const;
 	bool get_all_requests_to_proxy(void) const;
@@ -504,10 +580,15 @@ public:
 	t_bit_rate_type get_speex_bit_rate_type(void) const;
 	int get_speex_abr_nb(void) const;
 	int get_speex_abr_wb(void) const;
-	bool get_speex_vad(void) const;
 	bool get_speex_dtx(void) const;
 	bool get_speex_penh(void) const;
+	unsigned short get_speex_quality(void) const;
 	unsigned short get_speex_complexity(void) const;
+	bool get_speex_dsp_vad(void) const;
+	bool get_speex_dsp_agc(void) const;
+	bool get_speex_dsp_aec(void) const;
+	bool get_speex_dsp_nrd(void) const;
+	unsigned short get_speex_dsp_agc_level(void) const;
 	unsigned short get_ilbc_payload_type(void) const;
 	unsigned short get_ilbc_mode(void) const;
 	unsigned short get_g726_16_payload_type(void) const;
@@ -539,6 +620,7 @@ public:
 	bool get_ask_user_to_refer(void) const;
 	bool get_auto_refresh_refer_sub(void) const;
 	bool get_attended_refer_to_aor(void) const;
+	bool get_allow_transfer_consultation_inprog(void) const;
 	bool get_send_p_preferred_id(void) const;
 	t_sip_transport get_sip_transport(void) const;
 	unsigned short get_sip_transport_udp_threshold(void) const;
@@ -546,12 +628,16 @@ public:
 	string get_nat_public_ip(void) const;
 	bool get_use_stun(void) const;
 	t_url get_stun_server(void) const;
+	bool get_persistent_tcp(void) const;
+	bool get_enable_nat_keepalive(void) const;
 	unsigned short get_timer_noanswer(void) const;
-	unsigned long get_timer_nat_keepalive(void) const; 
+	unsigned short get_timer_nat_keepalive(void) const; 
+	unsigned short get_timer_tcp_ping(void) const;
 	bool get_display_useronly_phone(void) const;
 	bool get_numerical_user_is_phone(void) const;
 	bool get_remove_special_phone_symbols(void) const;
 	string get_special_phone_symbols(void) const;
+	bool get_use_tel_uri_for_phone(void) const;
 	string get_ringtone_file(void) const;
 	string get_ringback_file(void) const;
 	string get_script_incoming_call(void) const;
@@ -574,6 +660,7 @@ public:
 	unsigned long get_mwi_subscription_time(void) const;
 	string get_mwi_vm_address(void) const;
 	unsigned short get_im_max_sessions(void) const;
+	bool get_im_send_iscomposing(void) const;
 	unsigned long get_pres_subscription_time(void) const;
 	unsigned long get_pres_publication_time(void) const;
 	bool get_pres_publish_startup(void) const;
@@ -589,6 +676,8 @@ public:
 	void set_auth_realm(const string &realm);
 	void set_auth_name(const string &name);
 	void set_auth_pass(const string &pass);
+	void set_auth_aka_op(const uint8 *aka_op);
+	void set_auth_aka_amf(const uint8 *aka_amf);
 	void set_use_outbound_proxy(bool b);
 	void set_outbound_proxy(const t_url &url);
 	void set_all_requests_to_proxy(bool b);
@@ -609,10 +698,15 @@ public:
 	void set_speex_bit_rate_type(t_bit_rate_type bit_rate_type);
 	void set_speex_abr_nb(int abr);
 	void set_speex_abr_wb(int abr);
-	void set_speex_vad(bool b);
 	void set_speex_dtx(bool b);
 	void set_speex_penh(bool b);
+	void set_speex_quality(unsigned short quality);
 	void set_speex_complexity(unsigned short complexity);
+	void set_speex_dsp_vad(bool b);
+	void set_speex_dsp_agc(bool b);
+	void set_speex_dsp_aec(bool b);
+	void set_speex_dsp_nrd(bool b);
+	void set_speex_dsp_agc_level(unsigned short level);
 	void set_ilbc_payload_type(unsigned short payload_type);
 	void set_g726_16_payload_type(unsigned short payload_type);
 	void set_g726_24_payload_type(unsigned short payload_type);
@@ -644,6 +738,7 @@ public:
 	void set_ask_user_to_refer(bool b);
 	void set_auto_refresh_refer_sub(bool b);
 	void set_attended_refer_to_aor(bool b);
+	void set_allow_transfer_consultation_inprog(bool b);
 	void set_send_p_preferred_id(bool b);
 	void set_sip_transport(t_sip_transport transport);
 	void set_sip_transport_udp_threshold(unsigned short threshold);
@@ -651,12 +746,16 @@ public:
 	void set_nat_public_ip(const string &public_ip);
 	void set_use_stun(bool b);
 	void set_stun_server(const t_url &url);
+	void set_persistent_tcp(bool b);
+	void set_enable_nat_keepalive(bool b);
 	void set_timer_noanswer(unsigned short timer);
 	void set_timer_nat_keepalive(unsigned short timer); 
+	void set_timer_tcp_ping(unsigned short timer);
 	void set_display_useronly_phone(bool b);
 	void set_numerical_user_is_phone(bool b);
 	void set_remove_special_phone_symbols(bool b);
 	void set_special_phone_symbols(const string &symbols);
+	void set_use_tel_uri_for_phone(bool b);
 	void set_ringtone_file(const string &file);
 	void set_ringback_file(const string &file);
 	void set_script_incoming_call(const string &script);
@@ -679,6 +778,7 @@ public:
 	void set_mwi_subscription_time(unsigned long t);
 	void set_mwi_vm_address(const string &address);
 	void set_im_max_sessions(unsigned short max_sessions);
+	void set_im_send_iscomposing(bool b);
 	void set_pres_subscription_time(unsigned long t);
 	void set_pres_publication_time(unsigned long t);
 	void set_pres_publish_startup(bool b);
@@ -689,12 +789,23 @@ public:
 	// be given to the user.
 	bool read_config(const string &filename, string &error_msg);
 
-	// Write the settings into a config file
+	/**
+	 * Write the settings into a config file.
+	 * @param filename [in] Name of the file to write.
+	 * @param error_msg [out] Human readable error message when writing fails.
+	 * @return Returns true of writing succeeded, otherwise false.
+	 */
 	bool write_config(const string &filename, string &error_msg);
+	
+	/** Get the file name for this user profile */
 	string get_filename(void) const;
 
-	// Set a config file name
-	void set_config(string _filename);
+	/** 
+	 * Set a config file name.
+	 * @return True if file name did not yet exist.
+	 * @return False if file name already exists.
+	 */
+	bool set_config(string _filename);
 
 	// Get the name of the profile (filename without extension)
 	string get_profile_name(void) const;
@@ -731,6 +842,9 @@ public:
 	
 	// Get URI for sending a SUBSCRIBE for MWI
 	t_url get_mwi_uri(void) const;
+	
+	/** Is this a user profile for a Diamondcard account? */
+	bool is_diamondcard_account(void) const;
 };
 
 #endif

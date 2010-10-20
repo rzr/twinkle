@@ -41,8 +41,8 @@ subdir = src/audio/gsm
 DIST_COMMON = README $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	ChangeLog INSTALL
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
-	$(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/m4/vl_lib_readline.m4 \
+	$(top_srcdir)/acinclude.m4 $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -220,6 +220,8 @@ X_PRE_LIBS = @X_PRE_LIBS@
 X_RPATH = @X_RPATH@
 YACC = @YACC@
 YFLAGS = @YFLAGS@
+ZRTP_CFLAGS = @ZRTP_CFLAGS@
+ZRTP_LIBS = @ZRTP_LIBS@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
 all_includes = @all_includes@

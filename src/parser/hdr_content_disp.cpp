@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,6 +26,11 @@ void t_hdr_content_disp::set_type(const string &t) {
 	type = t;
 }
 
+void t_hdr_content_disp::set_filename(const string &name) {
+	populated = true;
+	filename = name;
+}
+
 void t_hdr_content_disp::add_param(const t_parameter &p) {
 	populated = true;
 	params.push_back(p);
@@ -42,6 +47,13 @@ string t_hdr_content_disp::encode_value(void) const {
 	if (!populated) return s;
 
 	s = type;
+	
+	if (!filename.empty()) {
+		s += ";filename=\"";
+		s += filename;
+		s += "\"";
+	}
+	
 	s += param_list2str(params);
 
 	return s;

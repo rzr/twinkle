@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -85,10 +85,11 @@ string sdp_addr_type2str(t_sdp_addr_type a);
 t_sdp_addr_type str2sdp_addr_type(string s);
 
 
+/** Transport protocol */
 enum t_sdp_transport {
-	SDP_TRANS_NULL,
-	SDP_TRANS_RTP,
-	SDP_TRANS_UDP
+	SDP_TRANS_RTP,		/**< RTP/AVP */
+	SDP_TRANS_UDP,		/**< UDP */
+	SDP_TRANS_OTHER		/**< Another protocol not yet supported */
 };
 
 string sdp_transport2str(t_sdp_transport t);
@@ -152,16 +153,43 @@ public:
 	string encode(void) const;
 };
 
+/** 
+ * Media definition.
+ * The data from an m= line and associated a= lines.
+ */
 class t_sdp_media {
 private:
-	unsigned short		format_dtmf; // dynamic payload type for DTMF
+	/** Dynamic payload type for DTMF */
+	unsigned short		format_dtmf;
 
 public:
+	/** The media type, e.g. audio, video */
 	string			media_type;
+	
+	/** Port to receive media */
 	unsigned short		port;
-	t_sdp_transport		transport;
+	
+	/** Transport protocol, e.g. RTP/AVP */
+	string			transport;
+	
+	/** 
+	 * @name Media formats 
+	 * Depending on the media type, formats are in numeric format or
+	 * alpha numeric format. Only one of the following formats will
+	 * be populated.
+	 */
+	//@{
+	/** Media formats in numeric form, i.e. audio codecs */
 	list<unsigned short>	formats;
+	
+	/** Media formats in alpha numeric form. */
+	list<string>		alpha_num_formats;
+	//@}
+	
+	/** Optional connection information if not specified on global level. */
 	t_sdp_connection	connection;
+	
+	/** Attributes (a= lines) */
 	list <t_sdp_attr>	attributes;
 
 	t_sdp_media();
@@ -176,6 +204,7 @@ public:
 	list<t_sdp_attr *>get_attributes(const string &name);
 	t_sdp_media_direction get_direction(void) const;
 	t_sdp_media_type get_media_type(void) const;
+	t_sdp_transport get_transport(void) const;
 };
 
 class t_sdp : public t_sip_body {

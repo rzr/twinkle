@@ -1,9 +1,9 @@
 TEMPLATE	= app
 LANGUAGE	= C++
 
-CONFIG	+= qt warn_off release thread
+CONFIG	+= qt warn_on release thread
 
-LIBS	+= ../libtwinkle.a ../parser/libsipparser.a ../sdp/libsdpparser.a ../sockets/libsocket.a ../threads/libthread.a ../audio/libaudio.a ../audits/libaudits.a ../stun/libstun.a ../mwi/libmwi.a ../im/libim.a ../patterns/libpatterns.a ../presence/libpresence.a -lsndfile
+LIBS	+= ../libtwinkle.a ../parser/libsipparser.a ../sdp/libsdpparser.a ../sockets/libsocket.a ../threads/libthread.a ../audio/libaudio.a ../audits/libaudits.a ../stun/libstun.a ../mwi/libmwi.a ../im/libim.a ../patterns/libpatterns.a ../presence/libpresence.a ../utils/libutils.a -lsndfile -lmagic -lncurses -lreadline
 
 DEFINES	+= QT_NO_STL
 
@@ -20,7 +20,9 @@ HEADERS	+= gui.h \
 	yesnodialog.h \
 	command_args.h \
 	messageformview.h \
-	buddylistview.h
+	buddylistview.h \
+	textbrowsernoautolink.h \
+	twinkleapplication.h
 
 SOURCES	+= main.cpp \
 	gui.cpp \
@@ -31,7 +33,8 @@ SOURCES	+= main.cpp \
 	addresslistviewitem.cpp \
 	yesnodialog.cpp \
 	messageformview.cpp \
-	buddylistview.cpp
+	buddylistview.cpp \
+	twinkleapplication.cpp
 
 FORMS	= mphoneform.ui \
 	inviteform.ui \
@@ -55,7 +58,9 @@ FORMS	= mphoneform.ui \
 	numberconversionform.ui \
 	addresscardform.ui \
 	messageform.ui \
-	buddyform.ui
+	buddyform.ui \
+	sendfileform.ui \
+	diamondcardprofileform.ui
 
 IMAGES	= images/filenew \
 	images/filesave \
@@ -206,13 +211,21 @@ IMAGES	= images/filenew \
 	images/edit.png \
 	images/buddy.png \
 	images/message32.png \
-	images/presence.png
+	images/presence.png \
+	images/save_as.png \
+	images/attach.png \
+	images/mime_application.png \
+	images/mime_audio.png \
+	images/mime_image.png \
+	images/mime_text.png \
+	images/mime_video.png
 
 TRANSLATIONS	= lang/twinkle_nl.ts \
 	lang/twinkle_de.ts \
 	lang/twinkle_cs.ts \
 	lang/twinkle_fr.ts \
 	lang/twinkle_ru.ts \
+	lang/twinkle_sv.ts \
 	lang/twinkle_xx.ts
 
 unix {

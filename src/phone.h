@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@
 #include "protocol.h"
 #include "service.h"
 #include "transaction_layer.h"
+#include "im/msg_session.h"
 #include "mwi/mwi.h"
 #include "sockets/url.h"
 #include "parser/request.h"
@@ -53,6 +54,7 @@
 #define QUIT_IDLE_WAIT	2
 
 using namespace std;
+using namespace im;
 
 // Forward declarations
 class t_dialog;
@@ -94,16 +96,17 @@ private:
 	// Indicates if triggered INVITE must be anonymous
 	bool		hide_user;
 	
-	t_user		*user_config;
+	t_phone_user	*phone_user;
 	
 public:
-	t_transfer_data(t_request *r, unsigned short _lineno, bool _hide_user, t_user *user);
+	t_transfer_data(t_request *r, unsigned short _lineno, bool _hide_user, 
+		t_phone_user *pu);
 	~t_transfer_data();
 	
 	t_request *get_refer_request(void) const;
 	unsigned short get_lineno(void) const;
 	bool get_hide_user(void) const;
-	t_user *get_user(void) const;
+	t_phone_user *get_phone_user(void) const;
 };
 
 class t_phone : public t_transaction_layer {
@@ -156,9 +159,20 @@ private:
 	// cleanup the 3way conference data.
 	void cleanup_3way(void);
 
-	// Actions
+	/** @name Actions */
+	//@{
+	/**
+	 * Send an INVITE
+	 * @param pu The phone user making this call.
+	 * @param to_uri The URI to be used a request-URI and To header URI
+	 * @param to_display Display name for To header.
+	 * @param subject If not empty, this string will go into the Subject header.
+	 * @param no_fork If true, put a no-fork request disposition in the outgoing INVITE
+	 * @param anonymous Inidicates if the INVITE should be sent anonymous.
+	 */
 	void invite(t_phone_user *pu, const t_url &to_uri, const string &to_display,
-		const string &subject, bool anonymous);
+		const string &subject, bool no_fork, bool anonymous);
+		
 	void answer(void);
 	void redirect(const list<t_display_url> &destinations, int code, string reason = "");
 	void reject(void);
@@ -166,6 +180,7 @@ private:
 	void end_call(void);
 	void registration(t_phone_user *pu, t_register_type register_type,
 					unsigned long expires = 0);
+	//@}
 
 	// OPTIONS outside dialog
 	void options(t_phone_user *pu, const t_url &to_uri, const string &to_display = "");
@@ -314,6 +329,8 @@ protected:
 	 */
 	void timeout(t_phone_timer timer, unsigned short id_timer);
 	//@}
+	
+	virtual void handle_broken_connection(t_event_broken_connection *e);
 
 public:
 	t_phone();
@@ -434,14 +451,28 @@ public:
 	/** @name Instant messaging */
 	//@{
 	/**
-	 * Send a text message.
+	 * Send a message.
+	 * @param user [in] User profile of user sending the message.
 	 * @param to_uri [in] Destination URI of recipient.
 	 * @param to_display [in] Display name of recipient.
-	 * @param user [in] User profile of user sending the message.
-	 * @param text [in] The text to send.
+	 * @param msg [in] Message to send.
+	 * @return True if sending succeeded, false otherwise.
 	 */
-	void pub_send_message(t_user *user, const t_url &to_uri, const string &to_display,
-			const string &text);
+	bool pub_send_message(t_user *user, const t_url &to_uri, const string &to_display,
+			const t_msg &msg);
+			
+	/**
+	 * Send a message composing state indication.
+	 * @param user [in] User profile of user sending the message.
+	 * @param to_uri [in] Destination URI of recipient.
+	 * @param to_display [in] Display name of recipient.
+	 * @param state [in] Message composing state.
+	 * @param refresh [in] The refresh interval in seconds (when state is active).
+	 * @return True if sending succeeded, false otherwise.
+	 * @note For the idle state, the value of refresh has no meaning.
+	 */
+	bool pub_send_im_iscomposing(t_user *user, const t_url &to_uri, const string &to_display,
+			const string &state, time_t refresh);
 	//@}
 
 	unsigned short get_active_line(void) const;
@@ -574,10 +605,17 @@ public:
 	
 	/**
 	 * Find active phone user
-	 * @param profile_name [in] User profile name
-	 * @return The phone user for the user profile, NULL if there is not active phone user.
+	 * @param profile_name [in] User profile name.
+	 * @return The phone user for the user profile, NULL if there is no active phone user.
 	 */
 	t_phone_user *find_phone_user(const string &profile_name) const;
+	
+	/** 
+	 * Find active phone user
+	 * @param user_uri [in] The user URI (AoR) of the user to find.
+	 * @return The phone user for the URI, NULL if there is no active phone user.
+	 */
+	t_phone_user *find_phone_user(const t_url &user_uri) const;
 	
 	/**
 	 * Get local IP address for SIP.
@@ -595,14 +633,17 @@ public:
 	 */ 
 	unsigned short get_public_port_sip(const t_user *user) const;
 	
-	// Indicates if STUN is used
+	/** Indicates if STUN is used. */
 	bool use_stun(t_user *user);
 	
 	// Indicates if a NAT keepalive mechanism is used
 	bool use_nat_keepalive(t_user *user);
 	
-	// Disable STUN for a user
+	/** Disable STUN for a user. */
 	void disable_stun(t_user *user);
+	
+	/** Synchronize sending of NAT keep alives with user configuration settings. */
+	void sync_nat_keepalive(t_user *user);
 	
 	// Perform NAT discovery for all users having STUN enabled.
 	// If NAT discovery indicates that STUN cannot be used for 1 or more

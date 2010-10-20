@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -128,12 +128,14 @@ void yyerror(const char *s);
 %token			T_HDR_PROXY_REQUIRE
 %token			T_HDR_RACK
 %token			T_HDR_RECORD_ROUTE
+%token			T_HDR_SERVICE_ROUTE
 %token			T_HDR_REFER_SUB
 %token			T_HDR_REFER_TO
 %token			T_HDR_REFERRED_BY
 %token			T_HDR_REPLACES
 %token			T_HDR_REPLY_TO
 %token			T_HDR_REQUIRE
+%token			T_HDR_REQUEST_DISPOSITION
 %token			T_HDR_RETRY_AFTER
 %token			T_HDR_ROUTE
 %token			T_HDR_RSEQ
@@ -359,10 +361,12 @@ header:		  hd_accept hdr_accept T_CRLF
 		| hd_replaces hdr_replaces T_CRLF
 		| hd_reply_to hdr_reply_to T_CRLF
 		| hd_require hdr_require T_CRLF
+		| hd_request_disposition hdr_request_disposition T_CRLF
 		| hd_retry_after hdr_retry_after T_CRLF
 		| hd_route hdr_route T_CRLF
 		| hd_rseq hdr_rseq T_CRLF
 		| hd_server hdr_server T_CRLF
+		| hd_service_route hdr_service_route T_CRLF
 		| hd_sip_etag hdr_sip_etag T_CRLF
 		| hd_sip_if_match hdr_sip_if_match T_CRLF
 		| hd_subject hdr_subject T_CRLF
@@ -463,6 +467,8 @@ header:		  hd_accept hdr_accept T_CRLF
 			{ PARSE_ERROR("Reply-To"); }
 		| hd_require error T_CRLF
 			{ PARSE_ERROR("Require"); }
+		| hd_request_disposition error T_CRLF
+			{ PARSE_ERROR("Request-Disposition"); }
 		| hd_retry_after error T_CRLF
 			{ PARSE_ERROR("Retry-After"); }
 		| hd_route error T_CRLF
@@ -471,6 +477,8 @@ header:		  hd_accept hdr_accept T_CRLF
 			{ PARSE_ERROR("RSeq"); }
 		| hd_server error T_CRLF
 			{ PARSE_ERROR("Server"); }
+		| hd_service_route error T_CRLF
+			{ PARSE_ERROR("Service-Route"); }
 		| hd_sip_etag error T_CRLF
 			{ PARSE_ERROR("SIP-ETag"); }
 		| hd_sip_if_match error T_CRLF
@@ -590,6 +598,8 @@ hd_reply_to:		T_HDR_REPLY_TO ':' { CTXT_URI_SPECIAL; }
 ;
 hd_require:		T_HDR_REQUIRE ':'
 ;
+hd_request_disposition:	T_HDR_REQUEST_DISPOSITION ':'
+;
 hd_retry_after:		T_HDR_RETRY_AFTER ':' { CTXT_NUM; }
 ;
 hd_route:		T_HDR_ROUTE ':' { CTXT_URI; }
@@ -597,6 +607,8 @@ hd_route:		T_HDR_ROUTE ':' { CTXT_URI; }
 hd_rseq:		T_HDR_RSEQ ':' { CTXT_NUM; }
 ;
 hd_server:		T_HDR_SERVER ':'
+;
+hd_service_route:	T_HDR_SERVICE_ROUTE ':' { CTXT_URI; }
 ;
 hd_sip_etag:		T_HDR_SIP_ETAG ':'
 ;
@@ -849,7 +861,16 @@ display_name:	  /* empty */ { $$ = new string(); MEMMAN_NEW($$); }
 
 hdr_content_disp: T_TOKEN parameters {
 			MSG->hdr_content_disp.set_type(tolower(*$1));
-			MSG->hdr_content_disp.set_params(*$2);
+			
+			list<t_parameter>::const_iterator i;
+			for (i = $2->begin(); i != $2->end(); i++) {
+				if (i->name == "filename") {
+					MSG->hdr_content_disp.set_filename(i->value);
+				} else {
+					MSG->hdr_content_disp.add_param(*i);
+				}
+			}
+
 			MEMMAN_DELETE($1); delete $1;
 			MEMMAN_DELETE($2); delete $2; }
 ;
@@ -1056,6 +1077,14 @@ rec_route:	{ CTXT_URI; } display_name '<' T_URI { CTXT_INITIAL; } '>'
 			MEMMAN_DELETE($2); delete $2;
 			MEMMAN_DELETE($4); delete $4;
 			MEMMAN_DELETE($7); delete $7; }
+;
+
+hdr_service_route:  rec_route {
+			MSG->hdr_service_route.add_route(*$1);
+			MEMMAN_DELETE($1); delete $1; }
+		  | hdr_service_route ',' rec_route {
+		  	MSG->hdr_service_route.add_route(*$3);
+			MEMMAN_DELETE($3); delete $3; }
 ;
 
 hdr_replaces:	  { CTXT_WORD; } call_id { CTXT_INITIAL; } parameters {
@@ -1546,6 +1575,15 @@ hdr_sip_if_match: T_TOKEN {
 			MSG->hdr_sip_if_match.set_etag(*$1);
 			MEMMAN_DELETE($1); delete $1; }
 ;
+
+hdr_request_disposition:  T_TOKEN {
+				bool ret = MSG->hdr_request_disposition.set_directive(*$1);
+				if (!ret) YYERROR;
+				MEMMAN_DELETE($1); delete $1; }
+			| hdr_request_disposition ',' T_TOKEN {
+				bool ret = MSG->hdr_request_disposition.set_directive(*$3);
+				if (!ret) YYERROR;
+				MEMMAN_DELETE($3); delete $3; }
 
 %%
 

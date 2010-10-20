@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 #include "userintf.h"
 #include "util.h"
 #include "audits/memman.h"
+#include "im/im_iscomposing_body.h"
 #include "presence/presence_epa.h"
 
 extern t_phone 		*phone;
@@ -75,12 +76,26 @@ void t_phone_user::cleanup_nat_keepalive(void) {
 	}
 }
 
+void t_phone_user::sync_nat_keepalive(void) {
+	if (user_config->get_enable_nat_keepalive() && !id_nat_keepalive) {
+		send_nat_keepalive();
+		phone->start_timer(PTMR_NAT_KEEPALIVE, this);
+	}
+}
+
+void t_phone_user::cleanup_tcp_ping(void) {
+	if (register_ip_port.ipaddr == 0 && register_ip_port.port == 0) {
+		if (id_tcp_ping) phone->stop_timer(PTMR_TCP_PING, this);
+	}
+}
+
 void t_phone_user::cleanup_registration_data(void) {
 	register_ip_port.ipaddr = 0;
 	register_ip_port.port = 0;
 	stun_binding_inuse_registration = false;
 	cleanup_stun_data();
 	cleanup_nat_keepalive();
+	cleanup_tcp_ping();
 }
 
 t_phone_user::t_phone_user(const t_user &profile)
@@ -143,6 +158,7 @@ t_phone_user::t_phone_user(const t_user &profile)
 	// Timers
 	id_registration = 0;
 	id_nat_keepalive = 0;
+	id_tcp_ping = 0;
 	id_resubscribe_mwi = 0;
 	
 	// MWI
@@ -154,6 +170,7 @@ t_phone_user::~t_phone_user() {
 	// Stop timers
 	if (id_registration) phone->stop_timer(PTMR_REGISTRATION, this);
 	if (id_nat_keepalive) phone->stop_timer(PTMR_NAT_KEEPALIVE, this);
+	if (id_tcp_ping) phone->stop_timer(PTMR_TCP_PING, this);
 
 	// Delete pointers
 	if (r_options) {
@@ -393,7 +410,7 @@ void t_phone_user::handle_response_out_of_dialog(t_response *r, t_tuid tuid, t_t
 	t_request *req;
 	bool is_register = false;
 	t_buddy *buddy;
-
+	
 	if (r_register && r_register->get_tuid() == tuid) {
 		current_cr = &r_register;
 		is_register = true;
@@ -711,6 +728,30 @@ void t_phone_user::handle_response_register(t_response *r, bool &re_register) {
                 // The maximum timer that we can handle however is 2^31-1 ms
                 e = (expires > 2147483 ? 2147483 : expires);
                 phone->start_set_timer(PTMR_REGISTRATION, e * 1000, this);
+		// Save the Service-Route if present the response contains any
+
+		// RFC 3608 6
+		// Collect the service route to route later initial requests.
+		if (r->hdr_service_route.is_populated()) {
+			service_route = r->hdr_service_route.route_list;
+			log_file->write_header("t_phone_user::handle_response_register");
+			log_file->write_raw("Store service route:\n");
+			for (list<t_route>::const_iterator it = service_route.begin();
+			     it != service_route.end(); ++it)
+			{
+				log_file->write_raw(it->encode());
+				log_file->write_endl();
+			}
+			log_file->write_footer();
+		} else {
+			if (!service_route.empty())
+			{
+				log_file->write_report("Clear service route.",
+					"t_phone_user::handle_response_register");
+				service_route.clear();
+			}
+		}
+
 		first_success = !is_registered;
                 is_registered = true;
 		ui->cb_register_success(user_config, r, expires, first_success);
@@ -722,6 +763,11 @@ void t_phone_user::handle_response_register(t_response *r, bool &re_register) {
 			// message itself created the NAT binding. So there is
 			// no need to send a NAT keep alive packet now.
 			phone->start_timer(PTMR_NAT_KEEPALIVE, this);
+		}
+		
+		// Start sending TCP ping packets on persistent TCP connections.
+		if (user_config->get_persistent_tcp() && id_tcp_ping == 0) {
+			phone->start_timer(PTMR_TCP_PING, this);
 		}
 		
 		// Registration succeeded. If sollicited MWI is provisioned
@@ -838,7 +884,22 @@ void t_phone_user::handle_response_options(t_response *r) {
 }
 
 void t_phone_user::handle_response_message(t_response *r) {
-	ui->cb_message_response(user_config, r);
+	t_request *req = r_message->get_request();
+	
+	if (req->body && req->body->get_type() == BODY_IM_ISCOMPOSING_XML) {
+		// Response on message composing indication.
+		if (r->code == R_415_UNSUPPORTED_MEDIA_TYPE) {
+			// RFC 3994 4
+			// In SIP-based IM, The composer MUST cease transmitting 
+			// status messages if the receiver returned a 415 status 
+			// code (Unsupported Media Type) in response to MESSAGE 
+			// request containing the status indication.
+			ui->cb_im_iscomposing_not_supported(user_config, r);
+		}
+	} else {
+		// Response on instant message
+		ui->cb_message_response(user_config, r, req);
+	}
 }
 
 void t_phone_user::subscribe_mwi(void) {
@@ -973,8 +1034,8 @@ bool t_phone_user::is_presence_terminated(void) const {
 	return buddy_list->is_presence_terminated();
 }
 
-void t_phone_user::send_message(const t_url &to_uri, const string &to_display, 
-		const string &text)
+bool t_phone_user::send_message(const t_url &to_uri, const string &to_display, 
+		const t_msg &msg)
 {
 	t_request *req = create_request(MESSAGE, to_uri);
 	
@@ -989,8 +1050,34 @@ void t_phone_user::send_message(const t_url &to_uri, const string &to_display,
 	req->hdr_cseq.set_method(MESSAGE);
 	req->hdr_cseq.set_seqnr(NEW_SEQNR);
 	
-	// Body
-	req->set_body_plain_text(text, MSG_TEXT_CHARSET);
+	// Subject
+	if (!msg.subject.empty()) {
+		req->hdr_subject.set_subject(msg.subject);
+	}
+	
+	// Body and Content-Type
+	if (!msg.has_attachment) {
+		// A message without an attachment is a text message.
+		req->set_body_plain_text(msg.message, MSG_TEXT_CHARSET);
+	} else {
+		// Send message with file attachment
+		if (!req->set_body_from_file(msg.attachment_filename, msg.attachment_media)) {
+			log_file->write_header("t_phone_user::send_message", LOG_NORMAL, LOG_WARNING);
+			log_file->write_raw("Could not read file ");
+			log_file->write_raw(msg.attachment_filename);
+			log_file->write_endl();
+			log_file->write_footer();
+			
+			MEMMAN_DELETE(req);
+			delete req;
+			
+			return false;
+		}
+		
+		// Content-Disposition
+		req->hdr_content_disp.set_type(DISPOSITION_ATTACHMENT);
+		req->hdr_content_disp.set_filename(msg.attachment_save_as_name);
+	}
 	
 	// Store and send request
 	// Delete a possible pending options request
@@ -1007,15 +1094,59 @@ void t_phone_user::send_message(const t_url &to_uri, const string &to_display,
 		MEMMAN_DELETE(req);
 		delete req;
 	}
+	
+	return true;
+}
+
+bool t_phone_user::send_im_iscomposing(const t_url &to_uri, const string &to_display, 
+			const string &state, time_t refresh)
+{
+	t_request *req = create_request(MESSAGE, to_uri);
+	
+	// To
+	req->hdr_to.set_uri(to_uri);
+	req->hdr_to.set_display(to_display);
+
+	// Call-ID
+	req->hdr_call_id.set_call_id(NEW_CALL_ID(user_config));
+
+	// CSeq
+	req->hdr_cseq.set_method(MESSAGE);
+	req->hdr_cseq.set_seqnr(NEW_SEQNR);
+	
+	// Body and Content-Type
+	t_im_iscomposing_xml_body *body = new t_im_iscomposing_xml_body;
+	MEMMAN_NEW(body);
+	
+	body->set_state(state);
+	body->set_refresh(refresh);
+	
+	req->body = body;
+	req->hdr_content_type.set_media(body->get_media());
+	
+	// Store and send request
+	// Delete a possible pending options request
+	if (r_message) {
+		// RFC 3428 8
+		// Send only 1 message at a time.
+		// Store the message. It will be sent if the previous
+		// message transaction is finished.
+		pending_messages.push_back(req);
+	} else {
+		r_message = new t_client_request(user_config, req, 0);
+		MEMMAN_NEW(r_message);
+		phone->send_request(user_config, req, r_message->get_tuid());
+		MEMMAN_DELETE(req);
+		delete req;
+	}
+	
+	return true;
 }
 
 void t_phone_user::recvd_message(t_request *r, t_tid tid) {
 	t_response *resp;
 	
-	if (!r->body ||
-	    (r->body->get_type() != BODY_PLAIN_TEXT &&
-	     r->body->get_type() != BODY_HTML_TEXT))
-	{
+	if (!r->body || !MESSAGE_CONTENT_TYPE_SUPPORTED(*r)) {
 		resp = r->create_response(R_415_UNSUPPORTED_MEDIA_TYPE);
 		// RFC 3261 21.4.13
 		SET_MESSAGE_HDR_ACCEPT(resp->hdr_accept);
@@ -1026,14 +1157,24 @@ void t_phone_user::recvd_message(t_request *r, t_tid tid) {
 		return;
 	}
 	
-	bool accepted = ui->cb_message_request(user_config, r);
-	if (accepted) {
+	if (r->body && r->body->get_type() == BODY_IM_ISCOMPOSING_XML) {
+		// Message composing indication
+		t_im_iscomposing_xml_body *sb = dynamic_cast<t_im_iscomposing_xml_body *>(r->body);
+		im::t_composing_state state = im::string2composing_state(sb->get_state());
+		time_t refresh = sb->get_refresh();
+		
+		ui->cb_im_iscomposing_request(user_config, r, state, refresh);
 		resp = r->create_response(R_200_OK);
 	} else {
-		if (user_config->get_im_max_sessions() == 0) {
-			resp = r->create_response(R_603_DECLINE);
+		bool accepted = ui->cb_message_request(user_config, r);
+		if (accepted) {
+			resp = r->create_response(R_200_OK);
 		} else {
-			resp = r->create_response(R_486_BUSY_HERE);
+			if (user_config->get_im_max_sessions() == 0) {
+				resp = r->create_response(R_603_DECLINE);
+			} else {
+				resp = r->create_response(R_486_BUSY_HERE);
+			}
 		}
 	}
 	
@@ -1123,6 +1264,15 @@ void t_phone_user::send_nat_keepalive(void) {
 	}
 }
 
+void t_phone_user::send_tcp_ping(void) {
+	if (register_ip_port.ipaddr != 0 && register_ip_port.port != 0 &&
+	    register_ip_port.transport == "tcp") 
+	{
+		evq_sender->push_tcp_ping(user_config->create_user_uri(false),
+				register_ip_port.ipaddr, register_ip_port.port);
+	}
+}
+
 void t_phone_user::timeout(t_phone_timer timer) {
 	switch (timer) {
 	case PTMR_REGISTRATION:
@@ -1143,6 +1293,15 @@ void t_phone_user::timeout(t_phone_timer timer) {
 		if (use_nat_keepalive) {
 			send_nat_keepalive();
 			phone->start_timer(PTMR_NAT_KEEPALIVE, this);
+		}
+		break;
+	case PTMR_TCP_PING:
+		id_tcp_ping = 0;
+		
+		// Send a TCP ping;
+		if (user_config->get_persistent_tcp()) {
+			send_tcp_ping();
+			phone->start_timer(PTMR_TCP_PING, this);
 		}
 		break;
 	default:
@@ -1181,6 +1340,32 @@ void t_phone_user::timeout_publish(t_publish_timer timer, t_object_id id_timer) 
 		break;
 	default:
 		assert(false);
+	}
+}
+
+void t_phone_user::handle_broken_connection(void) {
+	log_file->write_header("t_phone_user::handle_broken_connection", LOG_NORMAL, LOG_DEBUG);
+	log_file->write_raw("Handle broken connection for ");
+	log_file->write_raw(user_config->get_profile_name());
+	log_file->write_endl();
+	log_file->write_footer();
+
+	// A persistent connection has been broken. The connection must be re-established
+	// by registering again. This is only needed when the user was registered already.
+	// If no registration was present, then the persistent connection should not have
+	// been established.
+	if (is_registered) {
+		// Re-register if no register is pending
+		if (!r_register) {
+			log_file->write_header("t_phone_user::handle_broken_connection", 
+					LOG_NORMAL, LOG_DEBUG);
+			log_file->write_raw("Re-establish broken connection for ");
+			log_file->write_raw(user_config->get_profile_name());
+			log_file->write_endl();
+			log_file->write_footer();
+			
+			registration(REG_REGISTER, true, registration_time);
+		}
 	}
 }
 
@@ -1242,7 +1427,15 @@ t_request *t_phone_user::create_request(t_method m, const t_url &request_uri) co
 	// Set request URI and calculate destinations. By calculating
 	// destinations now, the request can be resend to a next destination
 	// if failover is needed.
-	req->uri = request_uri;
+	if (m == REGISTER) {
+		// For a REGISTER do not use the service route for routing.
+		req->uri = request_uri;
+	} else {
+		// RFC 3608
+		// For all other requests, use the service route set for routing.
+		req->set_route(request_uri, service_route);
+	}
+
 	req->calc_destinations(*user_config);
 	
         // The Via header can only be created after the destinations
@@ -1315,6 +1508,10 @@ string t_phone_user::get_ip_sip(const string &auto_ip) const {
 unsigned short t_phone_user::get_public_port_sip(void) const {
 	if (stun_public_port_sip) return stun_public_port_sip;
 	return sys_config->get_sip_port();
+}
+
+list<t_route> t_phone_user::get_service_route(void) const {
+	return service_route;
 }
 
 bool t_phone_user::match(t_response *r, t_tuid tuid) const {
@@ -1429,6 +1626,7 @@ void t_phone_user::deactivate(void) {
 	// Stop timers
 	if (id_registration) phone->stop_timer(PTMR_REGISTRATION, this);
 	if (id_nat_keepalive) phone->stop_timer(PTMR_NAT_KEEPALIVE, this);
+	if (id_tcp_ping) phone->stop_timer(PTMR_TCP_PING, this);
 	if (id_resubscribe_mwi) stop_resubscribe_mwi_timer();
 
 	// Clear MWI

@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@
 #include "userintf.h"
 #include "audio/rtp_telephone_event.h"
 #include "audits/memman.h"
+#include "im/im_iscomposing_body.h"
 #include "sdp/sdp.h"
 #include "sockets/socket.h"
 #include "stun/stun_transaction.h"
@@ -47,6 +48,7 @@ extern t_phone		*phone;
 // RFC 3261 12.2.1.1
 t_request *t_dialog::create_request(t_method m) {
 	assert(state != DS_NULL);
+	t_user *user_config = phone_user->get_user_profile();
 
 	// RFC 3261 9.1
 	if (m == CANCEL) {
@@ -124,6 +126,7 @@ t_request *t_dialog::create_request(t_method m) {
 // NULL state. Waiting for incoming INVITE
 void t_dialog::state_null(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 
 	if (r->method != INVITE) {
 		state = DS_TERMINATED;
@@ -245,6 +248,21 @@ void t_dialog::state_null(t_request *r, t_tuid tuid, t_tid tid) {
 	resp = r->create_response(R_180_RINGING);
 	resp->hdr_to.set_tag(local_tag);
 
+	// RFC 3261 13.3.1.1
+	// A provisional response creates an early dialog, so
+	// copy the Record-Route header and add a Contact
+	// header.
+
+	// Copy the Record-Route header from request to response
+	if (r->hdr_record_route.is_populated()) {
+		resp->hdr_record_route = r->hdr_record_route;
+	}
+
+	// Set Contact header
+	t_contact_param contact;
+	contact.uri.set_url(line->create_user_contact(h_ip2str(resp->get_local_ip())));
+	resp->hdr_contact.add_contact(contact);
+
 	// RFC 3262 3
 	// Send 180 response reliable if needed
 	if (r->hdr_require.contains(EXT_100REL) ||
@@ -254,22 +272,6 @@ void t_dialog::state_null(t_request *r, t_tuid tuid, t_tid tid) {
 	{
 		resp->hdr_require.add_feature(EXT_100REL);
 		resp->hdr_rseq.set_resp_nr(++local_resp_nr);
-
-		// According to RFC 3262 4, a reliable provisional response
-		// must establish a dialog. RFC 3261 12.1.1 tells that
-		// a response that establishes a dialog must contain
-		// a contact header and copy record-route headers from
-		// the request.
-
-		// Copy the Record-Route header from request to response
-		if (r->hdr_record_route.is_populated()) {
-			resp->hdr_record_route = r->hdr_record_route;
-		}
-
-		// Set Contact header
-		t_contact_param contact;
-		contact.uri.set_url(line->create_user_contact(h_ip2str(resp->get_local_ip())));
-		resp->hdr_contact.add_contact(contact);
 
 		// RFC 3262 5
 		// Create SDP offer in first reliable response if no offer
@@ -303,6 +305,7 @@ void t_dialog::state_null(t_request *r, t_tuid tuid, t_tid tid) {
 // A provisional answer has been sent. Waiting for user to answer.
 void t_dialog::state_w4answer(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	bool tear_down = false;
 	bool answer_call = false;
 	
@@ -426,6 +429,7 @@ void t_dialog::state_w4answer(t_request *r, t_tuid tuid, t_tid tid) {
 void t_dialog::state_w4answer(t_line_timer timer) {
 	t_ip_port ip_port;
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	
 	t_call_script script_in_call_failed(user_config, t_call_script::TRIGGER_IN_CALL_FAILED,
 			line->get_line_number() + 1);
@@ -486,6 +490,7 @@ void t_dialog::state_w4answer(t_line_timer timer) {
 // 200 OK has been sent. Waiting for ACK
 void t_dialog::state_w4ack(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	bool tear_down = false;
 	t_client_request *cr;
 	
@@ -587,6 +592,7 @@ void t_dialog::state_w4ack(t_request *r, t_tuid tuid, t_tid tid) {
 
 void t_dialog::state_w4ack_re_invite(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	bool tear_down = false;
 	
 	t_call_script script_out_call_failed(user_config, t_call_script::TRIGGER_OUT_CALL_FAILED,
@@ -727,6 +733,7 @@ void t_dialog::state_w4ack_re_invite(t_line_timer timer) {
 
 void t_dialog::state_w4re_invite_resp(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	
 	t_call_script script_remote_release(user_config, t_call_script::TRIGGER_REMOTE_RELEASE,
 			line->get_line_number() + 1);
@@ -786,6 +793,7 @@ void t_dialog::state_w4re_invite_resp(t_request *r, t_tuid tuid, t_tid tid) {
 // In the confirmed state, requests will be responded.
 void t_dialog::state_confirmed(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	
 	t_call_script script_remote_release(user_config, t_call_script::TRIGGER_REMOTE_RELEASE,
 			line->get_line_number() + 1);
@@ -915,6 +923,7 @@ void t_dialog::state_confirmed_sub(t_request *r, t_tuid tuid, t_tid tid) {
 
 void t_dialog::process_re_invite(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 
 	session_re_invite = session->create_clean_copy();
 
@@ -1036,6 +1045,7 @@ void t_dialog::process_re_invite(t_request *r, t_tuid tuid, t_tid tid) {
 
 void t_dialog::process_refer(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	t_contact_param contact;
 	
 	refer_accepted = true;
@@ -1234,7 +1244,20 @@ void t_dialog::process_notify(t_request *r, t_tuid tuid, t_tid tid) {
 void t_dialog::process_info(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
 	
-	if (!r->body || r->body->get_type() != BODY_DTMF_RELAY) {
+	// RFC 2976 2.2
+	// A 200 OK response MUST be sent by a UAS for an INFO request with
+        // no message body if the INFO request was successfully received for
+        // an existing call.
+	if (!r->body) {
+		resp = r->create_response(R_200_OK);
+		line->send_response(resp, tuid, tid);
+		MEMMAN_DELETE(resp);
+		delete resp;
+		
+		return;
+	}
+	
+	if (r->body->get_type() != BODY_DTMF_RELAY) {
 		resp = r->create_response(R_415_UNSUPPORTED_MEDIA_TYPE);
 		resp->hdr_accept.add_media(t_media("application", "dtmf-relay"));
 		line->send_response(resp, tuid, tid);
@@ -1264,35 +1287,44 @@ void t_dialog::process_info(t_request *r, t_tuid tuid, t_tid tid) {
 
 void t_dialog::process_message(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 	
 	log_file->write_report("Received in-dialog MESSAGE.",
 		"t_dialog::process_message", LOG_NORMAL, LOG_DEBUG);
 		
-	if (!r->body ||
-	    r->body->get_type() != BODY_PLAIN_TEXT)
-	{
+	if (!r->body || !MESSAGE_CONTENT_TYPE_SUPPORTED(*r)) {
 		resp = r->create_response(R_415_UNSUPPORTED_MEDIA_TYPE);
 		// RFC 3261 21.4.13
 		SET_MESSAGE_HDR_ACCEPT(resp->hdr_accept);
-		phone->send_response(resp, 0, tid);
+		line->send_response(resp, tuid, tid);
 		MEMMAN_DELETE(resp);
 		delete resp;
 		
 		return;
 	}
 	
-	bool accepted = ui->cb_message_request(line->get_user(), r);
-	if (accepted) {
+	if (r->body && r->body->get_type() == BODY_IM_ISCOMPOSING_XML) {
+		// Message composing indication
+		t_im_iscomposing_xml_body *sb = dynamic_cast<t_im_iscomposing_xml_body *>(r->body);
+		im::t_composing_state state = im::string2composing_state(sb->get_state());
+		time_t refresh = sb->get_refresh();
+		
+		ui->cb_im_iscomposing_request(line->get_user(), r, state, refresh);
 		resp = r->create_response(R_200_OK);
 	} else {
-		if (user_config->get_im_max_sessions() == 0) {
-			resp = r->create_response(R_603_DECLINE);
+		// Instant message
+		bool accepted = ui->cb_message_request(line->get_user(), r);
+		if (accepted) {
+			resp = r->create_response(R_200_OK);
 		} else {
-			resp = r->create_response(R_486_BUSY_HERE);
+			if (user_config->get_im_max_sessions() == 0) {
+				resp = r->create_response(R_603_DECLINE);
+			} else {
+				resp = r->create_response(R_486_BUSY_HERE);
+			}
 		}
 	}
 	
-	resp = r->create_response(R_200_OK);
 	line->send_response(resp, tuid, tid);
 	MEMMAN_DELETE(resp);
 	delete resp;
@@ -1301,6 +1333,7 @@ void t_dialog::process_message(t_request *r, t_tuid tuid, t_tid tid) {
 // INVITE sent. Waiting for a first non-100 response.
 void t_dialog::state_w4invite_resp(t_response *r, t_tuid tuid, t_tid tid) {
 	if (r->hdr_cseq.method != INVITE) return;
+	t_user *user_config = phone_user->get_user_profile();
 
 	// 1XX (except 100) and 2XX establish the dialog.
 	// Update the state for dialog establishment.
@@ -1453,6 +1486,7 @@ void t_dialog::state_w4invite_resp(t_line_timer timer) {
 // received.
 void t_dialog::state_early(t_response *r, t_tuid tuid, t_tid tid) {
 	if (r->hdr_cseq.method != INVITE) return;
+	t_user *user_config = phone_user->get_user_profile();
 
 	switch (r->get_class()) {
 	case R_1XX:
@@ -1918,6 +1952,8 @@ void t_dialog::activate_new_session(void) {
 }
 
 void t_dialog::process_1xx_2xx_invite_resp(t_response *r) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	// Process SDP answer if answer is present and no
 	// answer has been received yet.
 	if (r->body) {
@@ -2035,6 +2071,7 @@ void t_dialog::process_1xx_2xx_invite_resp(t_response *r) {
 
 void t_dialog::ack_2xx_invite(t_response *r) {
 	t_ip_port ip_port;
+	t_user *user_config = phone_user->get_user_profile();
 
 	if (ack) {
 		// delete previous cached ACK
@@ -2060,6 +2097,8 @@ void t_dialog::ack_2xx_invite(t_response *r) {
 }
 
 void t_dialog::send_prack_if_required(t_response *r) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	// RFC 3262
 	// Send PRACK if needed
 	if (r->get_class() == R_1XX && r->code != R_100_TRYING) {
@@ -2094,6 +2133,8 @@ void t_dialog::send_prack_if_required(t_response *r) {
 }
 
 bool t_dialog::must_discard_100rel(t_response *r) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	// RFC 3262 4
 	// Discard retransmissiona and out-of-sequence reliable
 	// provisional responses.
@@ -2177,7 +2218,7 @@ void t_dialog::send_request(t_request *r, t_tuid tuid) {
 ////////////
 
 t_dialog::t_dialog(t_line *_line) :
-	t_abstract_dialog(_line->get_user())
+	t_abstract_dialog(_line->get_phone_user())
 {
 	line = _line;
 	
@@ -2215,6 +2256,8 @@ t_dialog::t_dialog(t_line *_line) :
 	dur_100rel_timeout = 0;
 	id_100rel_timeout = 0;
 	id_100rel_guard = 0;
+	
+	t_user *user_config = phone_user->get_user_profile();
 
 	// Create session
 	session = new t_session(this, USER_HOST(user_config, AUTO_IP4_ADDRESS), line->get_rtp_port());
@@ -2323,8 +2366,12 @@ t_dialog *t_dialog::copy(void) {
 void t_dialog::send_invite(const t_url &to_uri, const string &to_display,
 		const string &subject, const t_hdr_referred_by &hdr_referred_by,
 		const t_hdr_replaces &hdr_replaces, 
-		const t_hdr_require &hdr_require, bool anonymous)
+		const t_hdr_require &hdr_require, 
+		const t_hdr_request_disposition &hdr_request_disposition,
+		bool anonymous)
 {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	if (state != DS_NULL) {
 		throw X_DIALOG_ALREADY_ESTABLISHED;
 	}
@@ -2340,7 +2387,10 @@ void t_dialog::send_invite(const t_url &to_uri, const string &to_display,
 	}
 	
 	t_request invite(INVITE);
-	invite.uri = to_uri;
+	
+	// RFC 3261 12.2.1.1
+	// Request URI and Route header
+	invite.set_route(to_uri, phone_user->get_service_route());
 
 	// Set Call-ID header
 	call_id = NEW_CALL_ID(user_config);
@@ -2425,6 +2475,9 @@ void t_dialog::send_invite(const t_url &to_uri, const string &to_display,
 		invite.hdr_require.add_features(hdr_require.features);
 	}
 	
+	// RFC 3841 Request-Disposition header
+	invite.hdr_request_disposition = hdr_request_disposition;
+	
 	// Calculate destinations
 	// See create_request() for more comments
 	invite.calc_destinations(*user_config);
@@ -2463,6 +2516,7 @@ void t_dialog::send_invite(const t_url &to_uri, const string &to_display,
 }
 
 bool t_dialog::resend_invite_auth(t_response *resp) {
+	t_user *user_config = phone_user->get_user_profile();
 	if (!req_out_invite) return false;
 
 	assert(state == DS_W4INVITE_RESP || state == DS_W4INVITE_RESP2);
@@ -2483,6 +2537,8 @@ bool t_dialog::resend_invite_auth(t_response *resp) {
 }
 
 bool t_dialog::resend_invite_unsupported(t_response *resp) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	if (!req_out_invite) return false;
 	if (resp->code != R_420_BAD_EXTENSION) return false;
 	if (!resp->hdr_unsupported.is_populated()) return false;
@@ -2535,6 +2591,7 @@ bool t_dialog::resend_invite_unsupported(t_response *resp) {
 
 bool t_dialog::redirect_invite(t_response *resp) {
 	t_contact_param contact;
+	t_user *user_config = phone_user->get_user_profile();
 
 	if (!req_out_invite) return false;
 
@@ -2603,6 +2660,8 @@ bool t_dialog::failover_invite(void) {
 }
 
 void t_dialog::send_bye(void) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	switch (state) {
 	case DS_W4INVITE_RESP2:
 	case DS_EARLY:
@@ -2653,6 +2712,8 @@ void t_dialog::send_bye(void) {
 }
 
 void t_dialog::send_options(void) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	// Request can only be sent in a confirmed dialog.
 	if (state != DS_CONFIRMED) return;
 
@@ -2672,6 +2733,7 @@ void t_dialog::send_options(void) {
 
 void t_dialog::send_cancel(bool early_dialog_exists) {
 	t_request *cancel;
+	t_user *user_config = phone_user->get_user_profile();
 
 	switch (state) {
 	case DS_W4INVITE_RESP:
@@ -2714,6 +2776,7 @@ void t_dialog::set_end_after_2xx_invite(bool on) {
 
 void t_dialog::send_re_invite(void) {
 	assert(session_re_invite);
+	t_user *user_config = phone_user->get_user_profile();
 
 	// Request can only be sent in a confirmed dialog.
 	if (state != DS_CONFIRMED) return;
@@ -2804,6 +2867,7 @@ bool t_dialog::resend_request_auth(t_response *resp) {
 
 bool t_dialog::redirect_request(t_response *resp) {
 	t_client_request **current_cr;
+	t_user *user_config = phone_user->get_user_profile();
 	
 	if (resp->hdr_cseq.method == INVITE) {
 		// re-INVITE
@@ -2911,6 +2975,7 @@ void t_dialog::hold(bool rtponly) {
 
 void t_dialog::retrieve(void) {
 	assert(!session_re_invite);
+	t_user *user_config = phone_user->get_user_profile();
 
 	// Stop glare retry timer
 	if (id_glare_retry) {
@@ -2950,6 +3015,8 @@ void t_dialog::kill_rtp(void){
 }
 
 void t_dialog::send_refer(const t_url &uri, const string &display) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	if (state != DS_CONFIRMED) return;
 
 	if (refer_state != REFST_NULL) return;
@@ -2990,6 +3057,8 @@ void t_dialog::send_refer(const t_url &uri, const string &display) {
 }
 
 void t_dialog::send_dtmf(char digit, bool inband, bool info) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	if (info) {
 		if (req_info) {
 			// An INFO request is still in progress, put the
@@ -3020,6 +3089,8 @@ void t_dialog::send_dtmf(char digit, bool inband, bool info) {
 }
 
 bool t_dialog::stun_bind_media(void) {
+	t_user *user_config = phone_user->get_user_profile();
+	
 	try {
 		unsigned long mapped_ip;
 		unsigned short mapped_port;
@@ -3064,6 +3135,7 @@ bool t_dialog::stun_bind_media(void) {
 }
 
 void t_dialog::recvd_response(t_response *r, t_tuid tuid, t_tid tid) {
+	t_user *user_config = phone_user->get_user_profile();
 	t_abstract_dialog::recvd_response(r, tuid, tid);
 
 	if (r->hdr_cseq.method == INVITE &&
@@ -3232,6 +3304,7 @@ void t_dialog::recvd_response(t_response *r, t_tuid tuid, t_tid tid) {
 
 void t_dialog::recvd_request(t_request *r, t_tuid tuid, t_tid tid) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 
 	// CANCEL will be handled by recvd_cancel()
 	
@@ -3420,6 +3493,7 @@ void t_dialog::recvd_stun_resp(StunMessage *r, t_tuid tuid, t_tid tid) {
 
 // RFC 3261 13.3.1.4
 void t_dialog::answer(void) {
+	t_user *user_config = phone_user->get_user_profile();
 	if (!req_in_invite) return;
 
 	t_request *invite_req = req_in_invite->get_request();
@@ -3490,6 +3564,7 @@ void t_dialog::answer(void) {
 
 void t_dialog::reject(int code, string reason) {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 
 	if (state != DS_W4ANSWER) {
 		throw X_WRONG_STATE;
@@ -3522,6 +3597,7 @@ void t_dialog::reject(int code, string reason) {
 void t_dialog::redirect(const list<t_display_url> &destinations, int code, string reason)
 {
 	t_response *resp;
+	t_user *user_config = phone_user->get_user_profile();
 
 	if (state != DS_W4ANSWER) {
 		throw X_WRONG_STATE;

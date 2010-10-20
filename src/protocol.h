@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,10 +22,16 @@
 #include "twinkle_config.h"
 #include "parser/hdr_supported.h"
 
+/** Carriage Return Line Feed */
 #define CRLF		"\r\n"
 
-// Name and version of the softphone
+/** TCP PING packet to be sent on a TCP connection. */
+#define TCP_PING_PACKET	CRLF CRLF
+
+/** Product name */
 #define PRODUCT_NAME	"Twinkle"
+
+/** Product version */
 #define PRODUCT_VERSION	VERSION
 
 /**
@@ -37,8 +43,10 @@
  */
 #define AUTO_IP4_ADDRESS	"255.255.255.255"
 
-// Anonymous calling
+/** Display name for anonymous calling */
 #define ANONYMOUS_DISPLAY	"Anonymous"
+
+/** SIP-URI for anonymous calling */
 #define ANONYMOUS_URI		"sip:anonymous@anonymous.invalid"
 
 /** Types of failures. */
@@ -47,23 +55,23 @@ enum t_failure {
 	FAIL_TRANSPORT	/**< Transport failure */
 };
 
-// Call transfer types
+/** Call transfer types */
 enum t_transfer_type {
-	TRANSFER_BASIC,		// Basic transfer (blind)
-	TRANSFER_CONSULT,	// Transfer with consultation (possibly attended)
-	TRANSFER_OTHER_LINE	// Transfer call to other line
+	TRANSFER_BASIC,		/**< Basic transfer (blind) */
+	TRANSFER_CONSULT,	/**< Transfer with consultation (possibly attended) */
+	TRANSFER_OTHER_LINE	/**< Transfer call to other line */
 };
 
-// State of a call transfer at the referrer.
+/** State of a call transfer at the referrer. */
 enum t_refer_state {
-	REFST_NULL,		// No REFER in progress
-	REFST_W4RESP,		// REFER sent, waiting for response
-	REFST_W4NOTIFY,		// Response received, waiting for 1st NOTIFY
-	REFST_PENDING,		// REFER received, but not granted yet
-	REFST_ACTIVE,		// Referee granted refer
+	REFST_NULL,		/**< No REFER in progress */
+	REFST_W4RESP,		/**< REFER sent, waiting for response */
+	REFST_W4NOTIFY,		/**< Response received, waiting for 1st NOTIFY */
+	REFST_PENDING,		/**< REFER received, but not granted yet */
+	REFST_ACTIVE,		/**< Referee granted refer */
 };
 
-// Types of registration requests
+/** Types of registration requests */
 enum t_register_type {
 	REG_REGISTER,
 	REG_QUERY,
@@ -71,8 +79,10 @@ enum t_register_type {
 	REG_DEREGISTER_ALL
 };
 
-// RFC 3261 Annex A
-// SIP timers
+/**
+ * RFC 3261 Annex A
+ * SIP timers
+ */
 enum t_sip_timer {
 	TIMER_T1,
 	TIMER_T2,
@@ -113,6 +123,7 @@ enum t_sip_timer {
 enum t_phone_timer {
 	PTMR_REGISTRATION,	/**< Registration (failure) timeout */
 	PTMR_NAT_KEEPALIVE,	/**< NAT binding refresh timeout for STUN */
+	PTMR_TCP_PING,		/**< TCP ping interval */
 };
 
 /** UA (line) timers */
@@ -144,26 +155,39 @@ enum t_stun_timer {
 };
 
 
-// No answer timer (ms)
+/** No answer timer (ms) */
 #define DUR_NO_ANSWER(u)	((u)->get_timer_noanswer() * 1000)
 
-// Registration timers (s)
-// Registration duration (seconds)
+/** @name Registration timers */
+//@{
+/** Registration duration (seconds) */
 #define DUR_REGISTRATION(u)	((u)->get_registration_time())
-#define RE_REGISTER_DELTA	5   // Re-register 5 seconds before expiry
-#define DUR_REG_FAILURE         30  // Re-registration interval after reg. failure
 
-// NAT keepalive timer (s) default value
+/**< Re-register 5 seconds before expiry **/
+#define RE_REGISTER_DELTA	5
+
+/** Re-registration interval after reg. failure */
+#define DUR_REG_FAILURE         30
+//@}
+
+/** NAT keepalive timer (s) default value */
 #define DUR_NAT_KEEPALIVE	30
 
-// re-INVITE guard timer (ms). This timer guards against the situation
-// where a UAC has sent a re-INVITE, received a 1XX but never receives
-// a final response. No timer for this is defined in RFC 3261
+/** Default TCP ping interval (s) */
+#define DUR_TCP_PING		30
+
+/**
+ * re-INVITE guard timer (ms). This timer guards against the situation
+ * where a UAC has sent a re-INVITE, received a 1XX but never receives
+ * a final response. No timer for this is defined in RFC 3261
+ */
 #define DUR_RE_INVITE_GUARD	10000
 
-// Guard for situation where CANCEL has been 
-// responded to, but 487 on INVITE is never eceived.
-// This situation is not defined by RFC 3261
+/**
+ * Guard for situation where CANCEL has been 
+ * responded to, but 487 on INVITE is never eceived.
+ * This situation is not defined by RFC 3261
+ */
 #define DUR_CANCEL_GUARD	(64 * DURATION_T1)
 
 // MWI timers (s)
@@ -254,8 +278,21 @@ enum t_stun_timer {
 /** Create a new PIDF tuple id. */
 #define NEW_PIDF_TUPLE_ID	random_token(PIDF_TUPLE_ID_LEN)
 
-// Character set encoding for outgoing text messages
+/** Character set encoding for outgoing text messages */
 #define MSG_TEXT_CHARSET	"utf-8"
+
+/** @name Definitions for akav1-md5 authentication. */
+#define AKA_RANDLEN	16
+#define AKA_AUTNLEN	16
+#define AKA_CKLEN	16
+#define AKA_IKLEN	16
+#define AKA_AKLEN	6
+#define AKA_OPLEN	16
+#define AKA_RESLEN	8
+#define AKA_SQNLEN	6
+#define AKA_RESHEXLEN	16
+#define AKA_AMFLEN	2
+#define AKA_KLEN	16
 
 // Set Allow header with methods that can be handled by the phone
 #define SET_HDR_ALLOW(h, u)	{ (h).add_method(INVITE); \
@@ -283,24 +320,53 @@ enum t_stun_timer {
 // Set Accept header with accepted body types
 #define SET_HDR_ACCEPT(h)	{ (h).add_media(t_media("application",\
 				  "sdp")); }
+				  
+/** 
+ * Check if the content type of an instant message is supported 
+ * @param h [in] A SIP message.
+ */
+#define MESSAGE_CONTENT_TYPE_SUPPORTED(h)\
+				((h).hdr_content_type.media.type == "application" ||\
+				 (h).hdr_content_type.media.type == "audio" ||\
+				 (h).hdr_content_type.media.type == "image" ||\
+				 (h).hdr_content_type.media.type == "text" ||\
+				 (h).hdr_content_type.media.type == "video")
 				 
-/** Set Accept header with accepted body types for messaging. */
-#define SET_MESSAGE_HDR_ACCEPT(h)	{ (h).add_media(t_media("text", "plain"));\
-					  (h).add_media(t_media("text", "html")); }
+/** 
+ * Set Accept header with accepted body types for instant messaging. 
+ * @param h [inout] A SIP message.
+ */
+#define SET_MESSAGE_HDR_ACCEPT(h)	{ (h).add_media(t_media("application/*"));\
+					  (h).add_media(t_media("audio/*"));\
+					  (h).add_media(t_media("image/*"));\
+					  (h).add_media(t_media("text/*"));\
+					  (h).add_media(t_media("video/*")); }
 
-/** Set Accept header with accepted body types for presence. */
+/** 
+ * Set Accept header with accepted body types for presence.
+ * @param h [inout] A SIP message.
+ */
 #define SET_PRESENCE_HDR_ACCEPT(h)	{ (h).add_media(t_media("application",\
 				  "pidf+xml")); }
 				  
-/** Set Accept header with accepted body types for MWI. */
+/** 
+ * Set Accept header with accepted body types for MWI. 
+ * @param h [inout] A SIP message.
+ */
 #define SET_MWI_HDR_ACCEPT(h)	{ (h).add_media(t_media("application",\
 				  "simple-message-summary")); }
 
-/** Set Accept-Encoding header with accepted encodings. */
+/** 
+ * Set Accept-Encoding header with accepted encodings. 
+ * @param h [inout] A SIP message.
+ */
 #define SET_HDR_ACCEPT_ENCODING(h)\
 				{ (h).add_coding(t_coding("identity")); }
 				
-/** Check if content encoding is supported */
+/** 
+ * Check if content encoding is supported 
+ * @param h [inout] A SIP message.
+ */
 #define CONTENT_ENCODING_SUPPORTED(ce)\
 				(cmp_nocase(ce, "identity") == 0)
 

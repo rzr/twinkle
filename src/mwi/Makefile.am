@@ -1,6 +1,8 @@
 AM_CPPFLAGS = \
+	-Wall \
 	-I$(top_srcdir)/src \
-	$(CCRTP_CFLAGS)
+	$(CCRTP_CFLAGS) \
+	$(XML2_CFLAGS)
 
 #noinst_PROGRAMS = mwitest
 

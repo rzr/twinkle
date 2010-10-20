@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,7 +32,10 @@ public:
 	MessageFormView(QWidget *parent, im::t_msg_session *s);
 	virtual ~MessageFormView();
 	virtual void updatePartyInfo(void);
+	
+	/** Update the message form with the latest message session state. */
 	virtual void update(void);
+	
 	virtual void subject_destroyed(void);
 	virtual void show(void);
 };
