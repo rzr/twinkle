@@ -1,0 +1,64 @@
+Summary:	A SIP Soft Phone
+Name:		twinkle
+Version:	@VERSION@
+Release:	%{suserel}1
+License:	GPL
+Group:		Productivity/Telephony/SIP/Clients
+Source:		%{name}-%{version}.tar.gz
+Prefix:		%{_prefix}
+BuildArch:	i586
+BuildRoot:	%{_tmppath}/making_of_%{name}_%{version}
+Packager:
+URL:		http://www.twinklephone.com
+Requires:	alsa
+Requires:	commoncpp2 >= 1.6.0 
+Requires:	ccrtp >= 1.6.0
+Requires:	libzrtpcpp >= 0.9.0
+Requires:	kdelibs3 >= 3.2.0
+Requires:	libsndfile
+Requires:	speex
+Requires:	boost
+Requires:	libxml2
+BuildRequires:	alsa-devel
+BuildRequires:	qt3-devel
+BuildRequires:	update-desktop-files
+BuildRequires:  commoncpp2-devel
+BuildRequires:  ccrtp-devel
+BuildRequires:  libzrtpcpp-devel
+BuildRequires:  kdelibs3-devel
+BuildRequires:	libsndfile-devel
+BuildRequires:	speex-devel
+BuildRequires:	boost-devel
+BuildRequires:	libxml2-devel
+
+%description
+Twinkle is a SIP based softphone for making telephone calls
+and instant messaging over IP networks.
+
+%prep
+
+%setup -q
+
+%build
+autoreconf -fi
+%configure --without-ilbc
+make
+
+%install
+rm -rf %{buildroot}
+%makeinstall
+install -d 755 %{buildroot}%{_datadir}/pixmaps
+install -m 644 src/gui/images/twinkle48.png %{buildroot}%{_datadir}/pixmaps/twinkle.png
+%suse_update_desktop_file -c twinkle Twinkle "A SIP softphone" twinkle twinkle Network Telephony
+
+%clean
+rm -rf %{buildroot}
+
+%files
+%defattr(-, root, root)
+%doc AUTHORS COPYING README ChangeLog
+%{_bindir}/%{name}
+%{_datadir}/%{name}
+%{_datadir}/pixmaps/twinkle.png
+%{_datadir}/applications/twinkle.desktop
+
