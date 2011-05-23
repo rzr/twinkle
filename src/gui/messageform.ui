@@ -1,3 +1,8 @@
+//Added by qt3to4:
+#include <QCloseEvent>
+#include <QLabel>
+#include <Q3PopupMenu>
+#include <QKeyEvent>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>MessageForm</class>
 <widget class="QMainWindow">
@@ -67,7 +72,7 @@
                                 <cstring>addressToolButton</cstring>
                             </property>
                             <property name="focusPolicy">
-                                <enum>TabFocus</enum>
+                                <enum>Qt::TabFocus</enum>
                             </property>
                             <property name="text">
                                 <string></string>
@@ -282,7 +287,7 @@
     <variable>im::t_msg_session *_msgSession;</variable>
     <variable access="private">bool _remotePartyComplete;</variable>
     <variable access="private">GetAddressForm *_getAddressForm;</variable>
-    <variable access="private">QPopupMenu *attachmentPopupMenu;</variable>
+    <variable access="private">Q3PopupMenu *attachmentPopupMenu;</variable>
     <variable access="private">QString clickedAttachment;</variable>
     <variable access="private">void *_serviceMap;</variable>
     <variable access="private">QLabel *_isComposingLabel;</variable>

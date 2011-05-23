@@ -35,7 +35,7 @@
                 <string>Select user profile(s) to run:</string>
             </property>
             <property name="alignment">
-                <set>WordBreak|AlignVCenter</set>
+                <set>Qt::TextWordWrap|Qt::AlignVCenter</set>
             </property>
         </widget>
         <widget class="QListView" row="1" column="0">
@@ -73,7 +73,7 @@
                         <cstring>spacer17</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Vertical</enum>
+                        <enum>Qt::Vertical</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -325,9 +325,9 @@
     </connection>
     <connection>
         <sender>profileListView</sender>
-        <signal>doubleClicked(QListViewItem*)</signal>
+        <signal>doubleClicked(Q3ListViewItem*)</signal>
         <receiver>SelectProfileForm</receiver>
-        <slot>toggleItem(QListViewItem*)</slot>
+        <slot>toggleItem(Q3ListViewItem*)</slot>
     </connection>
     <connection>
         <sender>diamondcardPushButton</sender>
@@ -379,14 +379,14 @@
     <variable access="public">std::list&lt;std::string&gt; selectedProfiles;</variable>
     <variable access="private">bool defaultSet;</variable>
     <variable access="private">t_user *user_config;</variable>
-    <variable access="private">QMainWindow *mainWindow;</variable>
+    <variable access="private">Q3MainWindow *mainWindow;</variable>
 </variables>
 <signals>
     <signal>selection(const list&lt;string&gt; &amp;)</signal>
     <signal>profileRenamed()</signal>
 </signals>
 <slots>
-    <slot>showForm( QMainWindow * _mainWindow )</slot>
+    <slot>showForm( Q3MainWindow * _mainWindow )</slot>
     <slot>runProfile()</slot>
     <slot>editProfile()</slot>
     <slot>newProfile()</slot>
@@ -401,7 +401,7 @@
     <slot>diamondcardProfile( bool exec_mode )</slot>
     <slot>sysSettings()</slot>
     <slot>fillProfileListView( const QStringList &amp; profiles )</slot>
-    <slot>toggleItem( QListViewItem * item )</slot>
+    <slot>toggleItem( Q3ListViewItem * item )</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>

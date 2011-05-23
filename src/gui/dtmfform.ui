@@ -1,3 +1,5 @@
+//Added by qt3to4:
+#include <QKeyEvent>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>DtmfForm</class>
 <widget class="QDialog">
@@ -32,7 +34,7 @@
                 <cstring>keypadGroupBox</cstring>
             </property>
             <property name="title">
-                <string>Keypad</string>
+                <string>Qt::KeypadModifier</string>
             </property>
             <grid>
                 <property name="name">
@@ -82,9 +84,9 @@
                     </property>
                     <property name="paletteBackgroundColor">
                         <color>
-                            <red>194</red>
-                            <green>202</green>
-                            <blue>210</blue>
+                            <Qt::red>194</Qt::red>
+                            <Qt::green>202</Qt::green>
+                            <Qt::blue>210</Qt::blue>
                         </color>
                     </property>
                     <property name="text">
@@ -145,9 +147,9 @@
                     </property>
                     <property name="paletteBackgroundColor">
                         <color>
-                            <red>194</red>
-                            <green>202</green>
-                            <blue>210</blue>
+                            <Qt::red>194</Qt::red>
+                            <Qt::green>202</Qt::green>
+                            <Qt::blue>210</Qt::blue>
                         </color>
                     </property>
                     <property name="text">
@@ -208,9 +210,9 @@
                     </property>
                     <property name="paletteBackgroundColor">
                         <color>
-                            <red>194</red>
-                            <green>202</green>
-                            <blue>210</blue>
+                            <Qt::red>194</Qt::red>
+                            <Qt::green>202</Qt::green>
+                            <Qt::blue>210</Qt::blue>
                         </color>
                     </property>
                     <property name="text">
@@ -271,9 +273,9 @@
                     </property>
                     <property name="paletteBackgroundColor">
                         <color>
-                            <red>194</red>
-                            <green>202</green>
-                            <blue>210</blue>
+                            <Qt::red>194</Qt::red>
+                            <Qt::green>202</Qt::green>
+                            <Qt::blue>210</Qt::blue>
                         </color>
                     </property>
                     <property name="text">
@@ -323,7 +325,7 @@
                         <cstring>spacer20</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>

@@ -1,3 +1,5 @@
+//Added by qt3to4:
+#include <Q3ValueList>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>UserProfileForm</class>
 <widget class="QDialog">
@@ -195,7 +197,7 @@
                         <cstring>spacer8</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -272,9 +274,9 @@
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -501,7 +503,7 @@ This field is mandatory.</string>
                             <cstring>spacer9</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -532,9 +534,9 @@ This field is mandatory.</string>
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -634,7 +636,7 @@ This field is mandatory.</string>
                                             <cstring>spacer1</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -694,7 +696,7 @@ This field is mandatory.</string>
                                             <cstring>spacer48</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -795,7 +797,7 @@ This field is mandatory.</string>
                             <cstring>spacer10</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -826,9 +828,9 @@ This field is mandatory.</string>
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -930,7 +932,7 @@ This field is mandatory.</string>
                                                 <cstring>spacer24</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -983,7 +985,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                         <cstring>spacer38</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -1081,7 +1083,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                         <cstring>spacer17_2</cstring>
                                                     </property>
                                                     <property name="orientation">
-                                                        <enum>Vertical</enum>
+                                                        <enum>Qt::Vertical</enum>
                                                     </property>
                                                     <property name="sizeType">
                                                         <enum>Expanding</enum>
@@ -1126,7 +1128,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                         <cstring>spacer18</cstring>
                                                     </property>
                                                     <property name="orientation">
-                                                        <enum>Vertical</enum>
+                                                        <enum>Qt::Vertical</enum>
                                                     </property>
                                                     <property name="sizeType">
                                                         <enum>Expanding</enum>
@@ -1179,7 +1181,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                         <cstring>spacer19_2</cstring>
                                                     </property>
                                                     <property name="orientation">
-                                                        <enum>Vertical</enum>
+                                                        <enum>Qt::Vertical</enum>
                                                     </property>
                                                     <property name="sizeType">
                                                         <enum>Expanding</enum>
@@ -1224,7 +1226,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                         <cstring>spacer20_2</cstring>
                                                     </property>
                                                     <property name="orientation">
-                                                        <enum>Vertical</enum>
+                                                        <enum>Qt::Vertical</enum>
                                                     </property>
                                                     <property name="sizeType">
                                                         <enum>Expanding</enum>
@@ -1366,7 +1368,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                 <cstring>spacer24</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -1385,7 +1387,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                         <cstring>spacer25</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -1500,7 +1502,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                 <cstring>spacer26</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -1519,7 +1521,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                         <cstring>spacer29_2</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -1737,7 +1739,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                 <cstring>spacer23_2</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -1756,7 +1758,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                         <cstring>spacer30_2</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -1907,7 +1909,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                 <cstring>spacer31</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -1961,7 +1963,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                         <cstring>spacer40_2</cstring>
                                                     </property>
                                                     <property name="orientation">
-                                                        <enum>Horizontal</enum>
+                                                        <enum>Qt::Horizontal</enum>
                                                     </property>
                                                     <property name="sizeType">
                                                         <enum>Expanding</enum>
@@ -1982,7 +1984,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                         <cstring>spacer32</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -2023,7 +2025,7 @@ If you disable this option, then the first codec from the active codecs that is 
                                                 <cstring>spacer17</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -2303,7 +2305,7 @@ Send DTMF out-of-band via a SIP INFO request.
                                                         <cstring>spacer22_2</cstring>
                                                     </property>
                                                     <property name="orientation">
-                                                        <enum>Horizontal</enum>
+                                                        <enum>Qt::Horizontal</enum>
                                                     </property>
                                                     <property name="sizeType">
                                                         <enum>Expanding</enum>
@@ -2324,7 +2326,7 @@ Send DTMF out-of-band via a SIP INFO request.
                                         <cstring>spacer23_3</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -2358,9 +2360,9 @@ Send DTMF out-of-band via a SIP INFO request.
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -2398,7 +2400,7 @@ Send DTMF out-of-band via a SIP INFO request.
                                         <cstring>spacer24_2</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -2469,7 +2471,7 @@ Send DTMF out-of-band via a SIP INFO request.
                                                 <cstring>spacer4</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -2679,7 +2681,7 @@ This format is what most SIP phones use.
                                                 <cstring>spacer5</cstring>
                                             </property>
                                             <property name="orientation">
-                                                <enum>Horizontal</enum>
+                                                <enum>Qt::Horizontal</enum>
                                             </property>
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
@@ -2900,7 +2902,7 @@ This format is what most SIP phones use.
                                         <cstring>spacer25</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -2957,7 +2959,7 @@ This format is what most SIP phones use.
                                         <cstring>spacer40</cstring>
                                     </property>
                                     <property name="orientation">
-                                        <enum>Vertical</enum>
+                                        <enum>Qt::Vertical</enum>
                                     </property>
                                     <property name="sizeType">
                                         <enum>Expanding</enum>
@@ -2991,9 +2993,9 @@ This format is what most SIP phones use.
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -3050,7 +3052,7 @@ This format is what most SIP phones use.
                                     <cstring>spacer46</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -3109,7 +3111,7 @@ This format is what most SIP phones use.
                                     <cstring>spacer47</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -3276,7 +3278,7 @@ When you choose this option you have to create static address mappings in your N
                             <cstring>spacer19</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -3307,9 +3309,9 @@ When you choose this option you have to create static address mappings in your N
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -3513,7 +3515,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                                                     <cstring>spacer19_2_2</cstring>
                                                 </property>
                                                 <property name="orientation">
-                                                    <enum>Vertical</enum>
+                                                    <enum>Qt::Vertical</enum>
                                                 </property>
                                                 <property name="sizeType">
                                                     <enum>Expanding</enum>
@@ -3558,7 +3560,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                                                     <cstring>spacer20_2_2</cstring>
                                                 </property>
                                                 <property name="orientation">
-                                                    <enum>Vertical</enum>
+                                                    <enum>Qt::Vertical</enum>
                                                 </property>
                                                 <property name="sizeType">
                                                     <enum>Expanding</enum>
@@ -3629,7 +3631,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                                             <cstring>spacer38_2</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -3682,7 +3684,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                             <cstring>spacer20</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -3713,9 +3715,9 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -3857,7 +3859,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                                     <cstring>spacer23</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -3876,7 +3878,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                             <cstring>spacer22</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -3907,9 +3909,9 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -3940,7 +3942,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                                     <cstring>openRingbackToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -3957,7 +3959,7 @@ Match expression = 0[0-9]* , Replace =  9$&amp;&lt;br&gt;
                                     <cstring>openRingtoneToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4024,7 +4026,7 @@ This ring tone overrides the ring tone settings in the system settings.
                             <cstring>spacer30</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -4055,9 +4057,9 @@ This ring tone overrides the ring tone settings in the system settings.
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -4104,7 +4106,7 @@ The values of all SIP headers of the outgoing SIP BYE request are passed in envi
                                     <cstring>openInCallFailedToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4121,7 +4123,7 @@ The values of all SIP headers of the outgoing SIP BYE request are passed in envi
                                     <cstring>openIncomingCallScriptToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4138,7 +4140,7 @@ The values of all SIP headers of the outgoing SIP BYE request are passed in envi
                                     <cstring>openOutCallAnsweredToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4171,7 +4173,7 @@ The values of all SIP headers of the outgoing SIP failure response are passed in
                                     <cstring>openInCallAnsweredToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4204,7 +4206,7 @@ The values of all SIP headers of the incoming SIP BYE request are passed in envi
                                     <cstring>openOutCallToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4323,7 +4325,7 @@ The values of all SIP headers of the outgoing 200 OK are passed in environment v
                                     <cstring>openOutCallFailedToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4405,7 +4407,7 @@ The values of all SIP headers of the outgoing INVITE are passed in environment v
                                     <cstring>openLocalReleaseToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4444,7 +4446,7 @@ The values of all SIP headers of the outgoing INVITE are passed in environment v
                                     <cstring>openRemoteReleaseToolButton</cstring>
                                 </property>
                                 <property name="focusPolicy">
-                                    <enum>TabFocus</enum>
+                                    <enum>Qt::TabFocus</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -4485,7 +4487,7 @@ The values of all SIP headers of the outgoing INVITE are passed in environment v
                             <cstring>spacer29</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -4516,9 +4518,9 @@ The values of all SIP headers of the outgoing INVITE are passed in environment v
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -4610,7 +4612,7 @@ The values of all SIP headers of the outgoing INVITE are passed in environment v
                             <cstring>spacer33</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -4641,9 +4643,9 @@ The values of all SIP headers of the outgoing INVITE are passed in environment v
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -4730,7 +4732,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                                             <cstring>spacer39</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -4781,7 +4783,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                                             <cstring>spacer35</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -4864,7 +4866,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                                                     <cstring>spacer36</cstring>
                                                 </property>
                                                 <property name="orientation">
-                                                    <enum>Horizontal</enum>
+                                                    <enum>Qt::Horizontal</enum>
                                                 </property>
                                                 <property name="sizeType">
                                                     <enum>Expanding</enum>
@@ -4920,7 +4922,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                             <cstring>spacer38_3</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -4951,9 +4953,9 @@ Sollicited message waiting indication as specified by RFC 3842.
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -5006,7 +5008,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                                     <cstring>spacer42</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -5039,7 +5041,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                             <cstring>spacer40_3</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -5070,9 +5072,9 @@ Sollicited message waiting indication as specified by RFC 3842.
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -5153,7 +5155,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                                             <cstring>spacer43</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -5218,7 +5220,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                                             <cstring>spacer44</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
@@ -5239,7 +5241,7 @@ Sollicited message waiting indication as specified by RFC 3842.
                             <cstring>spacer45</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -5403,13 +5405,13 @@ Sollicited message waiting indication as specified by RFC 3842.
     </connection>
     <connection>
         <sender>availCodecListBox</sender>
-        <signal>doubleClicked(QListBoxItem*)</signal>
+        <signal>doubleClicked(Q3ListBoxItem*)</signal>
         <receiver>UserProfileForm</receiver>
         <slot>addCodec()</slot>
     </connection>
     <connection>
         <sender>activeCodecListBox</sender>
-        <signal>doubleClicked(QListBoxItem*)</signal>
+        <signal>doubleClicked(Q3ListBoxItem*)</signal>
         <receiver>UserProfileForm</receiver>
         <slot>removeCodec()</slot>
     </connection>
@@ -5749,7 +5751,7 @@ Sollicited message waiting indication as specified by RFC 3842.
     <function returnType="int">ext_support2indexComboItem( t_ext_support ext )</function>
     <function returnType="t_ext_support">indexComboItem2ext_support( int index )</function>
     <function returnType="int">exec( list&lt;t_user *&gt; profiles, QString show_profile )</function>
-    <function returnType="bool">check_dynamic_payload( QSpinBox * spb, QValueList&lt;int&gt; &amp; checked_list )</function>
+    <function returnType="bool">check_dynamic_payload( QSpinBox * spb, Q3ValueList&lt;int&gt; &amp; checked_list )</function>
     <function returnType="list&lt;t_number_conversion&gt;">get_number_conversions()</function>
     <function returnType="bool">validateValues()</function>
 </functions>

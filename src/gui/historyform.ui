@@ -1,3 +1,6 @@
+//Added by qt3to4:
+#include <QCloseEvent>
+#include <Q3PopupMenu>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>HistoryForm</class>
 <widget class="QDialog">
@@ -112,7 +115,7 @@
                                 <cstring>cdrTextEdit</cstring>
                             </property>
                             <property name="textFormat">
-                                <enum>RichText</enum>
+                                <enum>Qt::RichText</enum>
                             </property>
                             <property name="wordWrap">
                                 <enum>NoWrap</enum>
@@ -242,7 +245,7 @@
                         <cstring>spacer28</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -335,7 +338,7 @@
                         <cstring>spacer11</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -360,9 +363,9 @@
     </connection>
     <connection>
         <sender>historyListView</sender>
-        <signal>currentChanged(QListViewItem*)</signal>
+        <signal>currentChanged(Q3ListViewItem*)</signal>
         <receiver>HistoryForm</receiver>
-        <slot>showCallDetails(QListViewItem*)</slot>
+        <slot>showCallDetails(Q3ListViewItem*)</slot>
     </connection>
     <connection>
         <sender>inCheckBox</sender>
@@ -396,15 +399,15 @@
     </connection>
     <connection>
         <sender>historyListView</sender>
-        <signal>rightButtonPressed(QListViewItem*,const QPoint&amp;,int)</signal>
+        <signal>rightButtonPressed(Q3ListViewItem*,const QPoint&amp;,int)</signal>
         <receiver>HistoryForm</receiver>
-        <slot>popupMenu(QListViewItem*,const QPoint&amp;)</slot>
+        <slot>popupMenu(Q3ListViewItem*,const QPoint&amp;)</slot>
     </connection>
     <connection>
         <sender>historyListView</sender>
-        <signal>doubleClicked(QListViewItem*,const QPoint&amp;,int)</signal>
+        <signal>doubleClicked(Q3ListViewItem*,const QPoint&amp;,int)</signal>
         <receiver>HistoryForm</receiver>
-        <slot>call(QListViewItem*)</slot>
+        <slot>call(Q3ListViewItem*)</slot>
     </connection>
     <connection>
         <sender>clearPushButton</sender>
@@ -448,7 +451,7 @@
 </forwards>
 <variables>
     <variable access="private">time_t timeLastViewed;</variable>
-    <variable access="private">QPopupMenu *histPopupMenu;</variable>
+    <variable access="private">Q3PopupMenu *histPopupMenu;</variable>
     <variable access="private">int itemCall;</variable>
 </variables>
 <signals>
@@ -459,9 +462,9 @@
     <slot>update()</slot>
     <slot>show()</slot>
     <slot>closeEvent( QCloseEvent * e )</slot>
-    <slot>showCallDetails( QListViewItem * item )</slot>
-    <slot>popupMenu( QListViewItem * item, const QPoint &amp; pos )</slot>
-    <slot>call( QListViewItem * item )</slot>
+    <slot>showCallDetails( Q3ListViewItem * item )</slot>
+    <slot>popupMenu( Q3ListViewItem * item, const QPoint &amp; pos )</slot>
+    <slot>call( Q3ListViewItem * item )</slot>
     <slot>call( void )</slot>
     <slot>deleteEntry( void )</slot>
     <slot>clearHistory()</slot>

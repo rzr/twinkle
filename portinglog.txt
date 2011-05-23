@@ -1,0 +1,1419 @@
+Log for qt3to4 on Mon May 23 11:31:07 2011. Number of log entries: 71
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/abstract_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/address_book.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/auth.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_history.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_script.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/client_request.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/cmd_socket.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/diamondcard.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/epa.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/events.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/id_object.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/line.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/listener.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/log.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/main.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone_user.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/prohibit_thread.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/redirect.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sender.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/service.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/session.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sub_refer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sys_settings.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/timekeeper.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_layer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_mgr.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/user.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/userintf.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/util.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/abstract_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/address_book.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/auth.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_history.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_script.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/client_request.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/cmd_socket.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/diamondcard.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/epa.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/events.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/exceptions.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/id_object.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/line.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/listener.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/log.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone_user.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/prohibit_thread.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/protocol.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/redirect.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sender.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sequence_number.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/service.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/session.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sub_refer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sys_settings.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/timekeeper.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_layer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_mgr.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/translator.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/user.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/userintf.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/util.h
+
+Log for qt3to4 on Mon May 23 11:31:20 2011. Number of log entries: 71
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/abstract_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/address_book.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/auth.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_history.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_script.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/client_request.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/cmd_socket.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/diamondcard.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/epa.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/events.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/id_object.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/line.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/listener.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/log.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/main.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone_user.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/prohibit_thread.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/redirect.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sender.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/service.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/session.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sub_refer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sys_settings.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/timekeeper.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_layer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_mgr.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/user.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/userintf.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/util.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/abstract_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/address_book.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/auth.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_history.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_script.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/client_request.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/cmd_socket.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/diamondcard.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/epa.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/events.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/exceptions.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/id_object.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/line.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/listener.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/log.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone_user.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/prohibit_thread.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/protocol.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/redirect.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sender.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sequence_number.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/service.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/session.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sub_refer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sys_settings.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/timekeeper.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_layer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_mgr.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/translator.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/user.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/userintf.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/util.h
+
+Log for qt3to4 on Mon May 23 11:32:05 2011. Number of log entries: 1240
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/abstract_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/address_book.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/auth.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_history.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_script.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/client_request.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/cmd_socket.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/diamondcard.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/epa.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/events.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/id_object.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/line.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/listener.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/log.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/main.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone_user.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/prohibit_thread.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/redirect.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sender.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/service.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/session.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sub_refer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sys_settings.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/timekeeper.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_layer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_mgr.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/user.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/userintf.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/util.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/abstract_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/address_book.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/auth.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_history.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/call_script.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/client_request.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/cmd_socket.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/diamondcard.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/epa.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/events.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/exceptions.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/id_object.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/line.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/listener.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/log.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/phone_user.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/prohibit_thread.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/protocol.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/redirect.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sender.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sequence_number.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/service.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/session.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sub_refer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/subscription_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sys_settings.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/timekeeper.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_layer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/transaction_mgr.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/translator.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/user.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/userintf.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/util.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/twinkle_config.h.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/README_G711
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_codecs.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_codecs.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_decoder.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_decoder.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_device.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_device.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_encoder.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_encoder.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_rx.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_rx.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_session.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_session.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_tx.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/audio_tx.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/dtmf_player.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/dtmf_player.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/freq_gen.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/freq_gen.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g711.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g711.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g721.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g723_16.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g723_24.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g723_40.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g72x.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/g72x.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/media_buffer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/media_buffer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/rtp_telephone_event.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/rtp_telephone_event.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/tone_gen.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/tone_gen.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/twinkle_rtp_session.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/twinkle_rtp_session.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/twinkle_zrtp_ui.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audio/twinkle_zrtp_ui.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audits/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audits/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audits/memman.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/audits/memman.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/Makefile at line 291 column 1682: yellow -> Qt::yellow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/Makefile at line 948 column 26: yellow -> Qt::yellow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/Makefile at line 1037 column 1404: yellow -> Qt::yellow
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/address_finder.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/address_finder.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresscardform.ui at line 132 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresscardform.ui at line 157 column 40: Horizontal -> Qt::Horizontal
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresscardform.ui.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresslistviewitem.cpp at line 26 column 50: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresslistviewitem.cpp at line 27 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresslistviewitem.h at line 23 column 22: qlistview.h -> q3listview.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresslistviewitem.h at line 25 column 48: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/addresslistviewitem.h at line 30 column 30: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 46 column 38: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 74 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 74 column 39: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 75 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 75 column 44: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 76 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 76 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 101 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 101 column 39: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 102 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 102 column 44: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 103 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 103 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 200 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 225 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 294 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 294 column 39: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 295 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 295 column 44: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 296 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui at line 296 column 43: blue -> Qt::blue
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/authenticationform.ui.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui at line 35 column 38: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui at line 52 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui at line 129 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui at line 154 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui at line 240 column 44: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui at line 243 column 64: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddyform.ui.h at line 33 column 64: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 27 column 20: qheader.h -> q3header.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 31 column 24: qstylesheet.h -> q3stylesheet.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 36 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 39 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 42 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 45 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 48 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 51 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 56 column 46: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 57 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 60 column 42: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 61 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 76 column 19: QStyleSheet -> Q3StyleSheet
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 79 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 121 column 50: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 140 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 160 column 19: QStyleSheet -> Q3StyleSheet
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 169 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 177 column 38: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 206 column 40: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 225 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 236 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 250 column 44: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 256 column 10: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp at line 258 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.cpp: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 22 column 22: qlistview.h -> q3listview.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 29 column 44: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 38 column 30: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 39 column 26: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 53 column 32: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 70 column 25: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 84 column 10: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/buddylistview.h at line 87 column 27: QListView -> Q3ListView
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/command_args.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/core_strings.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/deregisterform.ui at line 51 column 40: Horizontal -> Qt::Horizontal
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/deregisterform.ui.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 44 column 30: RichText -> Qt::RichText
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 52 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 139 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 164 column 47: PaletteBackground -> Qt::PaletteBackground
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 168 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 168 column 39: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 169 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 169 column 43: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 170 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 170 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 180 column 41: AlignVCenter -> Qt::AlignVCenter
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 190 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui at line 215 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui: Added the following include directives:
+	#include <QMouseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/diamondcardprofileform.ui.h: Added the following include directives:
+	#include <QEvent> 	#include <QMouseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 37 column 30: Keypad -> Qt::KeypadModifier
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 87 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 87 column 41: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 88 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 88 column 45: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 89 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 89 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 150 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 150 column 41: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 151 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 151 column 45: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 152 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 152 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 213 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 213 column 41: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 214 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 214 column 45: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 215 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 215 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 276 column 32: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 276 column 41: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 277 column 34: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 277 column 45: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 278 column 33: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 278 column 43: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui at line 328 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui: Added the following include directives:
+	#include <QKeyEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/dtmfform.ui.h: Added the following include directives:
+	#include <QKeyEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 32 column 43: WMouseNoMask -> Qt::WMouseNoMask
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 32 column 61: WRepaintNoErase -> Qt::WNoAutoErase
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 32 column 78: WType_TopLevel -> Qt::WType_TopLevel
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 32 column 97: WStyle_Customize -> Qt::WStyle_Customize
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 32 column 115: WStyle_NoBorder -> Qt::WStyle_NoBorder
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 32 column 135: WStyle_StaysOnTop -> Qt::WStyle_StaysOnTop
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 35 column 27: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 43 column 10: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 43 column 43: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 106 column 17: LeftButton -> Qt::LeftButton
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 110 column 18: RightButton -> Qt::RightButton
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp at line 138 column 10: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.cpp: Added the following include directives:
+	#include <q3mimefactory.h> 	#include <QPixmap> 	#include <QLabel> 	#include <QMouseEvent> 	#include <Q3PopupMenu> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.h at line 30 column 20: qpopupmenu.h -> q3popupmenu.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.h at line 69 column 14: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.h at line 75 column 14: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/freedesksystray.h: Added the following include directives:
+	#include <QMouseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui at line 123 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui at line 164 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui at line 296 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui at line 326 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui at line 382 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui at line 400 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui.h at line 110 column 21: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui.h at line 116 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui.h at line 131 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getaddressform.ui.h at line 147 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getprofilenameform.ui at line 49 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getprofilenameform.ui at line 109 column 41: AlignVCenter -> Qt::AlignVCenter
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/getprofilenameform.ui.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 65 column 18: qhbox.h -> q3hbox.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 68 column 21: qlistbox.h -> q3listbox.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 71 column 21: qprocess.h -> q3process.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 77 column 22: qtextedit.h -> q3textedit.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 78 column 21: qtoolbar.h -> q3toolbar.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 80 column 18: qvbox.h -> q3vbox.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 100 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 101 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 102 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 102 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 107 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 108 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 109 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 109 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 209 column 52: QImage::ScaleMin -> Qt::KeepAspectRatio
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 886 column 28: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1510 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1515 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1595 column 8: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1595 column 40: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1597 column 31: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1600 column 27: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1608 column 7: QVBox -> Q3VBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1608 column 31: QVBox -> Q3VBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1609 column 7: QHBox -> Q3HBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1609 column 23: QHBox -> Q3HBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1614 column 7: QVBox -> Q3VBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1614 column 23: QVBox -> Q3VBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1650 column 7: QHBox -> Q3HBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1650 column 30: QHBox -> Q3HBox
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1651 column 10: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1651 column 45: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1656 column 10: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 1656 column 45: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 2052 column 18: QMessageBox -> Qt
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 2095 column 18: QMessageBox -> Qt
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 2294 column 49: QProgressDialog -> Q3ProgressDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp at line 3035 column 9: QProcess -> Q3Process
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.cpp: Added the following include directives:
+	#include <q3mimefactory.h> 	#include <Q3Frame> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.h at line 34 column 28: qprogressdialog.h -> q3progressdialog.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/gui.h at line 77 column 16: QProgressDialog -> Q3ProgressDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 118 column 46: RichText -> Qt::RichText
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 248 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 341 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 366 column 44: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 368 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 402 column 48: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 404 column 37: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 408 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 410 column 32: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 454 column 41: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 465 column 40: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 466 column 34: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui at line 467 column 29: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui: Added the following include directives:
+	#include <QCloseEvent> 	#include <Q3PopupMenu> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 26 column 62: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 28 column 63: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 39 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 39 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 40 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 40 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 41 column 31: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 121 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 168 column 47: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 267 column 41: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 284 column 36: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 334 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h at line 340 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historyform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 	#include <QCloseEvent> 	#include <Q3PopupMenu> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 27 column 51: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 28 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 44 column 30: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 45 column 30: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 49 column 30: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 50 column 30: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 65 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 69 column 48: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp at line 72 column 22: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.cpp: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.h at line 23 column 22: qlistview.h -> q3listview.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.h at line 35 column 48: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.h at line 41 column 31: QListView -> Q3ListView
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/historylistview.h at line 46 column 28: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui at line 56 column 38: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui at line 81 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui at line 104 column 38: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui at line 216 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui at line 235 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui at line 260 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui: Added the following include directives:
+	#include <QCloseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/inviteform.ui.h: Added the following include directives:
+	#include <QCloseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui at line 30 column 31: PlainText -> Qt::PlainText
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui at line 58 column 32: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui at line 116 column 42: QTextStream -> Q3TextStream
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui: Added the following include directives:
+	#include <Q3TextStream> 	#include <QCloseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui.h at line 33 column 30: IO_ReadOnly -> QIODevice::ReadOnly
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui.h at line 34 column 29: QTextStream -> Q3TextStream
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/logviewform.ui.h: Added the following include directives:
+	#include <Q3TextStream> 	#include <QCloseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 29 column 25: qprogressdialog.h -> q3progressdialog.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 479 column 20: QMimeSourceFactory -> Q3MimeSourceFactory
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 479 column 53: QMimeSourceFactory -> Q3MimeSourceFactory
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 488 column 20: QMimeSourceFactory -> Q3MimeSourceFactory
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 488 column 54: QMimeSourceFactory -> Q3MimeSourceFactory
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 491 column 20: QMimeSourceFactory -> Q3MimeSourceFactory
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/main.cpp at line 494 column 20: QMimeSourceFactory -> Q3MimeSourceFactory
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui at line 75 column 46: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui at line 290 column 41: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui: Added the following include directives:
+	#include <QCloseEvent> 	#include <QLabel> 	#include <Q3PopupMenu> 	#include <QKeyEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 62 column 37: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 111 column 12: QMainWindow -> Q3MainWindow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 130 column 12: QMainWindow -> Q3MainWindow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 263 column 17: QStyleSheet -> Q3StyleSheet
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 282 column 19: QStyleSheet -> Q3StyleSheet
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 373 column 17: QStyleSheet -> Q3StyleSheet
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 385 column 17: QStyleSheet -> Q3StyleSheet
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 420 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 420 column 42: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 437 column 10: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 438 column 36: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 442 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 442 column 42: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 464 column 13: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 464 column 34: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 466 column 24: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 498 column 12: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 498 column 42: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 541 column 41: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h at line 541 column 59: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageform.ui.h: Added the following include directives:
+	#include <QKeyEvent> 	#include <QLabel> 	#include <QPixmap> 	#include <Q3Frame> 	#include <q3mimefactory.h> 	#include <Q3PopupMenu> 	#include <QCloseEvent> 
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageformview.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/messageformview.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 61 column 32: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 171 column 58: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 445 column 51: PlainText -> Qt::PlainText
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 648 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 648 column 76: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 649 column 70: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 649 column 79: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 650 column 69: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 650 column 79: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 658 column 74: RichText -> Qt::RichText
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 874 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 874 column 75: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 875 column 70: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 875 column 81: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 876 column 69: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 876 column 79: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 884 column 77: AlignVCenter -> Qt::AlignVCenter
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 884 column 88: AlignRight -> Qt::AlignRight
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 922 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 922 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 923 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 923 column 71: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 924 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 924 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 929 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 929 column 69: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 930 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 930 column 73: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 931 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 931 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 935 column 65: NoFocus -> Qt::NoFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 945 column 66: AlignAuto -> Qt::AlignLeft
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 957 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 957 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 958 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 958 column 71: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 959 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 959 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 964 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 964 column 69: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 965 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 965 column 73: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 966 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 966 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 970 column 65: NoFocus -> Qt::NoFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 989 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 989 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 990 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 990 column 71: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 991 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 991 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 996 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 996 column 69: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 997 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 997 column 73: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 998 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 998 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1002 column 65: NoFocus -> Qt::NoFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1212 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1212 column 76: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1213 column 70: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1213 column 79: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1214 column 69: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1214 column 79: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1222 column 74: RichText -> Qt::RichText
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1438 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1438 column 75: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1439 column 70: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1439 column 81: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1440 column 69: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1440 column 79: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1448 column 77: AlignVCenter -> Qt::AlignVCenter
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1448 column 88: AlignRight -> Qt::AlignRight
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1486 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1486 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1487 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1487 column 71: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1488 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1488 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1493 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1493 column 69: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1494 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1494 column 73: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1495 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1495 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1499 column 65: NoFocus -> Qt::NoFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1518 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1518 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1519 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1519 column 71: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1520 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1520 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1525 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1525 column 69: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1526 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1526 column 73: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1527 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1527 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1531 column 65: NoFocus -> Qt::NoFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1550 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1550 column 68: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1551 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1551 column 71: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1552 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1552 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1557 column 60: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1557 column 69: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1558 column 62: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1558 column 73: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1559 column 61: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1559 column 71: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 1563 column 65: NoFocus -> Qt::NoFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2596 column 48: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2598 column 50: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2602 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2604 column 42: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2711 column 41: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2712 column 41: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2713 column 41: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2738 column 43: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2827 column 47: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui at line 2829 column 39: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui: Added the following include directives:
+	#include <QMouseEvent> 	#include <QCloseEvent> 	#include <QKeyEvent> 	#include <Q3PopupMenu> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 52 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 52 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 53 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 53 column 45: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 54 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 54 column 42: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 55 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 55 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 56 column 32: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 64 column 45: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 66 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 66 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 67 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 67 column 50: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 74 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 74 column 56: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 75 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 75 column 41: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 76 column 36: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 140 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 148 column 12: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 495 column 35: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 495 column 51: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 497 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 500 column 35: QFrame -> Q3Frame
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 502 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 571 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 575 column 27: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 594 column 46: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 598 column 46: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 602 column 46: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 607 column 47: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 610 column 47: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 616 column 46: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 911 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 914 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 917 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 921 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 924 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 990 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 994 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1059 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1067 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1071 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1075 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1140 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1143 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1146 column 49: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1151 column 48: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1154 column 48: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1157 column 48: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1162 column 48: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1165 column 48: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1169 column 48: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1222 column 52: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1230 column 26: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1360 column 43: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1416 column 18: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1417 column 18: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1418 column 18: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1419 column 18: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1452 column 31: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1453 column 37: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1454 column 34: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1455 column 34: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 1505 column 49: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2183 column 17: QMessageBox -> Qt
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2183 column 40: QMessageBox -> Qt
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2184 column 46: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2318 column 16: QProgressDialog -> Q3ProgressDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2759 column 11: QPopupMenu -> Q3PopupMenu
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2760 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2760 column 40: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2761 column 41: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2762 column 17: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2762 column 38: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2951 column 53: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2965 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2975 column 45: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2987 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 2993 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 3006 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 3032 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 3048 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h at line 3060 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/mphoneform.ui.h: Added the following include directives:
+	#include <QLabel> 	#include <QMouseEvent> 	#include <QCloseEvent> 	#include <q3mimefactory.h> 	#include <QKeyEvent> 	#include <QEvent> 	#include <Q3Frame> 	#include <Q3PopupMenu> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/numberconversionform.ui at line 75 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/numberconversionform.ui at line 100 column 40: Horizontal -> Qt::Horizontal
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/numberconversionform.ui.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/qt_translator.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui at line 103 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui at line 126 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui at line 149 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui at line 174 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui at line 199 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui.h at line 27 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui.h at line 29 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui.h at line 30 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui.h at line 30 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/redirectform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui at line 38 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui at line 66 column 38: WordBreak -> Qt::TextWordWrap
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui at line 66 column 47: AlignTop -> Qt::AlignTop
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui at line 84 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui at line 109 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui.h at line 44 column 26: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui.h at line 52 column 25: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectnicform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 38 column 30: WordBreak -> Qt::TextWordWrap
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 38 column 43: AlignVCenter -> Qt::AlignVCenter
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 76 column 38: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 328 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 330 column 38: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 382 column 42: QMainWindow -> Q3MainWindow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 389 column 31: QMainWindow -> Q3MainWindow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui at line 404 column 35: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 89 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 89 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 120 column 44: QMainWindow -> Q3MainWindow
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 136 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 138 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 138 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 145 column 45: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 166 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 166 column 63: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 168 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 168 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 191 column 15: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 191 column 39: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 286 column 15: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 286 column 42: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 288 column 18: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 289 column 43: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 307 column 15: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 307 column 39: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 314 column 14: QMessageBox -> Qt
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 358 column 17: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 358 column 41: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 382 column 15: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 382 column 39: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 463 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 463 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 484 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 486 column 51: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 493 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 493 column 63: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 495 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 495 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 496 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 609 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 609 column 43: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 610 column 44: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 611 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 618 column 48: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 620 column 15: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h at line 620 column 44: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectprofileform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui at line 49 column 32: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui at line 167 column 43: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui at line 169 column 34: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui at line 199 column 31: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 62 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 62 column 43: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 63 column 51: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 84 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 86 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 86 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 104 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 106 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 106 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 114 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 116 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 116 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 122 column 41: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 124 column 15: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/selectuserform.ui.h at line 124 column 44: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui at line 35 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui at line 52 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui at line 103 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui at line 128 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui.h at line 62 column 12: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui.h at line 62 column 33: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui.h at line 86 column 12: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/sendfileform.ui.h at line 86 column 42: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui at line 121 column 55: LineEditPanel -> QFrame::StyledPanel
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui at line 193 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui at line 213 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui at line 236 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui at line 584 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui at line 609 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui.h at line 32 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui.h at line 34 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui.h at line 35 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui.h at line 35 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/srvredirectform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 99 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 176 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 176 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 177 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 177 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 178 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 178 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 517 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 536 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 567 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 567 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 568 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 568 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 569 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 569 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 639 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 714 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 745 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 745 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 746 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 746 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 747 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 747 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 937 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 997 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1059 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1059 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1060 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1060 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1061 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1061 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1084 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1101 column 44: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1159 column 44: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1246 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1246 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1247 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1247 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1248 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1248 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1335 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1360 column 58: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1450 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1475 column 58: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1496 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1527 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1527 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1528 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1528 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1529 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1529 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui at line 1594 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 32 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 34 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 35 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 35 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 38 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 39 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 39 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 247 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 247 column 43: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 248 column 28: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 249 column 44: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 348 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 348 column 63: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 350 column 16: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 350 column 40: QCheckListItem -> Q3CheckListItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 426 column 27: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h at line 438 column 27: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/syssettingsform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/termcapform.ui at line 99 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/termcapform.ui at line 124 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/termcapform.ui at line 149 column 40: Horizontal -> Qt::Horizontal
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/termcapform.ui.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/textbrowsernoautolink.h at line 22 column 22: qtextbrowser.h -> q3textbrowser.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/textbrowsernoautolink.h at line 25 column 49: QTextBrowser -> Q3TextBrowser
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/textbrowsernoautolink.h at line 29 column 15: QTextBrowser -> Q3TextBrowser
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui at line 59 column 38: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui at line 142 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui at line 167 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui: Added the following include directives:
+	#include <QCloseEvent> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui.h at line 26 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui.h at line 28 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui.h at line 29 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui.h at line 29 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/transferform.ui.h: Added the following include directives:
+	#include <q3mimefactory.h> 	#include <QCloseEvent> 
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/twinklesystray.cpp
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/yesnodialog.cpp at line 48 column 11: QBoxLayout -> Q3BoxLayout
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/yesnodialog.cpp at line 48 column 33: QVBoxLayout -> Q3VBoxLayout
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/yesnodialog.cpp at line 51 column 12: QHBoxLayout -> Q3HBoxLayout
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/yesnodialog.cpp at line 51 column 34: QHBoxLayout -> Q3HBoxLayout
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/yesnodialog.cpp: Added the following include directives:
+	#include <Q3VBoxLayout> 	#include <Q3BoxLayout> 	#include <Q3HBoxLayout> 
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/twinkleapplication.cpp
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/twinklesystray.h at line 31 column 23: qpopupmenu.h -> q3popupmenu.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/yesnodialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/twinkleapplication.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 140 column 9: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 142 column 36: QPixmap::fromMimeSource -> qPixmapFromMimeSource
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 143 column 14: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 143 column 35: QIconSet -> QIcon
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 539 column 19: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 620 column 19: QValueList -> Q3ValueList
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 638 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 640 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 809 column 11: QValueList -> Q3ValueList
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1232 column 27: QFileDialog -> Q3FileDialog
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1317 column 13: QListBoxItem -> Q3ListBoxItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1330 column 13: QListBoxItem -> Q3ListBoxItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1343 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1346 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1349 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1361 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1364 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1377 column 15: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1379 column 20: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1381 column 20: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1387 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h at line 1401 column 14: QListViewItem -> Q3ListViewItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui.h: Added the following include directives:
+	#include <Q3ValueList> 	#include <q3mimefactory.h> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/wizardform.ui.h at line 53 column 35: IO_ReadOnly -> QIODevice::ReadOnly
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/wizardform.ui.h at line 54 column 13: QTextStream -> Q3TextStream
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/wizardform.ui.h: Added the following include directives:
+	#include <Q3TextStream> 
+In file twinkle.pro: Added entry QT +=  qt3support 
+In file twinkle.pro: Added entry CONFIG += uic3
+
+In file twinkle.pro: Renamed FORMS to FORMS3
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 200 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 277 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 277 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 278 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 278 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 279 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 279 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 506 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 537 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 537 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 538 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 538 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 539 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 539 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 639 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 699 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 800 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 831 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 831 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 832 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 832 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 833 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 833 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 935 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 988 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1086 column 70: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1131 column 70: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1184 column 70: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1229 column 70: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1371 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1390 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1505 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1524 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1742 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1761 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1912 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1966 column 72: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 1987 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2028 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2308 column 72: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2329 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2363 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2363 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2364 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2364 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2365 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2365 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2403 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2474 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2684 column 64: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2905 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2962 column 54: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2996 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2996 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2997 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2997 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2998 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 2998 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3055 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3114 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3281 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3312 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3312 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3313 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3313 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3314 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3314 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3518 column 66: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3563 column 66: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3634 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3687 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3718 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3718 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3719 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3719 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3720 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3720 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3862 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3881 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3912 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3912 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3913 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3913 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3914 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3914 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3945 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 3962 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4029 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4060 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4060 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4061 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4061 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4062 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4062 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4109 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4126 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4143 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4176 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4209 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4328 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4410 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4449 column 50: TabFocus -> Qt::TabFocus
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4490 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4521 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4521 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4522 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4522 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4523 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4523 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4615 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4646 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4646 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4647 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4647 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4648 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4648 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4735 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4786 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4869 column 68: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4925 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4956 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4956 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4957 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4957 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4958 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 4958 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5011 column 52: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5044 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5075 column 36: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5075 column 45: red -> Qt::red
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5076 column 38: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5076 column 49: green -> Qt::green
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5077 column 37: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5077 column 47: blue -> Qt::blue
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5158 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5223 column 60: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5244 column 42: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5408 column 42: QListBoxItem -> Q3ListBoxItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5414 column 42: QListBoxItem -> Q3ListBoxItem
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui at line 5754 column 81: QValueList -> Q3ValueList
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/userprofileform.ui: Added the following include directives:
+	#include <Q3ValueList> 
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/wizardform.ui at line 114 column 40: Horizontal -> Qt::Horizontal
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/wizardform.ui at line 220 column 30: Vertical -> Qt::Vertical
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/gui/wizardform.ui at line 245 column 40: Horizontal -> Qt::Horizontal
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/im/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/im/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/im/im_iscomposing_body.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/im/im_iscomposing_body.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/im/msg_session.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/im/msg_session.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/mwi.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/mwi.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/mwi_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/mwi_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/mwi_subscription.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/mwi_subscription.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/simple_msg_sum_body.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/mwi/simple_msg_sum_body.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/challenge.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/challenge.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/coding.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/coding.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/credentials.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/credentials.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/definitions.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/definitions.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_accept.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_accept.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_accept_encoding.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_accept_encoding.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_accept_language.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_accept_language.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_alert_info.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_alert_info.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_allow.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_allow.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_allow_events.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_allow_events.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_auth_info.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_auth_info.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_authorization.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_authorization.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_call_id.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_call_id.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_call_info.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_call_info.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_contact.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_contact.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_disp.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_disp.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_encoding.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_encoding.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_language.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_language.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_length.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_length.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_type.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_content_type.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_cseq.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_cseq.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_date.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_date.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_error_info.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_error_info.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_event.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_event.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_expires.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_expires.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_from.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_from.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_in_reply_to.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_in_reply_to.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_max_forwards.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_max_forwards.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_mime_version.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_mime_version.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_min_expires.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_min_expires.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_organization.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_organization.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_p_asserted_identity.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_p_asserted_identity.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_p_preferred_identity.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_p_preferred_identity.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_priority.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_priority.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_privacy.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_privacy.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_proxy_authenticate.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_proxy_authenticate.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_proxy_authorization.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_proxy_authorization.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_proxy_require.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_proxy_require.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_rack.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_rack.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_record_route.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_record_route.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_refer_sub.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_refer_sub.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_refer_to.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_refer_to.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_referred_by.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_referred_by.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_replaces.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_replaces.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_reply_to.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_reply_to.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_request_disposition.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_request_disposition.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_require.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_require.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_retry_after.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_retry_after.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_route.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_route.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_rseq.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_rseq.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_server.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_server.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_service_route.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_service_route.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_sip_etag.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_sip_etag.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_sip_if_match.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_sip_if_match.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_subject.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_subject.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_subscription_state.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_subscription_state.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_supported.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_supported.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_timestamp.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_timestamp.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_to.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_to.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_unsupported.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_unsupported.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_user_agent.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_user_agent.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_via.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_via.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_warning.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_warning.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_www_authenticate.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/hdr_www_authenticate.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/header.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/header.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/identity.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/identity.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/media_type.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/media_type.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/milenage.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/milenage.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parameter.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parameter.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parse_ctrl.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parse_ctrl.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.cxx at line 1661 column 30: Bottom -> Qt::DockBottom
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.cxx at line 1661 column 35: Top -> Qt::DockTop
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.cxx at line 1664 column 27: Bottom -> Qt::DockBottom
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.cxx at line 1664 column 34: Top -> Qt::DockTop
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.cxx at line 1708 column 30: Bottom -> Qt::DockBottom
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.cxx at line 1708 column 35: Top -> Qt::DockTop
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/parser.yxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/request.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/request.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/response.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/response.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/rijndael.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/rijndael.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/route.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/route.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/scanner.cxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/scanner.lxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/sip_body.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/sip_body.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/sip_message.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/parser/sip_message.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/patterns/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/patterns/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/patterns/observer.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/patterns/observer.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/buddy.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/buddy.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/pidf_body.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/pidf_body.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_dialog.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_dialog.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_epa.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_epa.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_state.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_state.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_subscription.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/presence/presence_subscription.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parse_ctrl.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parse_ctrl.h
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.cxx at line 752 column 30: Bottom -> Qt::DockBottom
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.cxx at line 752 column 35: Top -> Qt::DockTop
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.cxx at line 755 column 27: Bottom -> Qt::DockBottom
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.cxx at line 755 column 34: Top -> Qt::DockTop
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.cxx at line 799 column 30: Bottom -> Qt::DockBottom
+In file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.cxx at line 799 column 35: Top -> Qt::DockTop
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_parser.yxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_scanner.cxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sdp/sdp_scanner.lxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/connection.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/connection.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/connection_table.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/connection_table.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/dnssrv.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/dnssrv.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/interfaces.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/interfaces.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/socket.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/socket.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/url.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/sockets/url.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/stun.cxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/stun.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/stun_transaction.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/stun_transaction.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/udp.cxx
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/stun/udp.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/mutex.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/mutex.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/sema.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/sema.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/thread.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/threads/thread.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/Makefile.am
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/Makefile.in
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/file_utils.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/file_utils.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/mime_database.cpp
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/mime_database.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/record_file.h
+No changes made to file /tmp/tmp-rzr.tmp/20110523-1306141576.tmp/twinkle/src/utils/record_file.hpp
+

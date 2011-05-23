@@ -1,3 +1,8 @@
+//Added by qt3to4:
+#include <QMouseEvent>
+#include <QCloseEvent>
+#include <QKeyEvent>
+#include <Q3PopupMenu>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>MphoneForm</class>
 <widget class="QMainWindow">
@@ -53,7 +58,7 @@
                 <cstring>splitter2</cstring>
             </property>
             <property name="orientation">
-                <enum>Horizontal</enum>
+                <enum>Qt::Horizontal</enum>
             </property>
             <widget class="QListView">
                 <column>
@@ -163,7 +168,7 @@
                                             <cstring>addressToolButton</cstring>
                                         </property>
                                         <property name="focusPolicy">
-                                            <enum>TabFocus</enum>
+                                            <enum>Qt::TabFocus</enum>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -437,7 +442,7 @@
                                     <enum>AlwaysOn</enum>
                                 </property>
                                 <property name="textFormat">
-                                    <enum>PlainText</enum>
+                                    <enum>Qt::PlainText</enum>
                                 </property>
                                 <property name="text">
                                     <string></string>
@@ -640,9 +645,9 @@
                                                         </property>
                                                         <property name="paletteForegroundColor">
                                                             <color>
-                                                                <red>85</red>
-                                                                <green>0</green>
-                                                                <blue>255</blue>
+                                                                <Qt::red>85</Qt::red>
+                                                                <Qt::green>0</Qt::green>
+                                                                <Qt::blue>255</Qt::blue>
                                                             </color>
                                                         </property>
                                                         <property name="text">
@@ -650,7 +655,7 @@
                                                             <comment>No need to translate</comment>
                                                         </property>
                                                         <property name="textFormat">
-                                                            <enum>RichText</enum>
+                                                            <enum>Qt::RichText</enum>
                                                         </property>
                                                     </widget>
                                                     <widget class="QLabel">
@@ -866,9 +871,9 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                         </property>
                                                         <property name="paletteForegroundColor">
                                                             <color>
-                                                                <red>0</red>
-                                                                <green>170</green>
-                                                                <blue>127</blue>
+                                                                <Qt::red>0</Qt::red>
+                                                                <Qt::green>170</Qt::green>
+                                                                <Qt::blue>127</Qt::blue>
                                                             </color>
                                                         </property>
                                                         <property name="text">
@@ -876,7 +881,7 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                             <comment>No need to translate</comment>
                                                         </property>
                                                         <property name="alignment">
-                                                            <set>AlignVCenter|AlignRight</set>
+                                                            <set>Qt::AlignVCenter|Qt::AlignRight</set>
                                                         </property>
                                                         <property name="whatsThis" stdset="0">
                                                             <string>Audio codec</string>
@@ -914,20 +919,20 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                 </property>
                                                 <property name="paletteForegroundColor">
                                                     <color>
-                                                        <red>85</red>
-                                                        <green>0</green>
-                                                        <blue>255</blue>
+                                                        <Qt::red>85</Qt::red>
+                                                        <Qt::green>0</Qt::green>
+                                                        <Qt::blue>255</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="paletteBackgroundColor">
                                                     <color>
-                                                        <red>238</red>
-                                                        <green>234</green>
-                                                        <blue>238</blue>
+                                                        <Qt::red>238</Qt::red>
+                                                        <Qt::green>234</Qt::green>
+                                                        <Qt::blue>238</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="focusPolicy">
-                                                    <enum>NoFocus</enum>
+                                                    <enum>Qt::NoFocus</enum>
                                                 </property>
                                                 <property name="frameShape">
                                                     <enum>NoFrame</enum>
@@ -937,7 +942,7 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                     <comment>No need to translate</comment>
                                                 </property>
                                                 <property name="alignment">
-                                                    <set>AlignAuto</set>
+                                                    <set>Qt::AlignLeft</set>
                                                 </property>
                                                 <property name="readOnly">
                                                     <bool>true</bool>
@@ -949,20 +954,20 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                 </property>
                                                 <property name="paletteForegroundColor">
                                                     <color>
-                                                        <red>85</red>
-                                                        <green>0</green>
-                                                        <blue>255</blue>
+                                                        <Qt::red>85</Qt::red>
+                                                        <Qt::green>0</Qt::green>
+                                                        <Qt::blue>255</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="paletteBackgroundColor">
                                                     <color>
-                                                        <red>238</red>
-                                                        <green>234</green>
-                                                        <blue>238</blue>
+                                                        <Qt::red>238</Qt::red>
+                                                        <Qt::green>234</Qt::green>
+                                                        <Qt::blue>238</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="focusPolicy">
-                                                    <enum>NoFocus</enum>
+                                                    <enum>Qt::NoFocus</enum>
                                                 </property>
                                                 <property name="frameShape">
                                                     <enum>NoFrame</enum>
@@ -981,20 +986,20 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                 </property>
                                                 <property name="paletteForegroundColor">
                                                     <color>
-                                                        <red>85</red>
-                                                        <green>0</green>
-                                                        <blue>255</blue>
+                                                        <Qt::red>85</Qt::red>
+                                                        <Qt::green>0</Qt::green>
+                                                        <Qt::blue>255</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="paletteBackgroundColor">
                                                     <color>
-                                                        <red>238</red>
-                                                        <green>234</green>
-                                                        <blue>238</blue>
+                                                        <Qt::red>238</Qt::red>
+                                                        <Qt::green>234</Qt::green>
+                                                        <Qt::blue>238</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="focusPolicy">
-                                                    <enum>NoFocus</enum>
+                                                    <enum>Qt::NoFocus</enum>
                                                 </property>
                                                 <property name="frameShape">
                                                     <enum>NoFrame</enum>
@@ -1204,9 +1209,9 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                         </property>
                                                         <property name="paletteForegroundColor">
                                                             <color>
-                                                                <red>85</red>
-                                                                <green>0</green>
-                                                                <blue>255</blue>
+                                                                <Qt::red>85</Qt::red>
+                                                                <Qt::green>0</Qt::green>
+                                                                <Qt::blue>255</Qt::blue>
                                                             </color>
                                                         </property>
                                                         <property name="text">
@@ -1214,7 +1219,7 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                             <comment>No need to translate</comment>
                                                         </property>
                                                         <property name="textFormat">
-                                                            <enum>RichText</enum>
+                                                            <enum>Qt::RichText</enum>
                                                         </property>
                                                     </widget>
                                                     <widget class="QLabel">
@@ -1430,9 +1435,9 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                         </property>
                                                         <property name="paletteForegroundColor">
                                                             <color>
-                                                                <red>0</red>
-                                                                <green>170</green>
-                                                                <blue>127</blue>
+                                                                <Qt::red>0</Qt::red>
+                                                                <Qt::green>170</Qt::green>
+                                                                <Qt::blue>127</Qt::blue>
                                                             </color>
                                                         </property>
                                                         <property name="text">
@@ -1440,7 +1445,7 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                             <comment>No need to translate</comment>
                                                         </property>
                                                         <property name="alignment">
-                                                            <set>AlignVCenter|AlignRight</set>
+                                                            <set>Qt::AlignVCenter|Qt::AlignRight</set>
                                                         </property>
                                                         <property name="whatsThis" stdset="0">
                                                             <string>Audio codec</string>
@@ -1478,20 +1483,20 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                 </property>
                                                 <property name="paletteForegroundColor">
                                                     <color>
-                                                        <red>85</red>
-                                                        <green>0</green>
-                                                        <blue>255</blue>
+                                                        <Qt::red>85</Qt::red>
+                                                        <Qt::green>0</Qt::green>
+                                                        <Qt::blue>255</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="paletteBackgroundColor">
                                                     <color>
-                                                        <red>238</red>
-                                                        <green>234</green>
-                                                        <blue>238</blue>
+                                                        <Qt::red>238</Qt::red>
+                                                        <Qt::green>234</Qt::green>
+                                                        <Qt::blue>238</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="focusPolicy">
-                                                    <enum>NoFocus</enum>
+                                                    <enum>Qt::NoFocus</enum>
                                                 </property>
                                                 <property name="frameShape">
                                                     <enum>NoFrame</enum>
@@ -1510,20 +1515,20 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                 </property>
                                                 <property name="paletteForegroundColor">
                                                     <color>
-                                                        <red>85</red>
-                                                        <green>0</green>
-                                                        <blue>255</blue>
+                                                        <Qt::red>85</Qt::red>
+                                                        <Qt::green>0</Qt::green>
+                                                        <Qt::blue>255</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="paletteBackgroundColor">
                                                     <color>
-                                                        <red>238</red>
-                                                        <green>234</green>
-                                                        <blue>238</blue>
+                                                        <Qt::red>238</Qt::red>
+                                                        <Qt::green>234</Qt::green>
+                                                        <Qt::blue>238</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="focusPolicy">
-                                                    <enum>NoFocus</enum>
+                                                    <enum>Qt::NoFocus</enum>
                                                 </property>
                                                 <property name="frameShape">
                                                     <enum>NoFrame</enum>
@@ -1542,20 +1547,20 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
                                                 </property>
                                                 <property name="paletteForegroundColor">
                                                     <color>
-                                                        <red>85</red>
-                                                        <green>0</green>
-                                                        <blue>255</blue>
+                                                        <Qt::red>85</Qt::red>
+                                                        <Qt::green>0</Qt::green>
+                                                        <Qt::blue>255</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="paletteBackgroundColor">
                                                     <color>
-                                                        <red>238</red>
-                                                        <green>234</green>
-                                                        <blue>238</blue>
+                                                        <Qt::red>238</Qt::red>
+                                                        <Qt::green>234</Qt::green>
+                                                        <Qt::blue>238</Qt::blue>
                                                     </color>
                                                 </property>
                                                 <property name="focusPolicy">
-                                                    <enum>NoFocus</enum>
+                                                    <enum>Qt::NoFocus</enum>
                                                 </property>
                                                 <property name="frameShape">
                                                     <enum>NoFrame</enum>
@@ -2588,15 +2593,15 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
     </connection>
     <connection>
         <sender>buddyListView</sender>
-        <signal>rightButtonPressed(QListViewItem*,const QPoint&amp;,int)</signal>
+        <signal>rightButtonPressed(Q3ListViewItem*,const QPoint&amp;,int)</signal>
         <receiver>MphoneForm</receiver>
-        <slot>showBuddyListPopupMenu(QListViewItem*,const QPoint&amp;)</slot>
+        <slot>showBuddyListPopupMenu(Q3ListViewItem*,const QPoint&amp;)</slot>
     </connection>
     <connection>
         <sender>buddyListView</sender>
-        <signal>doubleClicked(QListViewItem*)</signal>
+        <signal>doubleClicked(Q3ListViewItem*)</signal>
         <receiver>MphoneForm</receiver>
-        <slot>doMessageBuddy(QListViewItem*)</slot>
+        <slot>doMessageBuddy(Q3ListViewItem*)</slot>
     </connection>
     <connection>
         <sender>viewBuddyListAction</sender>
@@ -2703,9 +2708,9 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
     <variable access="private">bool viewDisplay;</variable>
     <variable access="private">bool viewCompactLineStatus;</variable>
     <variable access="private">bool mwiFlashStatus;</variable>
-    <variable access="private">QPopupMenu *buddyPopupMenu;</variable>
-    <variable access="private">QPopupMenu *buddyListPopupMenu;</variable>
-    <variable access="private">QPopupMenu *changeAvailabilityPopupMenu;</variable>
+    <variable access="private">Q3PopupMenu *buddyPopupMenu;</variable>
+    <variable access="private">Q3PopupMenu *buddyListPopupMenu;</variable>
+    <variable access="private">Q3PopupMenu *changeAvailabilityPopupMenu;</variable>
     <variable access="private">QToolTip *buddyToolTip;</variable>
     <variable access="private">bool viewBuddyList;</variable>
 </variables>
@@ -2730,7 +2735,7 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
     <slot>updateMenuStatus()</slot>
     <slot>updateDiamondcardMenu()</slot>
     <slot>removeDiamondcardAction( int &amp; id )</slot>
-    <slot>removeDiamondcardMenu( QPopupMenu * &amp; menu )</slot>
+    <slot>removeDiamondcardMenu( Q3PopupMenu * &amp; menu )</slot>
     <slot>phoneRegister()</slot>
     <slot>do_phoneRegister( list&lt;t_user *&gt; user_list )</slot>
     <slot>phoneDeregister()</slot>
@@ -2819,9 +2824,9 @@ If the SAS is equal at both ends, then you should confirm it by clicking this pa
     <slot>showBuddyList( bool on )</slot>
     <slot>showCompactLineStatus( bool on )</slot>
     <slot>populateBuddyList()</slot>
-    <slot>showBuddyListPopupMenu( QListViewItem * item, const QPoint &amp; pos )</slot>
+    <slot>showBuddyListPopupMenu( Q3ListViewItem * item, const QPoint &amp; pos )</slot>
     <slot>doCallBuddy()</slot>
-    <slot>doMessageBuddy( QListViewItem * qitem )</slot>
+    <slot>doMessageBuddy( Q3ListViewItem * qitem )</slot>
     <slot>doMessageBuddy()</slot>
     <slot>doEditBuddy()</slot>
     <slot>doDeleteBuddy()</slot>

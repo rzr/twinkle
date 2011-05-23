@@ -43,7 +43,7 @@
                         <cstring>spacer46</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Vertical</enum>
+                        <enum>Qt::Vertical</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -71,9 +71,9 @@
                     </property>
                     <property name="paletteForegroundColor">
                         <color>
-                            <red>0</red>
-                            <green>85</green>
-                            <blue>255</blue>
+                            <Qt::red>0</Qt::red>
+                            <Qt::green>85</Qt::green>
+                            <Qt::blue>255</Qt::blue>
                         </color>
                     </property>
                     <property name="text">
@@ -98,9 +98,9 @@
                     </property>
                     <property name="paletteForegroundColor">
                         <color>
-                            <red>0</red>
-                            <green>85</green>
-                            <blue>255</blue>
+                            <Qt::red>0</Qt::red>
+                            <Qt::green>85</Qt::green>
+                            <Qt::blue>255</Qt::blue>
                         </color>
                     </property>
                     <property name="text">
@@ -197,7 +197,7 @@
                 <cstring>spacer13</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -222,7 +222,7 @@
                         <cstring>spacer12</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -291,9 +291,9 @@
                     </property>
                     <property name="paletteForegroundColor">
                         <color>
-                            <red>0</red>
-                            <green>85</green>
-                            <blue>255</blue>
+                            <Qt::red>0</Qt::red>
+                            <Qt::green>85</Qt::green>
+                            <Qt::blue>255</Qt::blue>
                         </color>
                     </property>
                     <property name="text">

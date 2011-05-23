@@ -32,7 +32,7 @@
                         <cstring>spacer25</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Vertical</enum>
+                        <enum>Qt::Vertical</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -49,7 +49,7 @@
                         <cstring>addressToolButton</cstring>
                     </property>
                     <property name="focusPolicy">
-                        <enum>TabFocus</enum>
+                        <enum>Qt::TabFocus</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -126,7 +126,7 @@
                 <cstring>spacer14</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -151,7 +151,7 @@
                         <cstring>spacer13</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -237,10 +237,10 @@
     <variable access="private">bool edit_mode;</variable>
     <variable access="private">t_buddy_list *buddy_list;</variable>
     <variable access="private">t_buddy *edit_buddy;</variable>
-    <variable access="private">QListViewItem *profileItem;</variable>
+    <variable access="private">Q3ListViewItem *profileItem;</variable>
 </variables>
 <slots>
-    <slot>showNew( t_buddy_list &amp; _buddy_list, QListViewItem * _profileItem )</slot>
+    <slot>showNew( t_buddy_list &amp; _buddy_list, Q3ListViewItem * _profileItem )</slot>
     <slot>showEdit( t_buddy &amp; buddy )</slot>
     <slot>validate()</slot>
     <slot>showAddressBook()</slot>

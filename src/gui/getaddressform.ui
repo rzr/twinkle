@@ -120,7 +120,7 @@
                                     <cstring>spacer16</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -161,7 +161,7 @@
                                     <cstring>spacer59</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -293,7 +293,7 @@
                                     <cstring>spacer97</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -323,7 +323,7 @@
                         <cstring>spacer5</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -379,7 +379,7 @@
     </connection>
     <connection>
         <sender>addressListView</sender>
-        <signal>doubleClicked(QListViewItem*)</signal>
+        <signal>doubleClicked(Q3ListViewItem*)</signal>
         <receiver>GetAddressForm</receiver>
         <slot>selectKABCAddress()</slot>
     </connection>
@@ -397,7 +397,7 @@
     </connection>
     <connection>
         <sender>localListView</sender>
-        <signal>doubleClicked(QListViewItem*)</signal>
+        <signal>doubleClicked(Q3ListViewItem*)</signal>
         <receiver>GetAddressForm</receiver>
         <slot>selectLocalAddress()</slot>
     </connection>

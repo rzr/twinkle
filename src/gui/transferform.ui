@@ -1,3 +1,5 @@
+//Added by qt3to4:
+#include <QCloseEvent>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>TransferForm</class>
 <widget class="QDialog">
@@ -54,7 +56,7 @@
                         <cstring>addressToolButton</cstring>
                     </property>
                     <property name="focusPolicy">
-                        <enum>TabFocus</enum>
+                        <enum>Qt::TabFocus</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -137,7 +139,7 @@
                 <cstring>spacer24</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -162,7 +164,7 @@
                         <cstring>spacer23</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>

@@ -1,3 +1,5 @@
+//Added by qt3to4:
+#include <QCloseEvent>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>InviteForm</class>
 <widget class="QDialog">
@@ -51,7 +53,7 @@
                         <cstring>spacer3</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Vertical</enum>
+                        <enum>Qt::Vertical</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -76,7 +78,7 @@
                         <cstring>addressToolButton</cstring>
                     </property>
                     <property name="focusPolicy">
-                        <enum>TabFocus</enum>
+                        <enum>Qt::TabFocus</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -99,7 +101,7 @@
                         <cstring>spacer24</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Vertical</enum>
+                        <enum>Qt::Vertical</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -211,7 +213,7 @@ With this option you request your SIP provider to hide your identity from the ca
                         <cstring>spacer5</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -230,7 +232,7 @@ With this option you request your SIP provider to hide your identity from the ca
                 <cstring>spacer12</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -255,7 +257,7 @@ With this option you request your SIP provider to hide your identity from the ca
                         <cstring>spacer11</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>

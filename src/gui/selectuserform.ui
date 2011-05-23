@@ -46,7 +46,7 @@
                 <cstring>spacer47</cstring>
             </property>
             <property name="orientation">
-                <enum>Horizontal</enum>
+                <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -164,9 +164,9 @@
     </connection>
     <connection>
         <sender>userListView</sender>
-        <signal>doubleClicked(QListViewItem*)</signal>
+        <signal>doubleClicked(Q3ListViewItem*)</signal>
         <receiver>SelectUserForm</receiver>
-        <slot>toggle(QListViewItem*)</slot>
+        <slot>toggle(Q3ListViewItem*)</slot>
     </connection>
 </connections>
 <tabstops>
@@ -196,7 +196,7 @@
     <slot>validate()</slot>
     <slot>selectAll()</slot>
     <slot>clearAll()</slot>
-    <slot>toggle( QListViewItem * item )</slot>
+    <slot>toggle( Q3ListViewItem * item )</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>

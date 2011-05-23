@@ -96,7 +96,7 @@
                         <cstring>spacer98</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
@@ -173,9 +173,9 @@
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -514,7 +514,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                     <cstring>spacer27</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -533,7 +533,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                             <cstring>spacer97</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -564,9 +564,9 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -636,7 +636,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                     <cstring>spacer7</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -711,7 +711,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                             <cstring>spacer6</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -742,9 +742,9 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -934,7 +934,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                     <cstring>spacer73</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -994,7 +994,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                     <cstring>spacer14</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
@@ -1056,9 +1056,9 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -1081,7 +1081,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                             <cstring>spacer9</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -1098,7 +1098,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                             <cstring>spacer8</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Horizontal</enum>
+                            <enum>Qt::Horizontal</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -1156,7 +1156,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                             <cstring>spacer7_2</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Horizontal</enum>
+                            <enum>Qt::Horizontal</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -1243,9 +1243,9 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -1332,7 +1332,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                             <cstring>spacer21</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Fixed</enum>
@@ -1357,7 +1357,7 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                             <cstring>openRingtoneToolButton</cstring>
                                         </property>
                                         <property name="focusPolicy">
-                                            <enum>TabFocus</enum>
+                                            <enum>Qt::TabFocus</enum>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -1447,7 +1447,7 @@ Depending on your SIP provider the network might provide ring back tone or an an
                                             <cstring>spacer21_2</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Qt::Horizontal</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Fixed</enum>
@@ -1472,7 +1472,7 @@ Depending on your SIP provider the network might provide ring back tone or an an
                                             <cstring>openRingbackToolButton</cstring>
                                         </property>
                                         <property name="focusPolicy">
-                                            <enum>TabFocus</enum>
+                                            <enum>Qt::TabFocus</enum>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -1493,7 +1493,7 @@ Depending on your SIP provider the network might provide ring back tone or an an
                             <cstring>spacer23</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
@@ -1524,9 +1524,9 @@ Depending on your SIP provider the network might provide ring back tone or an an
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>150</red>
-                                <green>150</green>
-                                <blue>150</blue>
+                                <Qt::red>150</Qt::red>
+                                <Qt::green>150</Qt::green>
+                                <Qt::blue>150</Qt::blue>
                             </color>
                         </property>
                         <property name="font">
@@ -1591,7 +1591,7 @@ Depending on your SIP provider the network might provide ring back tone or an an
                             <cstring>spacer61</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Vertical</enum>
+                            <enum>Qt::Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>

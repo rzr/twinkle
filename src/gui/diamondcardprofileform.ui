@@ -1,3 +1,5 @@
+//Added by qt3to4:
+#include <QMouseEvent>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>DiamondcardProfileForm</class>
 <widget class="QDialog">
@@ -39,7 +41,7 @@
 &lt;p&gt;For call rates see the sign up web page that will be shown to you when you click on the "sign up" link.&lt;/p&gt;</string>
             </property>
             <property name="textFormat">
-                <enum>RichText</enum>
+                <enum>Qt::RichText</enum>
             </property>
         </widget>
         <spacer>
@@ -47,7 +49,7 @@
                 <cstring>spacer35</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -134,7 +136,7 @@
                 <cstring>spacer27</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -159,13 +161,13 @@
                         <cstring>signUpTextLabel</cstring>
                     </property>
                     <property name="backgroundMode">
-                        <enum>PaletteBackground</enum>
+                        <enum>Qt::PaletteBackground</enum>
                     </property>
                     <property name="paletteForegroundColor">
                         <color>
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>205</blue>
+                            <Qt::red>0</Qt::red>
+                            <Qt::green>0</Qt::green>
+                            <Qt::blue>205</Qt::blue>
                         </color>
                     </property>
                     <property name="cursor">
@@ -175,7 +177,7 @@
                         <string>&lt;p align="center"&gt;&lt;u&gt;Sign up for a Diamondcard account&lt;/u&gt;&lt;/p&gt;</string>
                     </property>
                     <property name="alignment">
-                        <set>AlignVCenter</set>
+                        <set>Qt::AlignVCenter</set>
                     </property>
                 </widget>
             </hbox>
@@ -185,7 +187,7 @@
                 <cstring>spacer28</cstring>
             </property>
             <property name="orientation">
-                <enum>Vertical</enum>
+                <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -210,7 +212,7 @@
                         <cstring>spacer21</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Horizontal</enum>
+                        <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>

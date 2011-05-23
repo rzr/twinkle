@@ -1,3 +1,6 @@
+//Added by qt3to4:
+#include <Q3TextStream>
+#include <QCloseEvent>
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>LogViewForm</class>
 <widget class="QDialog">
@@ -24,7 +27,7 @@
                 <cstring>logTextEdit</cstring>
             </property>
             <property name="textFormat">
-                <enum>PlainText</enum>
+                <enum>Qt::PlainText</enum>
             </property>
             <property name="wordWrap">
                 <enum>NoWrap</enum>
@@ -52,7 +55,7 @@
                 <cstring>spacer23</cstring>
             </property>
             <property name="orientation">
-                <enum>Horizontal</enum>
+                <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeType">
                 <enum>Expanding</enum>
@@ -110,7 +113,7 @@
 </includes>
 <variables>
     <variable access="private">QFile *logfile;</variable>
-    <variable access="private">QTextStream *logstream;</variable>
+    <variable access="private">Q3TextStream *logstream;</variable>
 </variables>
 <slots>
     <slot>show()</slot>
