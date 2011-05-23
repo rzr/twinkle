@@ -1761,6 +1761,7 @@ int yydebug;
 # define YY_SYMBOL_PRINT(Title, Type, Value, Location)
 
 # define YY_STACK_PRINT( /*Qt::*/DockBottom, /*Qt::*/DockTop) //#~rzr
+// error: 'YY_STACK_PRINT' was not declared in this scope
 
 # define YY_REDUCE_PRINT(Rule)
 #endif /* !YYDEBUG */
