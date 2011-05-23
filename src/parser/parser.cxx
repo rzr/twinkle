@@ -1759,7 +1759,9 @@ int yydebug;
 #else /* !YYDEBUG */
 # define YYDPRINTF(Args)
 # define YY_SYMBOL_PRINT(Title, Type, Value, Location)
-# define YY_STACK_PRINT(Qt::DockBottom, Qt::DockTop)
+
+# define YY_STACK_PRINT( /*Qt::*/DockBottom, /*Qt::*/DockTop) //#~rzr
+
 # define YY_REDUCE_PRINT(Rule)
 #endif /* !YYDEBUG */
 
