@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -66,10 +66,12 @@
 #include "hdr_replaces.h"
 #include "hdr_reply_to.h"
 #include "hdr_require.h"
+#include "hdr_request_disposition.h"
 #include "hdr_retry_after.h"
 #include "hdr_route.h"
 #include "hdr_rseq.h"
 #include "hdr_server.h"
+#include "hdr_service_route.h"
 #include "hdr_sip_etag.h"
 #include "hdr_sip_if_match.h"
 #include "hdr_subject.h"
@@ -86,8 +88,8 @@
 #include "sip_body.h"
 
 // Macro's to access the body of a message, eg msg.sdp_body
-#define sdp_body	((t_sdp *)body)
-#define opaque_body	((t_sip_body_opaque)*body)
+#define SDP_BODY	((t_sdp *)body)
+#define OPAQUE_BODY	((t_sip_body_opaque)*body)
 
 using namespace std;
 
@@ -159,10 +161,12 @@ public:
 	t_hdr_replaces		hdr_replaces;
 	t_hdr_reply_to		hdr_reply_to;
 	t_hdr_require		hdr_require;
+	t_hdr_request_disposition hdr_request_disposition;
 	t_hdr_retry_after	hdr_retry_after;
 	t_hdr_route		hdr_route;
 	t_hdr_rseq		hdr_rseq;
 	t_hdr_server		hdr_server;
+	t_hdr_service_route	hdr_service_route;
 	t_hdr_sip_etag		hdr_sip_etag;
 	t_hdr_sip_if_match	hdr_sip_if_match;
 	t_hdr_subject		hdr_subject;
@@ -230,6 +234,14 @@ public:
 	void set_body_plain_text(const string &text, const string &charset);
 	
 	/**
+	 * Set a body with the contents of a file.
+	 * @param filename [in] The name of the file.
+	 * @param media [in] The mime type of the contents.
+	 * @return True of body is set, false if file could not be read.
+	 */
+	bool set_body_from_file(const string &filename, const t_media &media);
+	
+	/**
 	 * Get the size of an encoded SIP message.
 	 * @return Size in bytes.
 	 */
@@ -247,6 +259,8 @@ public:
 	
 	/**
 	 * Get the local IP address for this SIP message.
+	 * The local IP address can be used as source address for sending
+	 * the message.
 	 * @return The local IP address.
 	 * @return 0, if the local IP address is not determined yet.
 	 */

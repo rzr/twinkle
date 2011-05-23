@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -139,10 +139,14 @@ private:
 	/** RTP port to be used for this line. */
 	unsigned short		rtp_port;
 	
-	// User profile of user using the line
-	// This is a pointer to the user_config owned by a phone user.
-	// So this pointer should never be deleted.
-	t_user			*user_config;
+	/**
+	 * Phone user using the line.
+	 * This member is only set when the line is not idle.
+	 * An idle line is not associated with a user.
+	 * @note The line object does not own the phone user.
+	 *       Therefor the line object must never delete the phone user.
+	 */
+	t_phone_user		*phone_user;
 	
 	// The incoming call script can return a specific ring tone
 	// to be played for an incoming call. This ring tone is
@@ -198,18 +202,48 @@ public:
 	void start_timer(t_line_timer timer, t_object_id did = 0);
 	void stop_timer(t_line_timer timer, t_object_id did = 0);
 
-	// Actions
-	void invite(t_user *user, const t_url &to_uri, const string &to_display,
+	/** @name Actions */
+	//@{
+	/**
+	 * Send INIVTE request.
+	 * @param pu The phone user making this call.
+	 * @param to_uri The URI to be used a request-URI and To header URI
+	 * @param to_display Display name for To header.
+	 * @param subject If not empty, this string will go into the Subject header.
+	 * @param hdr_referred_by The Reffered-By header to be put in the INVITE.
+	 * @param hdr_replaces The Replaces header to be put in the INVITE.
+	 * @param hdr_require Required extensions to be put in the Require header.
+	 * @param hdr_request_disposition Request-Disposition header to be put in the INVITE.
+	 * @param anonymous Inidicates if the INVITE should be sent anonymous.
+	 *
+	 * @pre The line is idle.
+	 */
+	void invite(t_phone_user *pu, const t_url &to_uri, const string &to_display,
 		const string &subject, const t_hdr_referred_by &hdr_referred_by,
-		const t_hdr_replaces &hdr_replaces, const t_hdr_require &hdr_require, 
+		const t_hdr_replaces &hdr_replaces, const t_hdr_require &hdr_require,
+		const t_hdr_request_disposition &hdr_request_disposition,
 		bool anonymous);
-	void invite(t_user *user, const t_url &to_uri, const string &to_display,
-		const string &subject, bool anonymous);
+		
+	/**
+	 * Send INIVTE request.
+	 * @param pu The phone user making this call.
+	 * @param to_uri The URI to be used a request-URI and To header URI
+	 * @param to_display Display name for To header.
+	 * @param subject If not empty, this string will go into the Subject header.
+	 * @param no_fork If true, put a no-fork request disposition in the outgoing INVITE
+	 * @param anonymous Inidicates if the INVITE should be sent anonymous.
+	 *
+	 * @pre The line is idle.
+	 */
+	void invite(t_phone_user *pu, const t_url &to_uri, const string &to_display,
+		const string &subject, bool no_fork, bool anonymous);
+		
 	void answer(void);
 	void reject(void);
 	void redirect(const list<t_display_url> &destinations, int code, string reason = "");
 	void end_call(void);
 	void send_dtmf(char digit, bool inband, bool info);
+	//@}
 
 	// OPTIONS inside dialog
 	void options(void);
@@ -239,7 +273,7 @@ public:
 
 	/** @name Handle incoming requests */
 	//@{
-	void recvd_invite(t_user *user, t_request *r, t_tid tid, const string &ringtone);
+	void recvd_invite(t_phone_user *pu, t_request *r, t_tid tid, const string &ringtone);
 	void recvd_ack(t_request *r, t_tid tid);
 	void recvd_cancel(t_request *r, t_tid cancel_tid, t_tid target_tid);
 	void recvd_bye(t_request *r, t_tid tid);
@@ -281,14 +315,22 @@ public:
 	bool match_cancel(t_request *r, t_tid target_tid) const;
 	bool match(StunMessage *r, t_tuid tuid) const;
 	
-	// RFC 3891
-	// Match for info from Replaces header
-	// Match call id, to-tag and from tag like an incoming request.
-	// Return true if a match is found with an associated dialog.
-	// When a match is found, early_matched indicates if the match
-	// was on an early dialog.
+	/**
+	 * RFC 3891 Match info from Replaces header
+	 * Match call id, to-tag and from tag like an incoming request.
+	 * @param call_id [in] The Call ID of the Replaces header.
+	 * @param to_tag [in] to-tag of the Replaces header.
+	 * @param from_tag [in] from-tag of the Replaces header.
+	 * @param no_fork_req_disposition [in] Indicates if the incoming request
+	 *	contains a no-fork request disposition.
+	 * @param early_matched [out] When a match is found, early_matched 
+	 * 	indicates if the match was on an early dialog.
+	 * @return true if a match is found with an associated dialog.
+	 */
 	bool match_replaces(const string &call_id, const string &to_tag, 
-		const string &from_tag, bool &early_matched) const;
+		const string &from_tag, 
+		bool no_fork_req_disposition,
+		bool &early_matched) const;
 
 	// Check if an incoming INVITE is a retransmission of an INVITE
 	// that is already being processed by this line
@@ -341,19 +383,103 @@ public:
 	bool is_refer_succeeded(void) const;
 	bool has_media(void) const;
 	
-	// Return the remote (target) uri/display of the active dialog.
-	// If there is no active dialog, then an empty url/display will
-	// be returned.
+	/** @name Remote (target) uri/display */
+	//@{
+	/** 
+	 * Get the remote target URI of the active dialog.
+	 * @return Remote target URI. If there is no active dialog, then an
+	 *         empty URI is returned.
+	 */
 	t_url get_remote_target_uri(void) const;
+	
+	/** 
+	 * Get the remote target URI of the first pending dialog.
+	 * @return Remote target URI. If there is no pending dialog, then an
+	 *         empty URI is returned.
+	 */
+	t_url get_remote_target_uri_pending(void) const;
+	
+	/**
+	 * Get the remote target display name of the active dialog.
+	 * @return Remote target display name. If there is no active dialog,
+	 *         then an empty string is returned.
+	 */
 	string get_remote_target_display(void) const;
+	
+	/**
+	 * Get the remote target display name of the first pending dialog.
+	 * @return Remote target display name. If there is no pending dialog,
+	 *         then an empty string is returned.
+	 */
+	string get_remote_target_display_pending(void) const;
+	
+	/** 
+	 * Get the remote URI of the active dialog.
+	 * @return Remote URI. If there is no active dialog, then an
+	 *         empty URI is returned.
+	 */
 	t_url get_remote_uri(void) const;
+	
+	/** 
+	 * Get the remote URI of the first pending dialog.
+	 * @return Remote URI. If there is no pending dialog, then an
+	 *         empty URI is returned.
+	 */
+	t_url get_remote_uri_pending(void) const;
+	
+	/**
+	 * Get the remote display name of the active dialog.
+	 * @return Remote display name. If there is no active dialog,
+	 *         then an empty string is returned.
+	 */
 	string get_remote_display(void) const;
 	
-	// Get call-id and tags of the active dialog
-	// If there is no active dialog, then empty strings are returned.
+	/**
+	 * Get the remote display name of the first pending dialog.
+	 * @return Remote display name. If there is no pending dialog,
+	 *         then an empty string is returned.
+	 */
+	string get_remote_display_pending(void) const;
+	//@}
+	
+	/** @name Call identification */
+	//@{
+	/**
+	 * Get the call-id of the active dialog
+	 * @return If there is no active dialog, then an empty string is returned.
+	 */
 	string get_call_id(void) const;
+	
+	/**
+	 * Get the call-id of the first pending dialog
+	 * @return If there is no pending dialog, then an empty string is returned.
+	 */
+	string get_call_id_pending(void) const;
+	
+	/**
+	 * Get the local tag of the active dialog
+	 * @return If there is no active dialog, then an empty string is returned.
+	 */
 	string get_local_tag(void) const;
+	
+	/**
+	 * Get the local tag of the first pending dialog
+	 * @return If there is no pending dialog, then an empty string is returned.
+	 */
+	string get_local_tag_pending(void) const;
+	
+	/**
+	 * Get the remote tag of the active dialog
+	 * @return If there is no active dialog, then an empty string is returned.
+	 */
 	string get_remote_tag(void) const;
+	
+	/**
+	 * Get the remote tag of the first pending dialog
+	 * @return If there is no pending dialog, then an empty string is returned.
+	 */
+	string get_remote_tag_pending(void) const;
+	//@}
 	
 	// Returns true if the remote party of the active dialog supports
 	// the extension.
@@ -399,10 +525,18 @@ public:
 	/** Get the RTP port to be used for a call on this line. */
 	unsigned short get_rtp_port(void) const;
 	
-	// Get the user using the phone.
-	// Returns a pointer to the user object owned by the line.
-	// NOT a copy.
+	/**
+	 * Get the user profile of the user using the phone.
+	 * @return a pointer to the user object owned by the line.
+	 * NOT a copy.
+	 */
 	t_user *get_user(void) const;
+	
+	/**
+	 * Get the phone user using the phone.
+	 * @return Pointer to the phone user.
+	 */
+	t_phone_user *get_phone_user(void) const;
 	
 	// Get the ring tone to be played for an incoming call
 	string get_ringtone(void) const;

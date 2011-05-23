@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -39,9 +39,11 @@
 #include "sockets/interfaces.h"
 #include "sockets/socket.h"
 #include "threads/thread.h"
+#include "utils/mime_database.h"
 #include "audits/memman.h"
 
 using namespace std;
+using namespace utils;
 
 // Class to initialize the random generator before objects of
 // other classes are created. Initializing just from the main function
@@ -131,6 +133,9 @@ t_call_history		*call_history;
 // Local address book
 t_address_book		*ab_local;
 
+// Mime database
+t_mime_database		*mime_database;
+
 // If a port number is passed by the user on the command line, then
 // that port number overrides the port from the system settings.
 unsigned short		g_override_sip_port = 0;
@@ -140,7 +145,7 @@ unsigned short		g_override_rtp_port = 0;
 bool			threading_is_LinuxThreads;
 
 
-main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 	string error_msg;
 	
 	end_app = false;
@@ -213,7 +218,7 @@ main(int argc, char *argv[]) {
 	// Create a lock file to guarantee that the application
 	// runs only once.
 	bool already_running;
-	if (!sys_config->create_lock_file(error_msg, already_running)) {
+	if (!sys_config->create_lock_file(false, error_msg, already_running)) {
 		ui->cb_show_msg(error_msg, MSG_CRITICAL);
 		exit(1);
 	}
@@ -292,6 +297,13 @@ main(int argc, char *argv[]) {
 	if (!ab_local->load(error_msg)) {
 		log_file->write_report(error_msg, "::main", LOG_NORMAL, LOG_WARNING);
 		ui->cb_show_msg(error_msg, MSG_WARNING);
+	}
+	
+	// Create mime database
+	mime_database = new t_mime_database();
+	MEMMAN_NEW(mime_database);
+	if (!mime_database->load(error_msg)) {
+		log_file->write_report(error_msg, "::main", LOG_NORMAL, LOG_WARNING);
 	}
 
 	// Initialize RTP port settings.
@@ -389,8 +401,8 @@ main(int argc, char *argv[]) {
 	t_thread *thr_listen_conn_tcp;
 	t_thread *thr_conn_timeout_handler;
 	t_thread *thr_timekeeper;
-	t_thread *thr_alarm_catcher;
-	t_thread *thr_sig_catcher;
+	t_thread *thr_alarm_catcher = NULL;
+	t_thread *thr_sig_catcher = NULL;
 	t_thread *thr_trans_mgr;
 	t_thread *thr_phone_uas;
 
@@ -509,6 +521,8 @@ main(int argc, char *argv[]) {
 	
 	evq_sender->push_quit();
 	thr_sender->join();
+	
+	sys_config->remove_all_tmp_files();
 
 	MEMMAN_DELETE(thr_phone_uas);
 	delete thr_phone_uas;
@@ -539,6 +553,8 @@ main(int argc, char *argv[]) {
 	MEMMAN_DELETE(thr_listen_conn_tcp);
 	delete thr_listen_conn_tcp;
 
+	MEMMAN_DELETE(mime_database);
+	delete mime_database;
 	MEMMAN_DELETE(ab_local);
 	delete ab_local;
 	MEMMAN_DELETE(call_history);

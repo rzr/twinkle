@@ -43,8 +43,8 @@ subdir = src
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(srcdir)/twinkle_config.h.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
-	$(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/m4/vl_lib_readline.m4 \
+	$(top_srcdir)/acinclude.m4 $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -58,10 +58,10 @@ libtwinkle_a_LIBADD =
 am_libtwinkle_a_OBJECTS = abstract_dialog.$(OBJEXT) \
 	address_book.$(OBJEXT) auth.$(OBJEXT) call_history.$(OBJEXT) \
 	call_script.$(OBJEXT) client_request.$(OBJEXT) \
-	cmd_socket.$(OBJEXT) dialog.$(OBJEXT) epa.$(OBJEXT) \
-	events.$(OBJEXT) id_object.$(OBJEXT) line.$(OBJEXT) \
-	listener.$(OBJEXT) log.$(OBJEXT) phone.$(OBJEXT) \
-	phone_user.$(OBJEXT) prohibit_thread.$(OBJEXT) \
+	cmd_socket.$(OBJEXT) dialog.$(OBJEXT) diamondcard.$(OBJEXT) \
+	epa.$(OBJEXT) events.$(OBJEXT) id_object.$(OBJEXT) \
+	line.$(OBJEXT) listener.$(OBJEXT) log.$(OBJEXT) \
+	phone.$(OBJEXT) phone_user.$(OBJEXT) prohibit_thread.$(OBJEXT) \
 	redirect.$(OBJEXT) sender.$(OBJEXT) service.$(OBJEXT) \
 	session.$(OBJEXT) sub_refer.$(OBJEXT) subscription.$(OBJEXT) \
 	subscription_dialog.$(OBJEXT) sys_settings.$(OBJEXT) \
@@ -85,8 +85,8 @@ twinkle_DEPENDENCIES = libtwinkle.a \
 	$(top_builddir)/src/im/libim.a \
 	$(top_builddir)/src/presence/libpresence.a \
 	$(top_builddir)/src/patterns/libpatterns.a \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1)
+	$(top_builddir)/src/utils/libutils.a $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -253,6 +253,8 @@ X_PRE_LIBS = @X_PRE_LIBS@
 X_RPATH = @X_RPATH@
 YACC = @YACC@
 YFLAGS = @YFLAGS@
+ZRTP_CFLAGS = @ZRTP_CFLAGS@
+ZRTP_LIBS = @ZRTP_LIBS@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
 all_includes = @all_includes@
@@ -342,7 +344,7 @@ xdg_appsdir = @xdg_appsdir@
 xdg_directorydir = @xdg_directorydir@
 xdg_menudir = @xdg_menudir@
 AM_LDFLAGS = -L $(libdir)
-AM_CPPFLAGS = $(CCRTP_CFLAGS) $(XML2_CFLAGS) -DDATADIR=\"$(pkgdatadir)\"
+AM_CPPFLAGS = -Wall $(CCRTP_CFLAGS) $(XML2_CFLAGS) -DDATADIR=\"$(pkgdatadir)\"
 noinst_LIBRARIES = libtwinkle.a
 twinkle_SOURCES = main.cpp
 twinkle_LDADD = libtwinkle.a\
@@ -357,10 +359,14 @@ twinkle_LDADD = libtwinkle.a\
         $(top_builddir)/src/im/libim.a\
         $(top_builddir)/src/presence/libpresence.a\
         $(top_builddir)/src/patterns/libpatterns.a\
+        $(top_builddir)/src/utils/libutils.a\
 	$(GSM_LIBS)\
 	$(CCRTP_LIBS)\
 	$(XML2_LIBS)\
-	-lsndfile
+	-lncurses \
+	-lreadline \
+	-lsndfile\
+	-lmagic
 
 libtwinkle_a_SOURCES = \
 	abstract_dialog.cpp\
@@ -371,6 +377,7 @@ libtwinkle_a_SOURCES = \
         client_request.cpp\
         cmd_socket.cpp\
         dialog.cpp\
+        diamondcard.cpp\
         epa.cpp\
         events.cpp\
         id_object.cpp\
@@ -403,6 +410,7 @@ libtwinkle_a_SOURCES = \
         client_request.h\
         cmd_socket.h\
         dialog.h\
+        diamondcard.h\
         epa.h\
         events.h\
 	exceptions.h\
@@ -512,6 +520,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/client_request.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_socket.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/diamondcard.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/epa.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/events.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/id_object.Po@am__quote@

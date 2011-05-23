@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,7 +36,8 @@ t_connection::t_connection(t_socket *socket) :
 	socket_(socket), 
 	sip_msg_(NULL),
 	pos_send_buf_(0),
-	idle_time_(0)
+	idle_time_(0),
+	can_reuse_(true)
 {}
 
 t_connection::~t_connection() {
@@ -71,7 +72,7 @@ void t_connection::write(void) {
 	if (send_buf_.empty()) return;
 	
 	ssize_t nwrite = send_buf_.size() - pos_send_buf_;
-	if (WRITE_BLOCK_SIZE < nwrite) nwrite = WRITE_BLOCK_SIZE;
+	if ((ssize_t)WRITE_BLOCK_SIZE < nwrite) nwrite = WRITE_BLOCK_SIZE;
 	ssize_t nwritten = socket_->send(send_buf_.c_str() + pos_send_buf_, nwrite);
 	pos_send_buf_ += nwritten;
 	
@@ -83,8 +84,10 @@ void t_connection::write(void) {
 }
 
 ssize_t t_connection::send(const char *data, int data_size) {
-	socket_->send(data, data_size);
+	ssize_t bytes_sent = socket_->send(data, data_size);
 	idle_time_ = 0;
+	
+	return bytes_sent;
 }
 
 void t_connection::async_send(const char *data, int data_size) {
@@ -103,6 +106,12 @@ t_sip_message *t_connection::get_sip_msg(string &raw_headers, string &raw_body, 
 	msg_too_large = false;
 	
 	if (!sip_msg_) {
+		// RFC 3261 7.5
+		// Ignore CRLF preceding the start-line of a SIP message
+		while (read_buf_.size() >= 2 && read_buf_.substr(0, 2) == string(CRLF)) {
+			remove_data(2);
+		}
+	
 		// A complete list of headers has not been read yet, try
 		// to find the boundary between headers and body.
 		string seperator = string(CRLF) + string(CRLF);
@@ -244,4 +253,42 @@ unsigned long t_connection::get_idle_time(void) const {
 
 bool t_connection::has_data_to_send(void) const {
 	return !send_buf_.empty();
+}
+
+void t_connection::set_reuse(bool reuse) {
+	can_reuse_ = reuse;
+}
+
+bool t_connection::may_reuse(void) const {
+	return can_reuse_;
+}
+
+void t_connection::add_registered_uri(const t_url &uri) {
+	// Add the URI if it is not in the set.
+	if (find(registered_uri_set_.begin(), registered_uri_set_.end(), uri) == registered_uri_set_.end())
+	{
+		registered_uri_set_.push_back(uri);
+	}
+}
+
+void t_connection::remove_registered_uri(const t_url &uri) {
+	registered_uri_set_.remove(uri);
+}
+
+void t_connection::update_registered_uri_set(const t_request *req) {
+	assert(req->method == REGISTER);
+	
+	if (req->is_registration_request()) {
+		add_registered_uri(req->hdr_to.uri);
+	} else if (req->is_de_registration_request()) {
+		remove_registered_uri(req->hdr_to.uri);
+	}
+}
+
+const list<t_url> &t_connection::get_registered_uri_set(void) const {
+	return registered_uri_set_;
+}
+
+bool t_connection::has_registered_uri(void) const {
+	return !registered_uri_set_.empty();
 }

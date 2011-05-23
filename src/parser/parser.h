@@ -94,32 +94,34 @@
      T_HDR_PROXY_REQUIRE = 310,
      T_HDR_RACK = 311,
      T_HDR_RECORD_ROUTE = 312,
-     T_HDR_REFER_SUB = 313,
-     T_HDR_REFER_TO = 314,
-     T_HDR_REFERRED_BY = 315,
-     T_HDR_REPLACES = 316,
-     T_HDR_REPLY_TO = 317,
-     T_HDR_REQUIRE = 318,
-     T_HDR_RETRY_AFTER = 319,
-     T_HDR_ROUTE = 320,
-     T_HDR_RSEQ = 321,
-     T_HDR_SERVER = 322,
-     T_HDR_SIP_ETAG = 323,
-     T_HDR_SIP_IF_MATCH = 324,
-     T_HDR_SUBJECT = 325,
-     T_HDR_SUBSCRIPTION_STATE = 326,
-     T_HDR_SUPPORTED = 327,
-     T_HDR_TIMESTAMP = 328,
-     T_HDR_TO = 329,
-     T_HDR_UNSUPPORTED = 330,
-     T_HDR_USER_AGENT = 331,
-     T_HDR_VIA = 332,
-     T_HDR_WARNING = 333,
-     T_HDR_WWW_AUTHENTICATE = 334,
-     T_HDR_UNKNOWN = 335,
-     T_CRLF = 336,
-     T_ERROR = 337,
-     T_NULL = 338
+     T_HDR_SERVICE_ROUTE = 313,
+     T_HDR_REFER_SUB = 314,
+     T_HDR_REFER_TO = 315,
+     T_HDR_REFERRED_BY = 316,
+     T_HDR_REPLACES = 317,
+     T_HDR_REPLY_TO = 318,
+     T_HDR_REQUIRE = 319,
+     T_HDR_REQUEST_DISPOSITION = 320,
+     T_HDR_RETRY_AFTER = 321,
+     T_HDR_ROUTE = 322,
+     T_HDR_RSEQ = 323,
+     T_HDR_SERVER = 324,
+     T_HDR_SIP_ETAG = 325,
+     T_HDR_SIP_IF_MATCH = 326,
+     T_HDR_SUBJECT = 327,
+     T_HDR_SUBSCRIPTION_STATE = 328,
+     T_HDR_SUPPORTED = 329,
+     T_HDR_TIMESTAMP = 330,
+     T_HDR_TO = 331,
+     T_HDR_UNSUPPORTED = 332,
+     T_HDR_USER_AGENT = 333,
+     T_HDR_VIA = 334,
+     T_HDR_WARNING = 335,
+     T_HDR_WWW_AUTHENTICATE = 336,
+     T_HDR_UNKNOWN = 337,
+     T_CRLF = 338,
+     T_ERROR = 339,
+     T_NULL = 340
    };
 #endif
 /* Tokens.  */
@@ -178,32 +180,34 @@
 #define T_HDR_PROXY_REQUIRE 310
 #define T_HDR_RACK 311
 #define T_HDR_RECORD_ROUTE 312
-#define T_HDR_REFER_SUB 313
-#define T_HDR_REFER_TO 314
-#define T_HDR_REFERRED_BY 315
-#define T_HDR_REPLACES 316
-#define T_HDR_REPLY_TO 317
-#define T_HDR_REQUIRE 318
-#define T_HDR_RETRY_AFTER 319
-#define T_HDR_ROUTE 320
-#define T_HDR_RSEQ 321
-#define T_HDR_SERVER 322
-#define T_HDR_SIP_ETAG 323
-#define T_HDR_SIP_IF_MATCH 324
-#define T_HDR_SUBJECT 325
-#define T_HDR_SUBSCRIPTION_STATE 326
-#define T_HDR_SUPPORTED 327
-#define T_HDR_TIMESTAMP 328
-#define T_HDR_TO 329
-#define T_HDR_UNSUPPORTED 330
-#define T_HDR_USER_AGENT 331
-#define T_HDR_VIA 332
-#define T_HDR_WARNING 333
-#define T_HDR_WWW_AUTHENTICATE 334
-#define T_HDR_UNKNOWN 335
-#define T_CRLF 336
-#define T_ERROR 337
-#define T_NULL 338
+#define T_HDR_SERVICE_ROUTE 313
+#define T_HDR_REFER_SUB 314
+#define T_HDR_REFER_TO 315
+#define T_HDR_REFERRED_BY 316
+#define T_HDR_REPLACES 317
+#define T_HDR_REPLY_TO 318
+#define T_HDR_REQUIRE 319
+#define T_HDR_REQUEST_DISPOSITION 320
+#define T_HDR_RETRY_AFTER 321
+#define T_HDR_ROUTE 322
+#define T_HDR_RSEQ 323
+#define T_HDR_SERVER 324
+#define T_HDR_SIP_ETAG 325
+#define T_HDR_SIP_IF_MATCH 326
+#define T_HDR_SUBJECT 327
+#define T_HDR_SUBSCRIPTION_STATE 328
+#define T_HDR_SUPPORTED 329
+#define T_HDR_TIMESTAMP 330
+#define T_HDR_TO 331
+#define T_HDR_UNSUPPORTED 332
+#define T_HDR_USER_AGENT 333
+#define T_HDR_VIA 334
+#define T_HDR_WARNING 335
+#define T_HDR_WWW_AUTHENTICATE 336
+#define T_HDR_UNKNOWN 337
+#define T_CRLF 338
+#define T_ERROR 339
+#define T_NULL 340
 
 
 
@@ -237,7 +241,7 @@ typedef union YYSTYPE
 	t_challenge		*yyt_challenge;
 }
 /* Line 1529 of yacc.c.  */
-#line 241 "parser.h"
+#line 245 "parser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

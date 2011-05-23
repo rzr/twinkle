@@ -1,5 +1,7 @@
 AM_CPPFLAGS = \
-	-I$(top_srcdir)/src
+	-Wall \
+	-I$(top_srcdir)/src\
+	$(XML2_CFLAGS)
 
 noinst_LIBRARIES = libsocket.a
 

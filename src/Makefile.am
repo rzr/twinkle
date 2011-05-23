@@ -1,6 +1,6 @@
 AM_LDFLAGS = -L $(libdir)
 
-AM_CPPFLAGS = $(CCRTP_CFLAGS) $(XML2_CFLAGS) -DDATADIR=\"$(pkgdatadir)\"
+AM_CPPFLAGS = -Wall $(CCRTP_CFLAGS) $(XML2_CFLAGS) -DDATADIR=\"$(pkgdatadir)\"
 
 noinst_PROGRAMS = twinkle
 
@@ -20,10 +20,14 @@ twinkle_LDADD = libtwinkle.a\
         $(top_builddir)/src/im/libim.a\
         $(top_builddir)/src/presence/libpresence.a\
         $(top_builddir)/src/patterns/libpatterns.a\
+        $(top_builddir)/src/utils/libutils.a\
 	$(GSM_LIBS)\
 	$(CCRTP_LIBS)\
 	$(XML2_LIBS)\
-	-lsndfile
+	-lncurses \
+	-lreadline \
+	-lsndfile\
+	-lmagic
 
 libtwinkle_a_SOURCES =\
 	abstract_dialog.cpp\
@@ -34,6 +38,7 @@ libtwinkle_a_SOURCES =\
         client_request.cpp\
         cmd_socket.cpp\
         dialog.cpp\
+        diamondcard.cpp\
         epa.cpp\
         events.cpp\
         id_object.cpp\
@@ -66,6 +71,7 @@ libtwinkle_a_SOURCES =\
         client_request.h\
         cmd_socket.h\
         dialog.h\
+        diamondcard.h\
         epa.h\
         events.h\
 	exceptions.h\

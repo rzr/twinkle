@@ -316,6 +316,74 @@
     </message>
 </context>
 <context>
+    <name>DiamondcardProfileForm</name>
+    <message>
+        <source>Twinkle - Diamondcard User Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your Diamondcard account ID.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is just your full name, e.g. John Doe. It is used as a display name. When you make a call, this display name might be shown to the called party.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Account ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;PIN code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Your name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;&lt;u&gt;Sign up for a Diamondcard account&lt;/u&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished">Abbruch (Es&amp;c)</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill in your account ID.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill in your PIN code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A user profile with name %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your Diamondcard PIN code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;With a Diamondcard account you can make worldwide calls to regular and cell phones and send SMS messages. To sign up for a Diamondcard account click on the &quot;sign up&quot; link below. Once you have signed up you receive an account ID and PIN code. Enter the account ID and PIN code below to create a Twinkle user profile for your Diamondcard account.&lt;/p&gt;
+&lt;p&gt;For call rates see the sign up web page that will be shown to you when you click on the &quot;sign up&quot; link.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DtmfForm</name>
     <message>
         <source>Twinkle - DTMF</source>
@@ -783,6 +851,22 @@
         <source>Accepted by network</source>
         <translation>Akzeptiert durch Netzwerk</translation>
     </message>
+    <message>
+        <source>Failed to save message attachment: %1</source>
+        <translation>Fehler beim Speichern des Nachrichtenanhangs: &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Transferred by: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot open web browser: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure your web browser in the system settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GetAddressForm</name>
@@ -1161,6 +1245,18 @@ Es bietet sich an, hier Ihre SIP-Adresse als Name zu verwenden, also &lt;b&gt;me
         <source>&amp;Call</source>
         <translation>Anrufen (&amp;Enter)</translation>
     </message>
+    <message>
+        <source>Number of calls:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>###</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total call duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InviteForm</name>
@@ -1230,6 +1326,10 @@ With this option you request your SIP provider to hide your identity from the ca
         <source>Not all SIP providers support identity hiding. Make sure your SIP provider supports it if you really need it.</source>
         <translation>Nicht alle SIP-Provider unterstützen die Funktion &quot;Absenderangaben unterdrücken&quot;. Bitte vergewissern Sie sich, bevor Sie sich auf diese Funktion verlassen.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LogViewForm</name>
@@ -1298,7 +1398,7 @@ With this option you request your SIP provider to hide your identity from the ca
     </message>
     <message>
         <source>The exchanged messages.</source>
-        <translation>Die gesendeten und empfangenen Nachrichten. Gesendete schwarz, empfangene blau.</translation>
+        <translation type="obsolete">Die gesendeten und empfangenen Nachrichten. Gesendete schwarz, empfangene blau.</translation>
     </message>
     <message>
         <source>Type your message here and then press &quot;send&quot; to send it.</source>
@@ -1323,6 +1423,54 @@ With this option you request your SIP provider to hide your identity from the ca
     <message>
         <source>Delivery notification</source>
         <translation>Übertragungsbestätigung</translation>
+    </message>
+    <message>
+        <source>Instant message toolbar</source>
+        <translation>Instant Message Werkzeugleiste</translation>
+    </message>
+    <message>
+        <source>Send file...</source>
+        <translation>Sende Datei...</translation>
+    </message>
+    <message>
+        <source>Send file</source>
+        <translation>Sende Datei</translation>
+    </message>
+    <message>
+        <source>image size is scaled down in preview</source>
+        <translation>Bild in Vorschau verkleinert</translation>
+    </message>
+    <message>
+        <source>Open with %1...</source>
+        <translation>Öffnen mit %1...</translation>
+    </message>
+    <message>
+        <source>Open with...</source>
+        <translation>Öffnen mit...</translation>
+    </message>
+    <message>
+        <source>Save attachment as...</source>
+        <translation>Anhang speichern unter...</translation>
+    </message>
+    <message>
+        <source>File already exists. Do you want to overwrite this file?</source>
+        <translation>Datei dieses Namens existiert bereits! Löschen und durch neue Datei ersetzen?</translation>
+    </message>
+    <message>
+        <source>Failed to save attachment.</source>
+        <translation>Fehler beim Speichern des Anhangs.</translation>
+    </message>
+    <message>
+        <source>%1 is typing a message.</source>
+        <translation>%1 schreibt gerade eine Nachricht.</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2221,6 +2369,58 @@ Um den Online-Status eines Buddies abzufragen, muss &lt;i&gt;dessen&lt;/i&gt; Pr
         <source>&amp;Display</source>
         <translation>&amp;Detailanzeige</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diamondcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sign up...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recharge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Balance history...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Call history...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin center...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recharge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Balance history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NumberConversionForm</name>
@@ -2315,6 +2515,18 @@ Um den Online-Status eines Buddies abzufragen, muss &lt;i&gt;dessen&lt;/i&gt; Pr
         <source>&amp;Cancel</source>
         <translation>Abbruch (Es&amp;c)</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectNicForm</name>
@@ -2387,11 +2599,11 @@ Um den Online-Status eines Buddies abzufragen, muss &lt;i&gt;dessen&lt;/i&gt; Pr
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Neu</translation>
+        <translation type="obsolete">&amp;Neu</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="obsolete">Alt+N</translation>
     </message>
     <message>
         <source>Create a new profile with the profile editor.</source>
@@ -2495,7 +2707,7 @@ Um den Online-Status eines Buddies abzufragen, muss &lt;i&gt;dessen&lt;/i&gt; Pr
     </message>
     <message>
         <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Sie können zum Erzeugen des Benutzerprofils den Profileditor verwenden. Dieser erlaubt detailierte Einstellungen für SIP-Protokoll, RTP sowie viele weitere Bereiche.&lt;br&gt;&lt;br&gt;Oder Sie nutzen den Wizard, um schnell und einfach die wichtigsten Einstellungen für ein Benutzerprofil vorzunehmen. Der Wizard erfragt von Ihnen nur die absolut notwendigen Daten, die Sie von Ihrem SIP-Provider bei der Anmeldung mitgeteilt bekommen haben sollten. Für einige Provider werden Ihnen sogar viele dieser Daten vorgeschlagen. Wenn Sie den Wizard nutzen, können Sie später immer noch alle Details mit Hilfe des Editors nach Wunsch ändern und ergänzen.&lt;br&gt;&lt;br&gt;Hilfe erhalten Sie überall in Twinkle entweder durch Drücken von &quot;Umschalt + F1&quot;, über das Kontextmenü via rechten Mausknopf, oder durch Anklicken des &quot;?&quot; oben rechts am Fensterrand.&lt;br&gt;&lt;br&gt;Bitte wählen Sie, wie Sie das Benutzerprofil anlegen wollen.&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;Sie können zum Erzeugen des Benutzerprofils den Profileditor verwenden. Dieser erlaubt detailierte Einstellungen für SIP-Protokoll, RTP sowie viele weitere Bereiche.&lt;br&gt;&lt;br&gt;Oder Sie nutzen den Wizard, um schnell und einfach die wichtigsten Einstellungen für ein Benutzerprofil vorzunehmen. Der Wizard erfragt von Ihnen nur die absolut notwendigen Daten, die Sie von Ihrem SIP-Provider bei der Anmeldung mitgeteilt bekommen haben sollten. Für einige Provider werden Ihnen sogar viele dieser Daten vorgeschlagen. Wenn Sie den Wizard nutzen, können Sie später immer noch alle Details mit Hilfe des Editors nach Wunsch ändern und ergänzen.&lt;br&gt;&lt;br&gt;Hilfe erhalten Sie überall in Twinkle entweder durch Drücken von &quot;Umschalt + F1&quot;, über das Kontextmenü via rechten Mausknopf, oder durch Anklicken des &quot;?&quot; oben rechts am Fensterrand.&lt;br&gt;&lt;br&gt;Bitte wählen Sie, wie Sie das Benutzerprofil anlegen wollen.&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;Next you may adjust the system settings. You can change these settings always at a later time.&lt;br&gt;&lt;br&gt;Click OK to view and adjust the system settings.&lt;/html&gt;</source>
@@ -2533,6 +2745,46 @@ Please select a profile.</source>
     <message>
         <source>&amp;Profile editor</source>
         <translation>&amp;Profil-Editor</translation>
+    </message>
+    <message>
+        <source>Create profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ed&amp;itor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+I</source>
+        <translation type="unfinished">Alt+I</translation>
+    </message>
+    <message>
+        <source>Dia&amp;mondcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modify profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Startup profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Diamondcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a profile for a Diamondcard account. With a Diamondcard account you can make worldwide calls to regular and cell phones and send SMS messages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;You can create a Diamondcard account to make worldwide calls to regular and cell phones and send SMS messages.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2621,6 +2873,49 @@ Please select a profile.</source>
     <message>
         <source>Select users for which you want to enable &apos;auto answer&apos;.</source>
         <translation>Benutzerprofile wählen, für die der Dienst &quot;Automatisch Annehmen&quot; aktiviert werden soll.</translation>
+    </message>
+</context>
+<context>
+    <name>SendFileForm</name>
+    <message>
+        <source>Twinkle - Send File</source>
+        <translation>Twinkle - Sende Datei</translation>
+    </message>
+    <message>
+        <source>Select file to send.</source>
+        <translation>Dateiauswahl für Senden.</translation>
+    </message>
+    <message>
+        <source>&amp;File:</source>
+        <translation>&amp;Datei:</translation>
+    </message>
+    <message>
+        <source>&amp;Subject:</source>
+        <translation>&amp;Betreff:</translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>Alt+O</source>
+        <translation>Alt+O</translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>Abbruch (Es&amp;c)</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation>Alt+C</translation>
+    </message>
+    <message>
+        <source>File does not exist.</source>
+        <translation>Datei existiert nicht.</translation>
+    </message>
+    <message>
+        <source>Send file...</source>
+        <translation>Sende Datei...</translation>
     </message>
 </context>
 <context>
@@ -2749,6 +3044,18 @@ Please select a profile.</source>
         <source>You have entered an invalid destination.</source>
         <translation>Ungültige Zieladresse eingegeben.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SysSettingsForm</name>
@@ -2822,17 +3129,17 @@ Please select a profile.</source>
     </message>
     <message>
         <source>Reduce &amp;noise from the microphone</source>
-        <translation>Spezielle Störgeräusch-U&amp;nterdrückung für manche defekte Gateways</translation>
+        <translation type="obsolete">Spezielle Störgeräusch-U&amp;nterdrückung für manche defekte Gateways</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="obsolete">Alt+N</translation>
     </message>
     <message>
         <source>Recordings from the microphone can contain noise. This could be annoying to the person on the other side of your call. This option removes soft noise coming from the microphone.
 
 The noise reduction algorithm is very simplistic. Sound is captured as 16 bits signed linear PCM samples. All samples between -50 and 50 are truncated to 0.</source>
-        <translation>Diese Option setzt alle Tonsamples mit  -50 &lt; Messwert &lt; 50 auf 0.
+        <translation type="obsolete">Diese Option setzt alle Tonsamples mit  -50 &lt; Messwert &lt; 50 auf 0.
 Michel hat diesen Hack entwickelt, als er mit fehlerhaften A/D-Wandlern in einigen Provider-Gateways konfrontiert war.
 Im Normalfall führt das Aktivieren eher zu einer kaum bemerkbaren Verschlechterung der Tonqualität.</translation>
     </message>
@@ -3210,16 +3517,16 @@ Depending on your SIP provider the network might provide ring back tone or an an
     <message>
         <source>none</source>
         <comment>This is the &apos;none&apos; in default IP address combo</comment>
-        <translation>auto</translation>
+        <translation type="obsolete">auto</translation>
     </message>
     <message>
         <source>none</source>
         <comment>This is the &apos;none&apos; in default network interface combo</comment>
-        <translation>auto</translation>
+        <translation type="obsolete">auto</translation>
     </message>
     <message>
         <source>Either choose a default IP address or a default network interface.</source>
-        <translation>Sie dürfen nur entweder einen Default-Anschluss oder eine Default-IP-Adresse angeben.</translation>
+        <translation type="obsolete">Sie dürfen nur entweder einen Default-Anschluss oder eine Default-IP-Adresse angeben.</translation>
     </message>
     <message>
         <source>Ring tones</source>
@@ -3300,6 +3607,14 @@ Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;
         <source>Maximum allowed size (0-4294967295) in bytes of an incoming SIP message over TCP.</source>
         <translation>Max. zulässige Größe in Byte (0-4294967295) für ankommende SIP-Nachrichten über TCP.</translation>
     </message>
+    <message>
+        <source>W&amp;eb browser command:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Command to start your web browser. If you leave this field empty Twinkle will try to figure out your default web browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SysTrayPopup</name>
@@ -3310,6 +3625,10 @@ Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;
     <message>
         <source>Reject</source>
         <translation>Abweisen</translation>
+    </message>
+    <message>
+        <source>Incoming Call</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3349,6 +3668,10 @@ Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;
     <message>
         <source>&amp;Cancel</source>
         <translation>Abbruch (Es&amp;c)</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3429,6 +3752,10 @@ Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;
         <source>Connect the remote party on the active line with the remote party on the other line.</source>
         <translation>Die beiden GgSt an Leitung 1 und 2 zueinander vermitteln. Hierbei ist die GgSt der gerade aktiven Ltg die vermittelte, also den Ruf aufbauende.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TwinkleCore</name>
@@ -3494,7 +3821,7 @@ Stattdessen zeigt Twinkle in beiden Fällen eine Warnung.&lt;/p&gt;
     </message>
     <message>
         <source>Translated to english by &lt;your name&gt;</source>
-        <translation>Deutsche Übersetzung: ©20080308-0105 Reisenweber tech+it-consult&lt;br&gt;
+        <translation>Deutsche Übersetzung: ©left 20080810-0830 Reisenweber tech+it-consult&lt;br&gt;
 joerg.twinklephone(AT)gmx.de</translation>
     </message>
     <message>
@@ -3519,7 +3846,7 @@ joerg.twinklephone(AT)gmx.de</translation>
     </message>
     <message>
         <source>Lock file %1 already exist, but cannot be opened.</source>
-        <translation>Sperrdatei &quot;%1&quot; existiert schon, kann aber nicht geöffnet werden.</translation>
+        <translation type="obsolete">Sperrdatei &quot;%1&quot; existiert schon, kann aber nicht geöffnet werden.</translation>
     </message>
     <message>
         <source>%1 is already running.
@@ -3533,7 +3860,7 @@ Sperrdatei &quot;%2&quot; existiert schon.</translation>
     </message>
     <message>
         <source>Cannot write to %1 .</source>
-        <translation>Kann in &quot;%1&quot; nicht schreiben.</translation>
+        <translation type="obsolete">Kann in &quot;%1&quot; nicht schreiben.</translation>
     </message>
     <message>
         <source>Syntax error in file %1 .</source>
@@ -3656,6 +3983,22 @@ In Ihrem Router/Firewall/NAT leiten Sie bitte folgende öffentliche Ports auf lo
     <message>
         <source>Cannot receive incoming TCP connections.</source>
         <translation>Kann eingehende TCP-Verbindungen nicht annehmen.</translation>
+    </message>
+    <message>
+        <source>Failed to create file %1</source>
+        <translation>Fehler beim Anlegen  der Datei &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Failed to write data to file %1</source>
+        <translation>Fehler beim Schreiben in Datei &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Failed to send message.</source>
+        <translation>Fehler beim Senden der Nachricht.</translation>
+    </message>
+    <message>
+        <source>Cannot lock %1 .</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4036,25 +4379,17 @@ Abhängig von den Compile-options können manche Codecs nicht verfügbar sein.</
         <translation>&amp;Ultra wide band Nutzdaten-Typ:</translation>
     </message>
     <message>
-        <source>&amp;VAD</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Alt+V</source>
         <translation>Alt+V</translation>
     </message>
     <message>
         <source>When enabled, voice activity detection detects whether the audio being encoded is speech or silence/background noise. VAD is always implicitly activated when encoding in VBR, so the option is only useful in non-VBR operation. In this case, Speex detects non-speech periods and encode them with just enough bits to reproduce the background noise. This is called &quot;comfort noise generation&quot; (CNG).</source>
-        <translation>Wenn aktiviert, prüft VAD (Voice Activity Detection, deutsch etwa: Sprache/Pause-Erkennung), ob gerade gesprochen wird. Nicht als Sprache erkannte Geräusche werden nicht übertragen, sondern es wird stattdessen ein wesentlich weniger Daten-Bandbreite benötigendes &quot;Pausesignal&quot; oder (siehe DTX) gar nichts gesendet. 
+        <translation type="obsolete">Wenn aktiviert, prüft VAD (Voice Activity Detection, deutsch etwa: Sprache/Pause-Erkennung), ob gerade gesprochen wird. Nicht als Sprache erkannte Geräusche werden nicht übertragen, sondern es wird stattdessen ein wesentlich weniger Daten-Bandbreite benötigendes &quot;Pausesignal&quot; oder (siehe DTX) gar nichts gesendet. 
 VBR (siehe dort) macht VAD unnötig.</translation>
     </message>
     <message>
         <source>&amp;Wide band payload type:</source>
         <translation>&amp;wide band Nutzdaten-Kennung:</translation>
-    </message>
-    <message>
-        <source>V&amp;BR</source>
-        <translation></translation>
     </message>
     <message>
         <source>Alt+B</source>
@@ -4073,12 +4408,8 @@ VBR (siehe dort) macht VAD unnötig.</translation>
         <translation>Ko&amp;mplexität:</translation>
     </message>
     <message>
-        <source>DT&amp;X</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Alt+X</source>
-        <translation>Alt+X</translation>
+        <translation type="obsolete">Alt+X</translation>
     </message>
     <message>
         <source>Discontinuous transmission is an addition to VAD/VBR operation, that allows to stop transmitting completely when the background noise is stationary.</source>
@@ -4430,7 +4761,7 @@ Diese Einstellung beeinflusst das Verhalten bei &quot;early media&quot; (z.B. &q
     </message>
     <message>
         <source>Allow call &amp;transfer (incoming REFER)</source>
-        <translation>GgSt darf vermi&amp;tteln (eingehender REFER)</translation>
+        <translation type="obsolete">GgSt darf vermi&amp;tteln (eingehender REFER)</translation>
     </message>
     <message>
         <source>Alt+T</source>
@@ -4705,11 +5036,11 @@ Anmerkung: Sie können diese Regel nicht einfach nur als dritte nach denen aus B
     </message>
     <message>
         <source>for STUN</source>
-        <translation>Sekunden</translation>
+        <translation type="obsolete">Sekunden</translation>
     </message>
     <message>
         <source>Keep alive timer for the STUN protocol. If you have enabled STUN, then Twinkle will send keep alive packets at this interval rate to keep the address bindings in your NAT device alive.</source>
-        <translation>Zeitgeber für das STUN-Protokoll. Wenn STUN aktiviert ist, werden die STUN-keep-alive Datenpakete in diesem Zeitabstand von Twinkle gesendet. Damit der Router die Zuordnung zwischen interner und externer Adresse nicht aus der NAT-Adresstabelle löscht, frischen diese keep-alive-Pakete die Zuordnung in der NAT rechtzeitig auf. Dieser Wert ist daher von der eingesetzten NAT abhängig und sollte nicht zu gross gezählt werden.</translation>
+        <translation type="obsolete">Zeitgeber für das STUN-Protokoll. Wenn STUN aktiviert ist, werden die STUN-keep-alive Datenpakete in diesem Zeitabstand von Twinkle gesendet. Damit der Router die Zuordnung zwischen interner und externer Adresse nicht aus der NAT-Adresstabelle löscht, frischen diese keep-alive-Pakete die Zuordnung in der NAT rechtzeitig auf. Dieser Wert ist daher von der eingesetzten NAT abhängig und sollte nicht zu gross gezählt werden.</translation>
     </message>
     <message>
         <source>When an incoming call is received, this timer is started. If the user answers the call, the timer is stopped. If the timer expires before the user answers the call, then Twinkle will reject the call with a &quot;480 User Not Responding&quot;.</source>
@@ -5447,7 +5778,7 @@ Sie können diese Einstellung auf 0 setzen, wenn Sie keine ankommenden Instant M
     </message>
     <message>
         <source> bytes</source>
-        <translation> Bytes</translation>
+        <translation type="obsolete"> Bytes</translation>
     </message>
     <message>
         <source>Messages larger than the threshold are sent via TCP. Smaller messages are sent via UDP.</source>
@@ -5456,6 +5787,138 @@ Sie können diese Einstellung auf 0 setzen, wenn Sie keine ankommenden Instant M
     <message>
         <source>Use &amp;STUN (does not work for incoming TCP)</source>
         <translation>&amp;STUN benutzen (wirkungslos für eingehende TCP-Verbindungen)</translation>
+    </message>
+    <message>
+        <source>P&amp;ersistent TCP connection</source>
+        <translation>TCP-V&amp;erbindung aufrecht erhalten</translation>
+    </message>
+    <message>
+        <source>Keep the TCP connection established during registration open such that the SIP proxy can reuse this connection to send incoming requests. Application ping packets are sent to test if the connection is still alive.</source>
+        <translation>Wenn aktiviert: Twinkle hält die TCP-Verbindung aufrecht, die bei der Registrierung verwendet wurde. So kann der SIP-Proxy diese Verbindung weiterhin benutzen, um ankommende Anfragen an Twinkle weiterzuleiten. Durch Senden von &quot;Application ping Paketen&quot; wird ständig überprüft, ob die Verbindung weiterhin besteht.</translation>
+    </message>
+    <message>
+        <source>&amp;Send composing indications when typing a message.</source>
+        <translation>&amp;Sende &quot;compositing indication&quot; beim Schreiben einer Nachricht.</translation>
+    </message>
+    <message>
+        <source>Twinkle sends a composing indication when you type a message. This way the recipient can see that you are typing.</source>
+        <translation>Wenn aktiviert, sendet Twinkle eine &quot;compositing indication&quot; wenn Sie eine Nachricht tippen. So kann der Empfänger erkennen, dass Sie gerade dabei sind, eine Nachricht zu verfassen.</translation>
+    </message>
+    <message>
+        <source>AKA AM&amp;F:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A&amp;KA OP:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authentication management field for AKAv1-MD5 authentication.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operator variant key for AKAv1-MD5 authentication.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prepr&amp;ocessing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preprocessing (improves quality at remote end)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Automatic gain control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic gain control (AGC) is a feature that deals with the fact that the recording volume may vary by a large amount between different setups. The AGC provides a way to adjust a signal to a reference volume. This is useful because it removes the need for manual adjustment of the microphone gain. A secondary advantage is that by setting the microphone gain to a conservative (low) level, it is easier to avoid clipping.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic gain control &amp;level:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic gain control level represents percentual value of automatic gain setting of a microphone. Recommended value is about 25%.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Voice activity detection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When enabled, voice activity detection detects whether the input signal represents a speech or a silence/background noise.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Noise reduction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The noise reduction can be used to reduce the amount of background noise present in the input signal. This provides higher quality speech.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Acoustic &amp;Echo Cancellation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In any VoIP communication, if a speech from the remote end is played in the local loudspeaker, then it propagates in the room and is captured by the microphone. If the audio captured from the microphone is sent directly to the remote end, then the remote user hears an echo of his voice. An acoustic echo cancellation is designed to remove the acoustic echo before it is sent to the remote end. It is important to understand that the echo canceller is meant to improve the quality on the remote end.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable &amp;bit-rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discontinuous &amp;Transmission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quality:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speex is a lossy codec, which means that it achives compression at the expense of fidelity of the input speech signal. Unlike some other speech codecs, it is possible to control the tradeoff made between quality and bit-rate. The Speex encoding process is controlled most of the time by a quality parameter that ranges from 0 to 10.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use tel-URI for telephone &amp;number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand a dialed telephone number to a tel-URI instead of a sip-URI.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept call &amp;transfer request (incoming REFER)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Allow call transfer while consultation in progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you perform an attended call transfer, you normally transfer the call after you established a consultation call. If you enable this option you can transfer the call while the consultation call is still in progress. This is a non-standard implementation and may not work with all SIP devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable NAT &amp;keep alive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send UDP NAT keep alive packets.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have enabled STUN or NAT keep alive, then Twinkle will send keep alive packets at this interval rate to keep the address bindings in your NAT device alive.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

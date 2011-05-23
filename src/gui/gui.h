@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -62,12 +62,16 @@ QString str2html(const QString &s);
 void setDisabledIcon(QAction *action, const QString &icon);
 void setDisabledIcon(QToolButton *toolButton, const QString &icon);
 
-class t_gui : public t_userintf {
+class t_gui : public QObject, public t_userintf {
+	Q_OBJECT
 private:
 	MphoneForm	*mainWindow;
 	
 	// List of active instant messaging session.
 	list<im::t_msg_session *> messageSessions;
+	
+	// Timer to schedule updating of message sessions every second.
+	QTimer *timerUpdateMessageSessions;
 	
 	// Progress dialog for FW/NAT discovery progress bar
 	QProgressDialog	*natDiscoveryProgressDialog;
@@ -135,7 +139,7 @@ protected:
 	virtual void do_user(const string &profile_name);
 	virtual void do_zrtp(t_zrtp_cmd zrtp_cmd);
 	virtual bool do_message(const string &destination, const string &display,
-		const string &text);
+				const im::t_msg &msg);
 	virtual void do_presence(t_presence_state::t_basic_state basic_state);
 	virtual void do_quit(void);
 	virtual void do_help(const list<t_command_arg> &al);
@@ -152,6 +156,12 @@ public:
 	
 	// Restore user interface state from system settings
 	void restore_state(void);
+	
+	/** Save state to restore a UI session. */
+	void save_session_state(void);
+	
+	/** Restore UI session state. */
+	void restore_session_state(void);
 	
 	// Lock the user interface to synchornize output
 	void lock(void);
@@ -202,7 +212,7 @@ public:
 	void cb_redirecting_request(t_user *user_config, int line, const t_contact_param &contact);
 	void cb_redirecting_request(t_user *user_config, const t_contact_param &contact);
 	void cb_notify_call(int line, const QString &from_party, const QString &organization,
-			   const QImage &photo, const QString &subject);
+			   const QImage &photo, const QString &subject, QString &referred_by_party);
 	void cb_stop_call_notification(int line);
 	void cb_dtmf_detected(int line, char dtmf_event);
 	void cb_send_dtmf(int line, char dtmf_event);
@@ -284,7 +294,10 @@ public:
 	
 	// Instant messaging
 	bool cb_message_request(t_user *user_config, t_request *r);
-	void cb_message_response(t_user *user_config, t_response *r);
+	void cb_message_response(t_user *user_config, t_response *r, t_request *req);
+	void cb_im_iscomposing_request(t_user *user_config, t_request *r,
+			im::t_composing_state state, time_t refresh);
+	void cb_im_iscomposing_not_supported(t_user *user_config, t_response *r);
 	
 	// Execute external commands
 	void cmd_call(const string &destination, bool immediate);
@@ -358,6 +371,26 @@ public:
 	void addMessageSession(im::t_msg_session *s);
 	void removeMessageSession(im::t_msg_session *s);
 	void destroyAllMessageSessions(void);
+	
+	/**
+	  * Convert a mime type to a file extension.
+	  * @param media [in] The mime type.
+	  * @return file extension as glob expression.
+	  */
+	string mime2file_extension(t_media media);
+	
+	/** 
+             * Open a URL in an external web browser.
+	  * @param url [in] URL to open.
+             */
+	void open_url_in_browser(const QString &url);
+	
+private slots:
+	/** 
+            * Update timers associated with message sessions. This
+	 * function should be called every second.
+	 */
+	void updateTimersMessageSessions();
 };
 
 #endif

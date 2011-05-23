@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>709</width>
-            <height>593</height>
+            <width>765</width>
+            <height>624</height>
         </rect>
     </property>
     <property name="caption">
@@ -355,22 +355,6 @@ If before answering a call, the microphone or speaker appears to be invalid, a w
                                 </property>
                             </widget>
                         </grid>
-                    </widget>
-                    <widget class="QCheckBox">
-                        <property name="name">
-                            <cstring>reduceNoiseMicCheckBox</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Reduce &amp;noise from the microphone</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+N</string>
-                        </property>
-                        <property name="whatsThis" stdset="0">
-                            <string>Recordings from the microphone can contain noise. This could be annoying to the person on the other side of your call. This option removes soft noise coming from the microphone.
-
-The noise reduction algorithm is very simplistic. Sound is captured as 16 bits signed linear PCM samples. All samples between -50 and 50 are truncated to 0.</string>
-                        </property>
                     </widget>
                     <widget class="QGroupBox">
                         <property name="name">
@@ -1022,6 +1006,35 @@ The noise reduction algorithm is very simplistic. Sound is captured as 16 bits s
                                     </size>
                                 </property>
                             </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout34</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>browserTextLabel</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>W&amp;eb browser command:</string>
+                                </property>
+                                <property name="buddy" stdset="0">
+                                    <cstring>browserLineEdit</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>browserLineEdit</cstring>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Command to start your web browser. If you leave this field empty Twinkle will try to figure out your default web browser.</string>
+                                </property>
+                            </widget>
                         </hbox>
                     </widget>
                 </vbox>
@@ -1759,7 +1772,6 @@ Depending on your SIP provider the network might provide ring back tone or an an
     <tabstop>micComboBox</tabstop>
     <tabstop>otherMicLineEdit</tabstop>
     <tabstop>validateAudioCheckBox</tabstop>
-    <tabstop>reduceNoiseMicCheckBox</tabstop>
     <tabstop>ossFragmentComboBox</tabstop>
     <tabstop>alsaPlayPeriodComboBox</tabstop>
     <tabstop>alsaCapturePeriodComboBox</tabstop>

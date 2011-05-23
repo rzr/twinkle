@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -48,6 +48,7 @@
 #include "protocol.h"
 #include "sender.h"
 #include "transaction_mgr.h"
+#include "twinkleapplication.h"
 #include "user.h"
 #include "util.h"
 #include "phone.h"
@@ -58,10 +59,11 @@
 #include "sockets/interfaces.h"
 #include "sockets/socket.h"
 #include "threads/thread.h"
+#include "utils/mime_database.h"
 #include "audits/memman.h"
 
-
 using namespace std;
+using namespace utils;
 
 // Class to initialize the random generator before objects of
 // other classes are created. Initializing just from the main function
@@ -151,6 +153,9 @@ t_call_history		*call_history;
 // Local address book
 t_address_book		*ab_local;
 
+// Mime database
+t_mime_database	*mime_database;
+
 /** Command arguments. */
 t_command_args g_cmd_args;
 
@@ -161,12 +166,29 @@ pthread_t		thread_id_main;
 bool			threading_is_LinuxThreads;
 
 
+/**
+ * Parse arguments passed to application
+ * @param argc [in] Number of arguments
+ * @param argv [in] Array of arguments
+ * @param cli_mode [out] Indicates if Twinkle must run in CLI mode.
+ * @param override_lock_file [out] Indicates if an existing lock file must be overriden.
+ * @param config_files [out] User profiles passed on the command line.
+ * @param remain_argc [out] The number of arguments not parsed by this function.
+ * @param remain_argv [out] The arguments not parsed by this function.
+ * 	remain_argv[0] == argv[0]
+ */
 void parse_main_args(int argc, char **argv, bool &cli_mode, bool &override_lock_file,
-		     list<string> &config_files) 
+		     list<string> &config_files, int &remain_argc, char **&remain_argv) 
 {
 	cli_mode = false;
 	override_lock_file = false;
 	config_files.clear();
+	
+	// Initialize the remaining arguments with the first argument (application name)
+	// from the original arguments.
+	remain_argv = (char**)malloc(argc * sizeof(char*));
+	remain_argv[0] = argv[0];
+	remain_argc = 1;
 
 	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
@@ -333,29 +355,7 @@ void parse_main_args(int argc, char **argv, bool &cli_mode, bool &override_lock_
 			} else {
 				cout << argv[0] << ": ";
 				cout << "Port missing for option '--rtp-port'\n";
-			}	
-#if 0
-		// DEPRECATED
-		} else if (strcmp(argv[i], "--nic") == 0) {
-			if (i < argc - 1) {
-				i++;
-				// NIC name, e.g. eth0
-				string user_dev = argv[i];
-				string ip;
-				if (exists_interface_dev(user_dev, ip)) {
-				        user_host = ip;
-				} else {
-					cout << argv[0] << ": ";
-					cout << "There is no network interface ";
-					cout << user_dev << endl;
-					exit(0);
-				}
-			} else {
-				cout << argv[0] << ": ";
-				cout << "NIC name missing for option '-d'.\n";
-				exit(0);
 			}
-#endif
 		} else if (strcmp(argv[i], "--call") == 0) {
 			if (i < argc - 1) {
 				i++;
@@ -420,11 +420,8 @@ void parse_main_args(int argc, char **argv, bool &cli_mode, bool &override_lock_
 			u.exec_command(cmd_help);
 			exit(0);
 		} else {
-			cout << argv[0] << ": ";
-			cout << "Unknown option '" << argv[i] << "'." << endl;
-			cout << argv[0] << ": ";
-			cout << "Use --help to get a list of available command line options.\n";
-			exit(0);
+			// Unknown argument. Assume that it is an Qt/KDE argument.
+			remain_argv[remain_argc++] = argv[i];
 		}
 	}
 	
@@ -475,7 +472,7 @@ bool open_sip_socket(bool cli_mode) {
 	return true;
 }
 
-QApplication *create_user_interface(bool cli_mode, char **argv, QTranslator *qtranslator) {
+QApplication *create_user_interface(bool cli_mode, int argc, char **argv, QTranslator *qtranslator) {
 	QApplication *qa = NULL;
 	
 	if (cli_mode) {
@@ -492,9 +489,9 @@ QApplication *create_user_interface(bool cli_mode, char **argv, QTranslator *qtr
 		QMimeSourceFactory *factory_qt = QMimeSourceFactory::takeDefaultFactory();
 		
 		// Initialize the KApplication
-		KCmdLineArgs::init(1, argv, "twinkle", PRODUCT_NAME, "Soft phone",
-				   PRODUCT_VERSION);
-		qa = new KApplication();
+		KCmdLineArgs::init(argc, argv, "twinkle", PRODUCT_NAME, "Soft phone",
+				   PRODUCT_VERSION, true);
+		qa = new t_twinkle_application();
 		MEMMAN_NEW(qa);
 		
 		// Store the KDE mime source factory
@@ -506,8 +503,8 @@ QApplication *create_user_interface(bool cli_mode, char **argv, QTranslator *qtr
 		// Add the KDE factory
 		QMimeSourceFactory::addFactory(factory_kde);
 #else
-		int tmp = 1;
-		qa = new QApplication(tmp, argv);
+		int tmp = argc;
+		qa = new t_twinkle_application(tmp, argv);
 		MEMMAN_NEW(qa);
 #endif
 		QTextCodec::setCodecForCStrings(QTextCodec::codecForName("utf8"));
@@ -575,7 +572,9 @@ int main( int argc, char ** argv )
 	MEMMAN_NEW(sys_config);
 	
 	// Parse command line arguments
-	parse_main_args(argc, argv, cli_mode, override_lock_file, config_files);
+	int remain_argc = 0;
+	char **remain_argv = NULL;
+	parse_main_args(argc, argv, cli_mode, override_lock_file, config_files, remain_argc, remain_argv);
 	sys_config->set_override_sip_port(g_cmd_args.override_sip_port);
 	sys_config->set_override_rtp_port(g_cmd_args.override_rtp_port);
 	
@@ -593,10 +592,10 @@ int main( int argc, char ** argv )
 	
 	// Create a lock file to guarantee that the application runs only once.
 	bool already_running;
-	bool lock_created;
+	bool lock_created = false;
 	string lock_error_msg;	
 	if (env_check_ok &&
-	    !(lock_created = sys_config->create_lock_file(lock_error_msg, already_running))) 
+	    !(lock_created = sys_config->create_lock_file(false, lock_error_msg, already_running))) 
 	{
 		bool must_exit = false;
 		
@@ -645,34 +644,12 @@ int main( int argc, char ** argv )
 	
 	// Read system configuration
 	bool sys_config_read = sys_config->read_config(error_msg);
-	qa = create_user_interface(cli_mode, argv, qtranslator);
+	qa = create_user_interface(cli_mode, remain_argc, remain_argv, qtranslator);
 	if (!sys_config_read) {
 		ui->cb_show_msg(error_msg, MSG_CRITICAL);
 		exit(1);
 	}
-	
-	// Get default values from system configuration
-	if (config_files.empty()) {
-		list<string> start_user_profiles = sys_config->get_start_user_profiles();
-		for (list<string>::iterator i = start_user_profiles.begin();
-		i != start_user_profiles.end(); i++)
-		{
-			QString config_file = (*i).c_str();
-			config_file += USER_FILE_EXT;
-			config_files.push_back(config_file.ascii());
-		}
-	}
-#if 0
-	// DEPRECATED
-	if (user_host.empty()) {
-		string ip;
-		if (exists_interface(sys_config->get_start_user_host())) {
-			user_host = sys_config->get_start_user_host();
-		} else if (exists_interface_dev(sys_config->get_start_user_nic(), ip)) {
-			user_host = ip;
-		}
-	}
-#endif
+
 	user_host = AUTO_IP4_ADDRESS;
 	local_hostname = get_local_hostname();
 	
@@ -691,7 +668,7 @@ int main( int argc, char ** argv )
 		string msg;
 		// Call create lock file once more to get proper translation of
 		// error message.
-		if (!sys_config->create_lock_file(msg, already_running)) {
+		if (!sys_config->create_lock_file(false, msg, already_running)) {
 			if (already_running) {
 				if (!cli_mode) {
 					msg += "\n\n";
@@ -700,7 +677,7 @@ int main( int argc, char ** argv )
 				}
 				if (override_lock_file || ui->cb_ask_msg(msg, MSG_WARNING)) {
 					sys_config->delete_lock_file();
-					if (!sys_config->create_lock_file(msg, 
+					if (!sys_config->create_lock_file(true, msg, 
 						already_running))
 					{
 						ui->cb_show_msg(msg, MSG_CRITICAL);
@@ -729,6 +706,37 @@ int main( int argc, char ** argv )
 	} else {
 		log_file->write_report("Threading implementation is NPTL.",
 			"::main", LOG_NORMAL, LOG_INFO);
+	}
+	
+	// Check if the previous Twinkle session was stopped by a system
+	// shutdow and now gets restored.
+	if (qa && qa->isSessionRestored()) {
+		QString msg = "Restore session: " + qa->sessionId();
+		log_file->write_report(msg.ascii(), "::main");
+		
+		if (sys_config->get_ui_session_id() == qa->sessionId().ascii()) {
+			config_files = sys_config->get_ui_session_active_profiles();
+			// Note: the GUI state is restore in t_gui::run()
+		} else {
+			log_file->write_header("::main", LOG_NORMAL, LOG_WARNING);
+			log_file->write_raw("Cannot restore session.\n");
+			log_file->write_raw("Stored session id: ");
+			log_file->write_raw(sys_config->get_ui_session_id());
+			log_file->write_endl();
+			log_file->write_footer();
+		}
+	}
+	
+	// Get default values from system configuration
+	if (config_files.empty()) {
+		list<string> start_user_profiles = sys_config->get_start_user_profiles();
+		for (list<string>::iterator i = start_user_profiles.begin();
+		i != start_user_profiles.end(); i++)
+		{
+			QString config_file = (*i).c_str();
+			config_file += USER_FILE_EXT;
+			config_files.push_back(config_file.ascii());
+		}
 	}
 	
 	bool profile_selected = false;
@@ -832,17 +840,12 @@ int main( int argc, char ** argv )
 		t_address_finder::preload();
 	}
 	
-#if 0
-	// DEPRECATED
-	// Pick network interface
-	if (user_host.empty()) {
-		user_host = ui->select_network_intf();
-		if (user_host.empty()) {
-			sys_config->delete_lock_file();
-			exit(1);
-		}
+	// Create mime database
+	mime_database = new t_mime_database();
+	MEMMAN_NEW(mime_database);
+	if (!mime_database->load(error_msg)) {
+		log_file->write_report(error_msg, "::main", LOG_NORMAL, LOG_WARNING);
 	}
-#endif
 	
 	// Discover NAT type if STUN is enabled
 	list<t_user *> user_list = phone->ref_users();
@@ -942,8 +945,8 @@ int main( int argc, char ** argv )
 	t_thread *thr_listen_conn_tcp;
 	t_thread *thr_conn_timeout_handler;
 	t_thread *thr_timekeeper;
-	t_thread *thr_alarm_catcher;
-	t_thread *thr_sig_catcher;
+	t_thread *thr_alarm_catcher = NULL;
+	t_thread *thr_sig_catcher = NULL;
 	t_thread *thr_trans_mgr;
 	t_thread *thr_phone_uas;
 	t_thread *thr_listen_cmd = NULL;
@@ -1091,6 +1094,8 @@ int main( int argc, char ** argv )
 	thr_sender->join();
 	log_file->write_report("thr_sender stopped.", "::main", LOG_NORMAL, LOG_DEBUG);
 	
+	sys_config->remove_all_tmp_files();
+	
 	if (thr_listen_cmd) {
 		MEMMAN_DELETE(thr_listen_cmd);
 		delete thr_listen_cmd;
@@ -1124,6 +1129,8 @@ int main( int argc, char ** argv )
 	MEMMAN_DELETE(thr_listen_conn_tcp);
 	delete thr_listen_conn_tcp;
 
+	MEMMAN_DELETE(mime_database);
+	delete mime_database;
 	MEMMAN_DELETE(ab_local);
 	delete ab_local;
 	MEMMAN_DELETE(call_history);

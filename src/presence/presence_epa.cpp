@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -33,10 +33,12 @@ t_presence_state::t_basic_state t_presence_epa::get_basic_state(void) const {
 }
 
 bool t_presence_epa::recv_response(t_response *r, t_tuid tuid, t_tid tid) {
-	(void)t_epa::recv_response(r, tuid, tid);
+	t_epa::recv_response(r, tuid, tid);
 	
 	// Notify observers so they can get the latest publication state.
 	notify();
+	
+	return true;
 }
 
 void t_presence_epa::publish_presence(t_presence_state::t_basic_state _basic_state) {

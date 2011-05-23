@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,6 +15,10 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 #include "sip_message.h"
 #include "util.h"
@@ -80,10 +84,12 @@ t_sip_message::t_sip_message(const t_sip_message& m) :
 		hdr_replaces(m.hdr_replaces),
 		hdr_reply_to(m.hdr_reply_to),
 		hdr_require(m.hdr_require),
+		hdr_request_disposition(m.hdr_request_disposition),
 		hdr_retry_after(m.hdr_retry_after),
 		hdr_route(m.hdr_route),
 		hdr_rseq(m.hdr_rseq),
 		hdr_server(m.hdr_server),
+		hdr_service_route(m.hdr_service_route),
 		hdr_sip_etag(m.hdr_sip_etag),
 		hdr_sip_if_match(m.hdr_sip_if_match),
 		hdr_subject(m.hdr_subject),
@@ -186,6 +192,7 @@ string t_sip_message::encode(bool add_content_length) {
 	s += hdr_via.encode();
 	s += hdr_route.encode();
 	s += hdr_record_route.encode();
+	s += hdr_service_route.encode();
 	s += hdr_proxy_require.encode();
 	s += hdr_max_forwards.encode();
 	s += hdr_proxy_authenticate.encode();
@@ -236,6 +243,7 @@ string t_sip_message::encode(bool add_content_length) {
 	s += hdr_replaces.encode();
 	s += hdr_reply_to.encode();
 	s += hdr_require.encode();
+	s += hdr_request_disposition.encode();
 	s += hdr_retry_after.encode();
 	s += hdr_rseq.encode();
 	s += hdr_server.encode();
@@ -291,6 +299,7 @@ list<string> t_sip_message::encode_env(void) {
 	l.push_back(hdr_via.encode_env());
 	l.push_back(hdr_route.encode_env());
 	l.push_back(hdr_record_route.encode_env());
+	l.push_back(hdr_service_route.encode_env());
 	l.push_back(hdr_proxy_require.encode_env());
 	l.push_back(hdr_max_forwards.encode_env());
 	l.push_back(hdr_proxy_authenticate.encode_env());
@@ -341,6 +350,7 @@ list<string> t_sip_message::encode_env(void) {
 	l.push_back(hdr_replaces.encode_env());
 	l.push_back(hdr_reply_to.encode_env());
 	l.push_back(hdr_require.encode_env());
+	l.push_back(hdr_request_disposition.encode_env());
 	l.push_back(hdr_retry_after.encode_env());
 	l.push_back(hdr_rseq.encode_env());
 	l.push_back(hdr_server.encode_env());
@@ -391,6 +401,46 @@ void t_sip_message::set_body_plain_text(const string &text, const string &charse
 	MEMMAN_NEW(body);
 }
 
+bool t_sip_message::set_body_from_file(const string &filename, const t_media &media) {
+	// Open file and set read pointer at end so we know the size.
+	ifstream f(filename.c_str(), ios::binary);
+	if (!f) return false;
+	
+	ostringstream body_stream(ios::binary);
+	
+	// Copy file into body
+	body_stream << f.rdbuf();
+	
+	if (!f.good() || !body_stream.good()) {
+		return false;
+	}
+	
+	// Create body of correct type
+	t_sip_body *new_body = NULL;
+	if (media.type == "text" && media.subtype == "plain") {
+		t_sip_body_plain_text *text_body = new t_sip_body_plain_text(body_stream.str());
+		MEMMAN_NEW(text_body);
+
+		new_body = text_body;
+	} else {
+		t_sip_body_opaque *opaque_body = new t_sip_body_opaque(body_stream.str());
+		MEMMAN_NEW(opaque_body);
+		
+		new_body = opaque_body;
+	}
+	
+	if (body) {
+		MEMMAN_DELETE(body);
+		delete body;
+	}
+	body = new_body;
+	
+	// Content-Type header
+	hdr_content_type.set_media(media);
+	
+	return true;
+}
+
 size_t t_sip_message::get_encoded_size(void) {
 	string s = encode();
 	return s.size();
@@ -403,8 +453,10 @@ bool t_sip_message::local_ip_check(void) const {
 	}
 	
 	if (hdr_contact.is_populated()) {
-		const t_contact_param &c = hdr_contact.contact_list.front();
-		if (c.uri.get_host() == "0.0.0.0") return false;
+		if (!hdr_contact.any_flag && !hdr_contact.contact_list.empty()) {
+			const t_contact_param &c = hdr_contact.contact_list.front();
+			if (c.uri.get_host() == "0.0.0.0") return false;
+		}
 	}
 	
 	if (body) {

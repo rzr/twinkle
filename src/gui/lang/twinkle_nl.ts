@@ -316,6 +316,81 @@
     </message>
 </context>
 <context>
+    <name>DiamondcardProfileForm</name>
+    <message>
+        <source>Twinkle - Diamondcard User Profile</source>
+        <translation>Twinkle - Diamondcard gebruikersprofiel</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;With a Diamondcard account you can make worldwide calls to regular and cell phones. To sign up for a Diamondcard account click on the &quot;sign up&quot; link below. Once you have signed up you receive an account ID and PIN code. Enter the account ID and PIN code below to create a Twinkle user profile for your Diamondcard account.&lt;/p&gt;
+&lt;p&gt;For call rates see the sign up web page that will be shown to you when you click on the &quot;sign up&quot; link.&lt;/p&gt;</source>
+        <translation type="obsolete">&lt;p&gt;Met een Diamondcard account kunt u wereldwijd bellen naar vaste en mobiele telefoons. U kunt zich aanmelden voor een Diamondcard account door op de onderstaande &quot;aanmelden&quot; link te klikken. Na aanmelding ontvangt u een account ID en PIN code. Voer dit account ID en de PIN code hieronder in om een Twinkle gebruikersprofiel voor uw Diamondcard account te maken.&lt;/p&gt;
+&lt;p&gt;Beltarieven kunt u vinden op de aanmeldingspagina die u krijgt als u op de &quot;aanmelden&quot; link klinkt.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Your Diamondcard account ID.</source>
+        <translation>Uw Diamondcard account ID.</translation>
+    </message>
+    <message>
+        <source>This is just your full name, e.g. John Doe. It is used as a display name. When you make a call, this display name might be shown to the called party.</source>
+        <translation>Dit is uw eigen naam. bijv. Jan Jansen. Als u iemand belt, kan deze naam getoond worden.</translation>
+    </message>
+    <message>
+        <source>&amp;Account ID:</source>
+        <translation>&amp;Account ID:</translation>
+    </message>
+    <message>
+        <source>&amp;PIN code:</source>
+        <translation>&amp;PIN code:</translation>
+    </message>
+    <message>
+        <source>&amp;Your name:</source>
+        <translation>U&amp;w naam:</translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;&lt;u&gt;Sign up for a Diamondcard account&lt;/u&gt;&lt;/p&gt;</source>
+        <translation>&lt;p align=&quot;center&quot;&gt;&lt;u&gt;Aanmelden voor een Diamondcard account&lt;/u&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>Alt+O</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>Ann&amp;uleren</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Fill in your account ID.</source>
+        <translation>Vul uw account ID in.</translation>
+    </message>
+    <message>
+        <source>Fill in your PIN code.</source>
+        <translation>Vul uw PIN code in.</translation>
+    </message>
+    <message>
+        <source>A user profile with name %1 already exists.</source>
+        <translation>Een gebruikersprofiel met de naam %1 bestaat al.</translation>
+    </message>
+    <message>
+        <source>Your Diamondcard PIN code.</source>
+        <translation>Uw Diamondcard PIN code.</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;With a Diamondcard account you can make worldwide calls to regular and cell phones and send SMS messages. To sign up for a Diamondcard account click on the &quot;sign up&quot; link below. Once you have signed up you receive an account ID and PIN code. Enter the account ID and PIN code below to create a Twinkle user profile for your Diamondcard account.&lt;/p&gt;
+&lt;p&gt;For call rates see the sign up web page that will be shown to you when you click on the &quot;sign up&quot; link.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Met een Diamondcard account kunt u wereldwijd bellen naar vaste en mobiele telefoons en SMS berichten versturen. U kunt zich aanmelden voor een Diamondcard account door op de onderstaande &quot;aanmelden&quot; link te klikken. Na aanmelding ontvangt u een account ID en PIN code. Voer dit account ID en de PIN code hieronder in om een Twinkle gebruikersprofiel voor uw Diamondcard account te maken.&lt;/p&gt;
+&lt;p&gt;Beltarieven kunt u vinden op de aanmeldingspagina die u krijgt als u op de &quot;aanmelden&quot; link klinkt.&lt;/p&gt;</translation>
+    </message>
+</context>
+<context>
     <name>DtmfForm</name>
     <message>
         <source>Twinkle - DTMF</source>
@@ -783,6 +858,22 @@
         <source>Accepted by network</source>
         <translation>Geaccepteerd door netwerk</translation>
     </message>
+    <message>
+        <source>Failed to save message attachment: %1</source>
+        <translation>Opslaan van bijlage %1 mislukt</translation>
+    </message>
+    <message>
+        <source>Transferred by: %1</source>
+        <translation>Doorverbonden door: %1</translation>
+    </message>
+    <message>
+        <source>Cannot open web browser: %1</source>
+        <translation>Web browser kan niet geopend worden: %1</translation>
+    </message>
+    <message>
+        <source>Configure your web browser in the system settings.</source>
+        <translation>Configureer uw web browser in de systeeminstellingen.</translation>
+    </message>
 </context>
 <context>
     <name>GetAddressForm</name>
@@ -1159,6 +1250,18 @@ Om uw gebruikersprofielen makkelijk uit elkaar te houden kunt u uw SIP gebruiker
         <source>&amp;Call</source>
         <translation>&amp;Bel</translation>
     </message>
+    <message>
+        <source>Number of calls:</source>
+        <translation>Aantal gesprekken:</translation>
+    </message>
+    <message>
+        <source>###</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Total call duration:</source>
+        <translation>Totale duur:</translation>
+    </message>
 </context>
 <context>
     <name>InviteForm</name>
@@ -1232,6 +1335,10 @@ Met deze optie verzoekt u uw SIP provider om uw identiteit verborgen te houden v
         <source>Not all SIP providers support identity hiding. Make sure your SIP provider supports it if you really need it.</source>
         <translation>Niet alle SIP providers ondersteunen het verbergen van uw identiteit. Verzeker u ervan dat uw SIP provider dit ondersteunt als u dit nodig heeft.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
+    </message>
 </context>
 <context>
     <name>LogViewForm</name>
@@ -1300,7 +1407,7 @@ Met deze optie verzoekt u uw SIP provider om uw identiteit verborgen te houden v
     </message>
     <message>
         <source>The exchanged messages.</source>
-        <translation>De uitgewisselde berichten.</translation>
+        <translation type="obsolete">De uitgewisselde berichten.</translation>
     </message>
     <message>
         <source>Type your message here and then press &quot;send&quot; to send it.</source>
@@ -1325,6 +1432,54 @@ Met deze optie verzoekt u uw SIP provider om uw identiteit verborgen te houden v
     <message>
         <source>Delivery notification</source>
         <translation>Aflevernotificatie</translation>
+    </message>
+    <message>
+        <source>Instant message toolbar</source>
+        <translation>Instant berichten</translation>
+    </message>
+    <message>
+        <source>Send file...</source>
+        <translation>Zend bestand...</translation>
+    </message>
+    <message>
+        <source>Send file</source>
+        <translation>Zend bestand</translation>
+    </message>
+    <message>
+        <source>image size is scaled down in preview</source>
+        <translation>plaatje is verkleind voor preview</translation>
+    </message>
+    <message>
+        <source>Open with %1...</source>
+        <translation>Openen met %1...</translation>
+    </message>
+    <message>
+        <source>Open with...</source>
+        <translation>Openen met...</translation>
+    </message>
+    <message>
+        <source>Save attachment as...</source>
+        <translation>Bijlage opslaan als...</translation>
+    </message>
+    <message>
+        <source>File already exists. Do you want to overwrite this file?</source>
+        <translation>Bestand bestaat al. Wilt u dit bestand overschrijven?</translation>
+    </message>
+    <message>
+        <source>Failed to save attachment.</source>
+        <translation>Opslaan bijlage mislukt.</translation>
+    </message>
+    <message>
+        <source>%1 is typing a message.</source>
+        <translation>%1 schrijft een bericht.</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Lengte</translation>
     </message>
 </context>
 <context>
@@ -2213,6 +2368,58 @@ Als de SAS aan beide kanten hetzelfde is, dan moet u die bevestigen door op het 
         <source>&amp;Display</source>
         <translation>&amp;Scherm</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
+    </message>
+    <message>
+        <source>Diamondcard</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Handleiding</translation>
+    </message>
+    <message>
+        <source>&amp;Manual</source>
+        <translation>&amp;Handleinding</translation>
+    </message>
+    <message>
+        <source>Sign up</source>
+        <translation>Aanmelden</translation>
+    </message>
+    <message>
+        <source>&amp;Sign up...</source>
+        <translation>&amp;Aanmelden...</translation>
+    </message>
+    <message>
+        <source>Recharge...</source>
+        <translation>Opwaarderen...</translation>
+    </message>
+    <message>
+        <source>Balance history...</source>
+        <translation>Balansoverzicht...</translation>
+    </message>
+    <message>
+        <source>Call history...</source>
+        <translation>Gesprekkenoverzicht...</translation>
+    </message>
+    <message>
+        <source>Admin center...</source>
+        <translation>Admin center...</translation>
+    </message>
+    <message>
+        <source>Recharge</source>
+        <translation>Opwaarderen</translation>
+    </message>
+    <message>
+        <source>Balance history</source>
+        <translation>Balansoverzicht</translation>
+    </message>
+    <message>
+        <source>Admin center</source>
+        <translation>Admin center</translation>
+    </message>
 </context>
 <context>
     <name>NumberConversionForm</name>
@@ -2307,6 +2514,18 @@ Als de SAS aan beide kanten hetzelfde is, dan moet u die bevestigen door op het 
         <source>&amp;Cancel</source>
         <translation>Ann&amp;uleren</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation>F12</translation>
+    </message>
+    <message>
+        <source>F11</source>
+        <translation>F11</translation>
+    </message>
 </context>
 <context>
     <name>SelectNicForm</name>
@@ -2379,11 +2598,11 @@ Als de SAS aan beide kanten hetzelfde is, dan moet u die bevestigen door op het 
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Nieuw</translation>
+        <translation type="obsolete">&amp;Nieuw</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="obsolete">Alt+N</translation>
     </message>
     <message>
         <source>Create a new profile with the profile editor.</source>
@@ -2487,7 +2706,7 @@ Als de SAS aan beide kanten hetzelfde is, dan moet u die bevestigen door op het 
     </message>
     <message>
         <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;U kunt de profieleditor gebruiken om een gebruikersprofiel te maken. Met de profieleditor kunt u diverse instellingen met betrekking tot het SIP protocol, RTP en vele andere zaken wijzigen.&lt;br&gt;&lt;br&gt;Met de wizard kunt u snel een gebruikersprofiel maken. De wizard vraagt u alleen om een aantal essentiële instellingen. Als u een gebruikersprofiel met de wizard maakt, dan kun u deze op een later tijdstip alsnog met de profieleditor wijzigen.&lt;br&gt;&lt;br&gt;Kies op welke wijze u een gebruikersprofiel wilt maken.&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;U kunt de profieleditor gebruiken om een gebruikersprofiel te maken. Met de profieleditor kunt u diverse instellingen met betrekking tot het SIP protocol, RTP en vele andere zaken wijzigen.&lt;br&gt;&lt;br&gt;Met de wizard kunt u snel een gebruikersprofiel maken. De wizard vraagt u alleen om een aantal essentiële instellingen. Als u een gebruikersprofiel met de wizard maakt, dan kun u deze op een later tijdstip alsnog met de profieleditor wijzigen.&lt;br&gt;&lt;br&gt;Kies op welke wijze u een gebruikersprofiel wilt maken.&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;Next you may adjust the system settings. You can change these settings always at a later time.&lt;br&gt;&lt;br&gt;Click OK to view and adjust the system settings.&lt;/html&gt;</source>
@@ -2526,6 +2745,55 @@ Kies eerst een gebruikersprofiel.</translation>
     <message>
         <source>&amp;Profile editor</source>
         <translation>&amp;Profieleditor</translation>
+    </message>
+    <message>
+        <source>Create profile</source>
+        <translation>Maak gebruikersprofiel</translation>
+    </message>
+    <message>
+        <source>Ed&amp;itor</source>
+        <translation>Ed&amp;itor</translation>
+    </message>
+    <message>
+        <source>Alt+I</source>
+        <translation>Alt+I</translation>
+    </message>
+    <message>
+        <source>Dia&amp;mondcard</source>
+        <translation>Dia&amp;mondcard</translation>
+    </message>
+    <message>
+        <source>Alt+M</source>
+        <translation>Alt+M</translation>
+    </message>
+    <message>
+        <source>Modify profile</source>
+        <translation>Bewerk gebruikersprofiel</translation>
+    </message>
+    <message>
+        <source>Startup profile</source>
+        <translation>Starten gebruikersprofiel</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;You can create a Diamondcard account to make worldwide calls to regular and cell phones.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;U kunt de profieleditor gebruiken om een gebruikersprofiel te maken. Met de profieleditor kunt u diverse instellingen met betrekking tot het SIP protocol, RTP en vele andere zaken wijzigen.&lt;br&gt;&lt;br&gt;Met de wizard kunt u snel een gebruikersprofiel maken. De wizard vraagt u alleen om een aantal essentiële instellingen. Als u een gebruikersprofiel met de wizard maakt, dan kun u deze op een later tijdstip alsnog met de profieleditor wijzigen.&lt;br&gt;&lt;br&gt;U kunt een Diamondcard account aanmaken waarmee u wereldwijd kunt bellen naar vaste en mobiele telefoonnummers.&lt;br&gt;&lt;br&gt;Kies op welke wijze u een gebruikersprofiel wilt maken.&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Diamondcard</source>
+        <translation>&amp;Diamondcard</translation>
+    </message>
+    <message>
+        <source>Create a profile for a Diamondcard account. With a Diamondcard account you can make worldwide calls to regular and cell phones.</source>
+        <translation type="obsolete">Maak een gebruikersprofiel voor een Diamondcard account. Met een Diamondcard account kunt u wereldwijd bellen naar vaste en mobiele telefoonnummers.</translation>
+    </message>
+    <message>
+        <source>Create a profile for a Diamondcard account. With a Diamondcard account you can make worldwide calls to regular and cell phones and send SMS messages.</source>
+        <translation>Maak een gebruikersprofiel voor een Diamondcard account. Met een Diamondcard account kunt u wereldwijd bellen naar vaste en mobiele telefoonnummers en SMS berichten versturen.
+</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;You can use the profile editor to create a profile. With the profile editor you can change many settings to tune the SIP protocol, RTP and many other things.&lt;br&gt;&lt;br&gt;Alternatively you can use the wizard to quickly setup a user profile. The wizard asks you only a few essential settings. If you create a user profile with the wizard you can still edit the full profile with the profile editor at a later time.&lt;br&gt;&lt;br&gt;You can create a Diamondcard account to make worldwide calls to regular and cell phones and send SMS messages.&lt;br&gt;&lt;br&gt;Choose what method you wish to use.&lt;/html&gt;</source>
+        <translation>&lt;html&gt;U kunt de profieleditor gebruiken om een gebruikersprofiel te maken. Met de profieleditor kunt u diverse instellingen met betrekking tot het SIP protocol, RTP en vele andere zaken wijzigen.&lt;br&gt;&lt;br&gt;Met de wizard kunt u snel een gebruikersprofiel maken. De wizard vraagt u alleen om een aantal essentiële instellingen. Als u een gebruikersprofiel met de wizard maakt, dan kun u deze op een later tijdstip alsnog met de profieleditor wijzigen.&lt;br&gt;&lt;br&gt;U kunt een Diamondcard account aanmaken waarmee u wereldwijd kunt bellen naar vaste en mobiele telefoonnummers en SMS berichten versturen.&lt;br&gt;&lt;br&gt;Kies op welke wijze u een gebruikersprofiel wilt maken.&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2614,6 +2882,49 @@ Kies eerst een gebruikersprofiel.</translation>
         <source>purpose</source>
         <comment>No need to translate</comment>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>SendFileForm</name>
+    <message>
+        <source>Twinkle - Send File</source>
+        <translation>Twinkle - Zend bestand</translation>
+    </message>
+    <message>
+        <source>Select file to send.</source>
+        <translation>Kies het bestand dat u wilt zenden.</translation>
+    </message>
+    <message>
+        <source>&amp;File:</source>
+        <translation>&amp;Bestand:</translation>
+    </message>
+    <message>
+        <source>&amp;Subject:</source>
+        <translation>O&amp;nderwerp:</translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>Alt+O</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>Ann&amp;uleren</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>File does not exist.</source>
+        <translation>Bestand bestaat niet.</translation>
+    </message>
+    <message>
+        <source>Send file...</source>
+        <translation>Zend bestand...</translation>
     </message>
 </context>
 <context>
@@ -2742,6 +3053,18 @@ Kies eerst een gebruikersprofiel.</translation>
         <source>You have entered an invalid destination.</source>
         <translation>U heeft een ongeldige bestemming ingevoerd.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
+    </message>
+    <message>
+        <source>F11</source>
+        <translation>F11</translation>
+    </message>
+    <message>
+        <source>F12</source>
+        <translation>F12</translation>
+    </message>
 </context>
 <context>
     <name>SysSettingsForm</name>
@@ -2815,17 +3138,17 @@ Kies eerst een gebruikersprofiel.</translation>
     </message>
     <message>
         <source>Reduce &amp;noise from the microphone</source>
-        <translation>&amp;Verminder ruis van de microfoon</translation>
+        <translation type="obsolete">&amp;Verminder ruis van de microfoon</translation>
     </message>
     <message>
         <source>Alt+N</source>
-        <translation>Alt+V</translation>
+        <translation type="obsolete">Alt+V</translation>
     </message>
     <message>
         <source>Recordings from the microphone can contain noise. This could be annoying to the person on the other side of your call. This option removes soft noise coming from the microphone.
 
 The noise reduction algorithm is very simplistic. Sound is captured as 16 bits signed linear PCM samples. All samples between -50 and 50 are truncated to 0.</source>
-        <translation>Opnames van de microfoon kunnen ruis bevatten. Dit kan vervelend zijn voor de persoon aan de andere kant van de lijn. Deze instelling kan zachte ruis van de microfoon verwijderen.
+        <translation type="obsolete">Opnames van de microfoon kunnen ruis bevatten. Dit kan vervelend zijn voor de persoon aan de andere kant van de lijn. Deze instelling kan zachte ruis van de microfoon verwijderen.
 
 Het algoritme om ruis te verminderen is erg simplistisch. Geluid wordt gedigitaliseerd als 16 bits lineaire PCM samples. Alle samples tussen de waarden -50 en 50 worden afgerond naar 0.</translation>
     </message>
@@ -3206,16 +3529,16 @@ Afhankelijk van uw SIP provider, kan het netwerk een ring back tone spelen.
     <message>
         <source>none</source>
         <comment>This is the &apos;none&apos; in default IP address combo</comment>
-        <translation>geen</translation>
+        <translation type="obsolete">geen</translation>
     </message>
     <message>
         <source>none</source>
         <comment>This is the &apos;none&apos; in default network interface combo</comment>
-        <translation>geen</translation>
+        <translation type="obsolete">geen</translation>
     </message>
     <message>
         <source>Either choose a default IP address or a default network interface.</source>
-        <translation>Kies óf een default IP adres óf een default netwerk interface.</translation>
+        <translation type="obsolete">Kies óf een default IP adres óf een default netwerk interface.</translation>
     </message>
     <message>
         <source>Ring tones</source>
@@ -3297,6 +3620,14 @@ Als voor het beantwoorden van een inkomend gesprek, de microfoon of speaker onbe
         <source>Maximum allowed size (0-4294967295) in bytes of an incoming SIP message over TCP.</source>
         <translation>Maxmimum grootte (0-4294967295) van een SIP bericht over TCP in bytes.</translation>
     </message>
+    <message>
+        <source>W&amp;eb browser command:</source>
+        <translation>Command voor opstarten w&amp;eb browser:</translation>
+    </message>
+    <message>
+        <source>Command to start your web browser. If you leave this field empty Twinkle will try to figure out your default web browser.</source>
+        <translation>Het commando waamee uw web browser kan worden opgestart. Als u dit veld leeg laat, dan zal Twinkle zelf proberen om uw standaard web browser op te starten.</translation>
+    </message>
 </context>
 <context>
     <name>SysTrayPopup</name>
@@ -3307,6 +3638,10 @@ Als voor het beantwoorden van een inkomend gesprek, de microfoon of speaker onbe
     <message>
         <source>Reject</source>
         <translation>Afwijzen</translation>
+    </message>
+    <message>
+        <source>Incoming Call</source>
+        <translation>Inkomend gesprek</translation>
     </message>
 </context>
 <context>
@@ -3346,6 +3681,10 @@ Als voor het beantwoorden van een inkomend gesprek, de microfoon of speaker onbe
     <message>
         <source>&amp;Cancel</source>
         <translation>Ann&amp;uleren</translation>
+    </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
     </message>
 </context>
 <context>
@@ -3426,6 +3765,10 @@ Als voor het beantwoorden van een inkomend gesprek, de microfoon of speaker onbe
         <source>Connect the remote party on the active line with the remote party on the other line.</source>
         <translation>Verbind de persoon op deze lijn door met de persoon op de andere lijn.</translation>
     </message>
+    <message>
+        <source>F10</source>
+        <translation>F10</translation>
+    </message>
 </context>
 <context>
     <name>TwinkleCore</name>
@@ -3435,7 +3778,7 @@ Als voor het beantwoorden van een inkomend gesprek, de microfoon of speaker onbe
     </message>
     <message>
         <source>Lock file %1 already exist, but cannot be opened.</source>
-        <translation>Lock bestand %1 bestaat al, maar kan niet geopend worden.</translation>
+        <translation type="obsolete">Lock bestand %1 bestaat al, maar kan niet geopend worden.</translation>
     </message>
     <message>
         <source>%1 is already running.
@@ -3529,7 +3872,7 @@ Lock bestand %2 bestaat al.</translation>
     </message>
     <message>
         <source>Cannot write to %1 .</source>
-        <translation>Kan niet schrijven naar %1 .</translation>
+        <translation type="obsolete">Kan niet schrijven naar %1 .</translation>
     </message>
     <message>
         <source>Syntax error in file %1 .</source>
@@ -3652,6 +3995,22 @@ en creëer de volgende statische UDP mapping in uw NAT.</translation>
     <message>
         <source>Cannot receive incoming TCP connections.</source>
         <translation>Kan geen inkomende TCP verbindingen ontvangen.</translation>
+    </message>
+    <message>
+        <source>Failed to create file %1</source>
+        <translation>Creëren van bestand %1 mislukt</translation>
+    </message>
+    <message>
+        <source>Failed to write data to file %1</source>
+        <translation>Schrijven naar bestand %1 mislukt</translation>
+    </message>
+    <message>
+        <source>Failed to send message.</source>
+        <translation>Zenden bericht mislukt.</translation>
+    </message>
+    <message>
+        <source>Cannot lock %1 .</source>
+        <translation>Kan geen lock zetten op %1 .</translation>
     </message>
 </context>
 <context>
@@ -4018,7 +4377,7 @@ Dit is een verplicht veld.</translation>
     </message>
     <message>
         <source>&amp;VAD</source>
-        <translation>&amp;VAD</translation>
+        <translation type="obsolete">&amp;VAD</translation>
     </message>
     <message>
         <source>Alt+V</source>
@@ -4026,7 +4385,7 @@ Dit is een verplicht veld.</translation>
     </message>
     <message>
         <source>When enabled, voice activity detection detects whether the audio being encoded is speech or silence/background noise. VAD is always implicitly activated when encoding in VBR, so the option is only useful in non-VBR operation. In this case, Speex detects non-speech periods and encode them with just enough bits to reproduce the background noise. This is called &quot;comfort noise generation&quot; (CNG).</source>
-        <translation>Voice activity detection detecteert of de opgenomen audio spraak of stilte dan wel achtergrondruis is. VAD staat atlijd impliciet aan als VBR wordt gebruikt. VAD is dus alleen nutting als VBR uitstaat. De Speex codec stuurt dan slechts een paar bits tijdens stilte periodes. Dit heet comfort noise generation (CNG).</translation>
+        <translation type="obsolete">Voice activity detection detecteert of de opgenomen audio spraak of stilte dan wel achtergrondruis is. VAD staat atlijd impliciet aan als VBR wordt gebruikt. VAD is dus alleen nutting als VBR uitstaat. De Speex codec stuurt dan slechts een paar bits tijdens stilte periodes. Dit heet comfort noise generation (CNG).</translation>
     </message>
     <message>
         <source>&amp;Wide band payload type:</source>
@@ -4034,7 +4393,7 @@ Dit is een verplicht veld.</translation>
     </message>
     <message>
         <source>V&amp;BR</source>
-        <translation>V&amp;BR</translation>
+        <translation type="obsolete">V&amp;BR</translation>
     </message>
     <message>
         <source>Alt+B</source>
@@ -4054,11 +4413,11 @@ Dit is een verplicht veld.</translation>
     </message>
     <message>
         <source>DT&amp;X</source>
-        <translation>DT&amp;X</translation>
+        <translation type="obsolete">DT&amp;X</translation>
     </message>
     <message>
         <source>Alt+X</source>
-        <translation>Alt+X</translation>
+        <translation type="obsolete">Alt+X</translation>
     </message>
     <message>
         <source>Discontinuous transmission is an addition to VAD/VBR operation, that allows to stop transmitting completely when the background noise is stationary.</source>
@@ -4405,7 +4764,7 @@ Sommige proxies vinden dit niet leuk. U kunt deze optie uitzetten voor een meer 
     </message>
     <message>
         <source>Allow call &amp;transfer (incoming REFER)</source>
-        <translation>Doorverbinden &amp;toestaan (inkomende REFER)</translation>
+        <translation type="obsolete">Doorverbinden &amp;toestaan (inkomende REFER)</translation>
     </message>
     <message>
         <source>Alt+T</source>
@@ -4671,11 +5030,11 @@ Match expressie = 0[0-9]* , Vervang =  9$&amp;&lt;br&gt;
     </message>
     <message>
         <source>for STUN</source>
-        <translation>STUN</translation>
+        <translation type="obsolete">STUN</translation>
     </message>
     <message>
         <source>Keep alive timer for the STUN protocol. If you have enabled STUN, then Twinkle will send keep alive packets at this interval rate to keep the address bindings in your NAT device alive.</source>
-        <translation>Keep alive timer voor het STUN protocol. Als u STUN aan heeft gezet, dan zal Twinkle keep alive pakketjes sturen met deze snelheid om de adresbindingen in uw NAT router in leven te houden.</translation>
+        <translation type="obsolete">Keep alive timer voor het STUN protocol. Als u STUN aan heeft gezet, dan zal Twinkle keep alive pakketjes sturen met deze snelheid om de adresbindingen in uw NAT router in leven te houden.</translation>
     </message>
     <message>
         <source>When an incoming call is received, this timer is started. If the user answers the call, the timer is stopped. If the timer expires before the user answers the call, then Twinkle will reject the call with a &quot;480 User Not Responding&quot;.</source>
@@ -5423,7 +5782,7 @@ Sollicited message waiting indication zoals gespecificeerd in RFC 3842.
     </message>
     <message>
         <source> bytes</source>
-        <translation> bytes</translation>
+        <translation type="obsolete"> bytes</translation>
     </message>
     <message>
         <source>Messages larger than the threshold are sent via TCP. Smaller messages are sent via UDP.</source>
@@ -5432,6 +5791,138 @@ Sollicited message waiting indication zoals gespecificeerd in RFC 3842.
     <message>
         <source>Use &amp;STUN (does not work for incoming TCP)</source>
         <translation>&amp;STUN (werkt niet voor inkomend TCP verkeer)</translation>
+    </message>
+    <message>
+        <source>P&amp;ersistent TCP connection</source>
+        <translation>P&amp;ersistente TCP verbinding</translation>
+    </message>
+    <message>
+        <source>Keep the TCP connection established during registration open such that the SIP proxy can reuse this connection to send incoming requests. Application ping packets are sent to test if the connection is still alive.</source>
+        <translation>De TCP verbinding die opgezet wordt tijdens registratie blijft open, zodat de SIP proxy deze verbinding kan gebruiken om binnenkomende verzoeken te sturen. Ping pakketten worden gestuurd om te testen of de verbinding nog bestaat.</translation>
+    </message>
+    <message>
+        <source>&amp;Send composing indications when typing a message.</source>
+        <translation>&amp;Zend indicaties als u een bericht aan het schrijven bent.</translation>
+    </message>
+    <message>
+        <source>Twinkle sends a composing indication when you type a message. This way the recipient can see that you are typing.</source>
+        <translation>Twinkle stuurt een compositie indicatie als u een bericht aan het schrijven bent. De ontvanger van uw bericht kan dan zien dat u bezig bent met schrijven.</translation>
+    </message>
+    <message>
+        <source>AKA AM&amp;F:</source>
+        <translation>AkA AM&amp;F:</translation>
+    </message>
+    <message>
+        <source>A&amp;KA OP:</source>
+        <translation>A&amp;KA OP:</translation>
+    </message>
+    <message>
+        <source>Authentication management field for AKAv1-MD5 authentication.</source>
+        <translation>&quot;Authentication management field&quot; voor AKAv1-MD5 authenticatie.</translation>
+    </message>
+    <message>
+        <source>Operator variant key for AKAv1-MD5 authentication.</source>
+        <translation>&quot;Operator variant key&quot; voor AKAv1-MD5 authenticatie.</translation>
+    </message>
+    <message>
+        <source>Prepr&amp;ocessing</source>
+        <translation>V&amp;oorbewerking</translation>
+    </message>
+    <message>
+        <source>Preprocessing (improves quality at remote end)</source>
+        <translation>Voorbewerking (verbetert de geluidskwaliteit voor uw gesprekspartner)</translation>
+    </message>
+    <message>
+        <source>&amp;Automatic gain control</source>
+        <translation>&amp;Automatische sterkteregeling</translation>
+    </message>
+    <message>
+        <source>Automatic gain control (AGC) is a feature that deals with the fact that the recording volume may vary by a large amount between different setups. The AGC provides a way to adjust a signal to a reference volume. This is useful because it removes the need for manual adjustment of the microphone gain. A secondary advantage is that by setting the microphone gain to a conservative (low) level, it is easier to avoid clipping.</source>
+        <translation>Automatische sterkteregeling versterkt zachte signalen en dempt luide signalen die door de microfoon worden opgenomen.</translation>
+    </message>
+    <message>
+        <source>Automatic gain control &amp;level:</source>
+        <translation>Niveau automatische sterkterege&amp;ling:</translation>
+    </message>
+    <message>
+        <source>Automatic gain control level represents percentual value of automatic gain setting of a microphone. Recommended value is about 25%.</source>
+        <translation>Een waarde rond 25% is aanbevolen voor een goede geluidskwaliteit.</translation>
+    </message>
+    <message>
+        <source>&amp;Voice activity detection</source>
+        <translation>&amp;Voice activity detection</translation>
+    </message>
+    <message>
+        <source>When enabled, voice activity detection detects whether the input signal represents a speech or a silence/background noise.</source>
+        <translation>&quot;Voice activity detection&quot; detecteteert of een signaal spraak of stilte/ruid bevat. Stilte/ruis wordt niet over het netwerk gestuurd waardoor minder bandbreedte gebruikt wordt.</translation>
+    </message>
+    <message>
+        <source>&amp;Noise reduction</source>
+        <translation>Ruisonderdrukki&amp;ng</translation>
+    </message>
+    <message>
+        <source>The noise reduction can be used to reduce the amount of background noise present in the input signal. This provides higher quality speech.</source>
+        <translation>Ruisonderdrukking vermindert achtergrondruis in het microfoonsignaal.</translation>
+    </message>
+    <message>
+        <source>Acoustic &amp;Echo Cancellation</source>
+        <translation>Acoustic &amp;Echo Cancellation</translation>
+    </message>
+    <message>
+        <source>In any VoIP communication, if a speech from the remote end is played in the local loudspeaker, then it propagates in the room and is captured by the microphone. If the audio captured from the microphone is sent directly to the remote end, then the remote user hears an echo of his voice. An acoustic echo cancellation is designed to remove the acoustic echo before it is sent to the remote end. It is important to understand that the echo canceller is meant to improve the quality on the remote end.</source>
+        <translation>Spraak uit de speakers wordt opgevangen door de microfoon waardoor uw gesprekspartner een echo waarneemt. &quot;Acoustic echo cancellation&quot; verwijdert deze echo.</translation>
+    </message>
+    <message>
+        <source>Variable &amp;bit-rate</source>
+        <translation>Variable &amp;bit-rate</translation>
+    </message>
+    <message>
+        <source>Discontinuous &amp;Transmission</source>
+        <translation>Discontinuous &amp;Transmission</translation>
+    </message>
+    <message>
+        <source>&amp;Quality:</source>
+        <translation>&amp;Kwaliteit:</translation>
+    </message>
+    <message>
+        <source>Speex is a lossy codec, which means that it achives compression at the expense of fidelity of the input speech signal. Unlike some other speech codecs, it is possible to control the tradeoff made between quality and bit-rate. The Speex encoding process is controlled most of the time by a quality parameter that ranges from 0 to 10.</source>
+        <translation>Speex comprimeert het geluidssignaal ten koste van de kwaliteit. Hoe meer compressie, hoe minder bandbreedte nodig is, maar hoe slechter de geluidskwaliteit. Deze kwaliteitsfactor (0 tot 10) bepaalt de trade-off tussen kwaliteit en compressie.</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>bytes</translation>
+    </message>
+    <message>
+        <source>Use tel-URI for telephone &amp;number</source>
+        <translation>Vestuur telefoon&amp;nummer als tel-URI</translation>
+    </message>
+    <message>
+        <source>Expand a dialed telephone number to a tel-URI instead of a sip-URI.</source>
+        <translation>Expandeer een telefoonnummer naar een tel-URI in plaats van een sip-URI.</translation>
+    </message>
+    <message>
+        <source>Accept call &amp;transfer request (incoming REFER)</source>
+        <translation>Accep&amp;teer doorverbindverzoek (inkomende REFER)</translation>
+    </message>
+    <message>
+        <source>Allow call transfer while consultation in progress</source>
+        <translation>Doorverbinden toestaan tijdens opbouw ruggespraak gesprek</translation>
+    </message>
+    <message>
+        <source>When you perform an attended call transfer, you normally transfer the call after you established a consultation call. If you enable this option you can transfer the call while the consultation call is still in progress. This is a non-standard implementation and may not work with all SIP devices.</source>
+        <translation>Bij doorverbinden met ruggespraak, verbindt u normaal pas door nadat u ruggespraak heeft gehouden. Met deze optie kunt u al doorverbinden terwijl het gesprek voor ruggespraak nog in opbouw is. Dit is een niet-standaard implementatie die mogelijk niet werkt met alle SIP apparaten.</translation>
+    </message>
+    <message>
+        <source>Enable NAT &amp;keep alive</source>
+        <translation>NAT &amp;keep alive</translation>
+    </message>
+    <message>
+        <source>Send UDP NAT keep alive packets.</source>
+        <translation>Stuur UDP NAT keep alive pakketten.</translation>
+    </message>
+    <message>
+        <source>If you have enabled STUN or NAT keep alive, then Twinkle will send keep alive packets at this interval rate to keep the address bindings in your NAT device alive.</source>
+        <translation>Als u STUN of NAT keep alive aan heeft gezet, dan zal Twinkle keep alive pakketjes sturen met deze snelheid om de adresbindingen in uw NAT router in leven te houden.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2005-2008  Michel de Boer <michel@twinklephone.com>
+    Copyright (C) 2005-2009  Michel de Boer <michel@twinklephone.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 
 #include <vector>
 #include <string>
+#include <cc++/config.h>
 
 using namespace std;
 
@@ -74,8 +75,29 @@ string duration2str(unsigned long seconds);
 // Convert a timer in seconds to a string (h:mm:ss)
 string timer2str(unsigned long seconds);
 
-// Convert a hex string to an integer
+/** 
+ * Convert a hex string to an integer.
+ * @param h [in] A hex string.
+ * @return The integer.
+ */
 unsigned long hex2int(const string &h);
+
+/**
+ * Convert a hex string to a binary blob representing the hex value.
+ * @param h [in] A hex string.
+ * @param buf [in] A pointer to a buffer to store the binary blob.
+ * @pre The buffer must be large enough to contain the binary blob.
+ * @post buf contains the binary representation of the hex string.
+ */
+void hex2binary(const string &h, uint8 *buf);
+
+/**
+ * Convert a binary blob to a hexadecimal string.
+ * @param buf [in] Pointer to the binary blob.
+ * @param len [in] Length of the blob.
+ * @return The hexadecimal string.
+ */
+string binary2hex(uint8 *buf, unsigned long len);
 
 // Convert a string to lower case
 string tolower(const string &s);
@@ -87,6 +109,15 @@ string toupper(const string &s);
 string rtrim(const string &s);
 string ltrim(const string &s);
 string trim(const string &s);
+
+/**
+ * Pad a string on the left side till a certain length.
+ * @param s [in] The string to pad.
+ * @param c [in] The pad character.
+ * @param len [in] The length to which the string must be padded.
+ * @return The padded string.
+ */
+string padleft(const string &s, char c, unsigned long len);
 
 // Compare 2 strings case insensive, return
 // -1 --> s1 < s2
@@ -117,20 +148,47 @@ string replace_char(const string &s, char from, char to);
 // Replace first occurrence of 'from'-string to 'to'-string in s
 string replace_first(const string &s, const string &from, const string &to);
 
-// Split a string into elements using c as a separator
+/**
+ *  Split a string into elements using a single character as separator.
+ * @param s [in] The string to split.
+ * @param c [in] The character separator.
+ * @return Vector containing the split parts.
+ */
 vector<string> split(const string &s, char c);
 
-// Split a string into elements using separator as a separator
+/** 
+ * Split a string into elements using a string separator.
+ * @param s [in] The string to split.
+ * @param separator [in] The string separator.
+ * @return Vector containing the split parts.
+ */
 vector<string> split(const string &s, const string &separator);
 
-// Split a string into elements using line breaks as seperator
-// If the string contains a CRLF, then CRLF is used as line break.
-// Otherwise if the string contains a CR, then CR is used as line break.
-// Otherwise LF is used as line break.
+/**
+ * Split a string into elements using line breaks as seperator
+ * If the string contains a CRLF, then CRLF is used as line break.
+ * Otherwise if the string contains a CR, then CR is used as line break.
+ * Otherwise LF is used as line break.
+ * @param s [in] The string to split.
+ * @return Vector containing the split parts.
+ */
 vector<string> split_linebreak(const string &s);
 
-// Split a string in two on the first occurence of the separator c.
+/**
+ * Split a string in two on the first occurrence of a separator.
+ * @param s [in] The string to split.
+ * @param c [in] The separator.
+ * @return Vector containing the split parts.
+ */
 vector<string> split_on_first(const string &s, char c);
+
+/**
+ * Split a string in two on the last occurrence of a separator.
+ * @param s [in] The string to split.
+ * @param c [in] The separator.
+ * @return Vector containing the split parts.
+ */
+vector<string> split_on_last(const string &s, char c);
 
 // Split an escaped string into elements using c as a separator
 // Escaped means: \c will not be seen as a seperator and backslash is
@@ -173,18 +231,36 @@ string str2dtmf(const string &s);
 // *, #, special symbols and white space
 bool looks_like_phone(const string &s, const string &special_symbols);
 
-// Remove all special symbols from a string
+/**
+ * Remove all special symbols from a string.
+ * @param s [in] The string to convert.
+ * @param special_symbols [in] The special symbols to remove.
+ * @return The string without the special symbols.
+ */
 string remove_symbols(const string &s, const string &special_symbols);
 
-// Remove spaces and tabs from a string
+/**
+ * Remove spaces and tabs from a string.
+ * @param s [in] The string to convert.
+ * @return The string without spaces and tabs.
+ */
 string remove_white_space(const string &s);
 
-// Truncate a string. If the string was longer than the truncated
-// result, then "..." will be appended.
-string dotted_truncate(const string &s, int len);
+/**
+ * Truncate a string. If the string was longer than the truncated
+ * result, then "..." will be appended.
+ * @param s [in] The string to truncate.
+ * @param len [in] The length in bytes to truncate to.
+ * @return The truncated string.
+ */
+string dotted_truncate(const string &s, string::size_type len);
 
-// Convert a string to a printable representation, i.e. change
-// all non-printable chars into dots
+/**
+ * Convert a string to a printable representation, i.e. change
+ * all non-printable chars into dots.
+ * @param s [in] The string to convert.
+ * @return The converted string.
+ */
 string to_printable(const string &s);
 
 /**
