@@ -1,3 +1,9 @@
+twinkle (0.0.0-0) UNRELEASED; urgency=low
+
+  * http://rzr.online.fr/q/qt
+
+ -- Philippe Coval <rzr@gna.org>  Mon, 23 May 2011 11:49:37 +0200
+
 twinkle (1:1.4.2-2build2) natty; urgency=low
 
   * No change rebuild against libboost 1.42
@@ -405,4 +411,3 @@ twinkle (0.1-1) experimental; urgency=low
   * Initial release Closes: #311150
 
  -- Mark Purcell <msp@debian.org>  Thu, 11 Aug 2005 22:16:20 +0100
-
