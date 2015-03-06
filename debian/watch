@@ -1,8 +1,0 @@
-# See uscan(1) for format
-
-# Compulsory line, this is a version 3 file
-version=3
-
-opts=uversionmangle=s/beta/~beta/ \
-   http://www.xs4all.nl/~mfnboer/twinkle/download/twinkle-(.*)\.tar\.gz debian svn-upgrade
-
